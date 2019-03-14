@@ -6,13 +6,12 @@ import { AppComponent } from './app.component';
 import { ChatModule } from './chat/chat.module';
 import { PatientHistoryModule } from './patient-history/patient-history.module';
 import { SharedModule } from './shared/shared.module';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { ZadaniaModule } from './zadania/zadania.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -20,9 +19,10 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     SharedModule,
     ChatModule,
-    PatientHistoryModule
+    PatientHistoryModule,
+    ZadaniaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

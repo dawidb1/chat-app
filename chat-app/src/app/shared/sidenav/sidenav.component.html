@@ -1,10 +1,15 @@
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-  <a [routerLink]="['/chat']">Chat</a>
-  <a [routerLink]="['/history']">name</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  <a [routerLink]="['/zad1']">Zadanie 1</a>
+  <a [routerLink]="['/zad2']">Zadanie 2</a>
+  <a [routerLink]="['/zad3']">Zadanie 3</a>
+  <a [routerLink]="['/zad4']">Zadanie 4</a>
+  <a [routerLink]="['/zad5']">Zadanie 5</a>
 </div>
 
 <!-- Use any element to open the sidenav -->
 <button (click)="openNav()">Open nav</button>
+
+<div>
+  <router-outlet></router-outlet>
+</div>
