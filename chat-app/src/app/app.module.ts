@@ -1,27 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChatModule } from './chat/chat.module';
 import { PatientHistoryModule } from './patient-history/patient-history.module';
 import { SharedModule } from './shared/shared.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
-import { ZadaniaModule } from './zadania/zadania.module';
+
+import { ImportModule } from './shared/import/import.module';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthorizationModule } from './authorization/authorization.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    RouterModule,
-    SharedModule,
-    ChatModule,
-    PatientHistoryModule,
-    ZadaniaModule
-  ],
+  imports: [ImportModule, SharedModule, AppRoutingModule, ChatModule, PatientHistoryModule, AuthorizationModule],
   providers: [],
   bootstrap: [AppComponent]
 })
