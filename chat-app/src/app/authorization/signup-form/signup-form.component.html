@@ -1,60 +1,28 @@
-<!-- <form [formGroup]="registerForm">
-  <div class="form-group">
-    <label>Email address</label>
-    <input type="email" formControlName="email" class="form-control" required />
-  </div>
-  <div class="form-group">
-    <label>Password</label>
-    <input type="password" class="form-control" formControlName="password" required />
-    <label class="error">{{ errorMessage }}</label>
-    <label class="success">{{ successMessage }}</label>
-  </div>
-  <button type="submit" (click)="signUp(registerForm.value)" class="btn btn-default">Register</button>
-</form> -->
-
-<div class="container">
-  <div class="signUpCard">
-    <form [formGroup]="registerForm">
-      <h2 class="heading">Sign Up</h2>
-
-      <label class="label">Token</label>
-      <input
-        formControlName="token"
-        type="email"
-        name="email"
-        placeholder="Enter your user token"
-        class="formInput"
-        maxlength="60"
-        required
-      />
-
-      <label class="label">Username</label>
-      <input
-        formControlName="username"
-        type="email"
-        name="email"
-        placeholder="Enter your username"
-        class="formInput"
-        maxlength="60"
-        required
-      />
-
-      <label class="label">Password</label>
-      <input
-        formControlName="password"
-        type="password"
-        name="password"
-        placeholder="Choose a password"
-        class="formInput"
-        required
-      />
-
-      <label class="label">Repeat Password</label>
-      <input type="password" name="password" placeholder="Please repeat password" class="formInput" required />
-
-      <button [disabled]="!registerForm.valid" type="submit" (click)="signUp()" class="btn" id="btn-signUp">
-        Sign Up
-      </button>
-    </form>
-  </div>
-</div>
+<mat-toolbar>
+  <span>Rejestracja</span>
+</mat-toolbar>
+<mat-card class="my-card">
+   <mat-card-content>
+      <form class="my-form">  
+         <mat-form-field class="full-width">
+            <mat-label>Nazwa użytkownika</mat-label>
+            <input  matInput  placeholder="User name"  name="uname"  required>
+         </mat-form-field>
+         <mat-form-field class="full-width">
+            <mat-label>Token</mat-label>
+            <input  matInput  placeholder="Token" name="Token"  required>
+         </mat-form-field>
+         <mat-form-field class="full-width">
+            <mat-label>Hasło</mat-label>
+            <input  matInput  placeholder="Hasło"  name="password">
+         </mat-form-field>
+         <mat-form-field class="full-width">
+            <mat-label>Powtórz hasło</mat-label>
+            <input  matInput  placeholder="Powtórz hasło"  name="passwordr">
+         </mat-form-field>
+      </form>
+   </mat-card-content>
+   <mat-card-actions>
+      <button mat-raised-button (click)="register()" color="primary">Zarejestruj</button>
+   </mat-card-actions>
+</mat-card>

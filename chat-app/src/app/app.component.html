@@ -1,6 +1,10 @@
-<div class="chatRoom">
-  <div class="chatHeaderWrapper">
-    <app-navbar></app-navbar>
-  </div>
-  <router-outlet></router-outlet>
-</div>
+<mat-toolbar color="primary" >
+  <mat-toolbar-row>
+    <!--  <span>HOME</span> -->
+     <span><a href="/">HOME</a></span>
+     <span class="spacer"></span>
+     <a mat-button routerLink="/signup">Rejestracja</a>
+     <a mat-button routerLink="/login">Logowanie</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
