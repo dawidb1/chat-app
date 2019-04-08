@@ -4,8 +4,6 @@ import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [HistoryComponent],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule]
 })
-export class PatientHistoryModule { }
+export class PatientHistoryModule {}
