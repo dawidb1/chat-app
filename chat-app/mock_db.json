@@ -1,0 +1,24 @@
+{
+  "Medicine_list": [
+      {
+          "id": 0,
+          "name": "paracetamol"
+      },
+      {
+          "id": 1,
+          "name": "apap"
+      },
+      {
+          "id": 2,
+          "name": "Acatar Acti-Tabs"
+      },
+      {
+          "id": 3,
+          "name": "Fenistil żel"
+      },
+      {
+          "id": 4,
+          "name": "Aviomarin"
+      }
+  ]
+} 
