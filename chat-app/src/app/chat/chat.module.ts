@@ -9,6 +9,7 @@ import { UserItemComponent } from './user-item/user-item.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { SharedModule } from '../shared/shared.module';
 import { ImportModule } from '../shared/import/import.module';
+import { MedicineListComponent } from './medicine-list/medicine-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ImportModule } from '../shared/import/import.module';
     MessageComponent,
     UserListComponent,
     UserItemComponent,
-    ChatroomComponent
+    ChatroomComponent,
+    MedicineListComponent
   ],
   imports: [CommonModule, ImportModule, SharedModule]
 })
