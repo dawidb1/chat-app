@@ -5,10 +5,13 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MyMaterialModule } from './material.module';
 
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+
 @NgModule({
   declarations: [NavbarComponent],
-  imports: [CommonModule, RouterModule, MyMaterialModule],
-  entryComponents: [],
-  exports: [RouterModule, NavbarComponent, MyMaterialModule]
+  imports: [BrowserModule, CommonModule, RouterModule, HttpClientModule, MyMaterialModule],
+  entryComponents: [NavbarComponent],
+  exports: [NavbarComponent, RouterModule, NavbarComponent, MyMaterialModule]
 })
 export class SharedModule {}
