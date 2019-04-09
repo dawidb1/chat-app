@@ -1,0 +1,21 @@
+My medicines
+<div>
+<ul class="medicines">
+  <li *ngFor="let medicine of medicines,let i = index"
+    [class.selected]="medicine === selectedMedicine"
+    (click)="onSelect(medicine)">
+    <span class="badge">{{i+1}}</span> {{medicine.name}}
+  </li>
+</ul>
+</div>
+ 
+<div *ngIf="selectedMedicine">
+  {{selectedMedicine.name | uppercase}} Details
+  <div><span>id: </span>{{selectedMedicine.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedMedicine.name" placeholder="name"/>
+    </label>
+  </div>
+ 
+</div>
