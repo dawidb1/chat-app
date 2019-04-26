@@ -12,6 +12,7 @@ export class MedicineService {
 
 getMedicine (){
   return this.http.get<Medicine[]>("http://localhost:3000/");
+  
 }
 
 }
