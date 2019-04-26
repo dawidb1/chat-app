@@ -32,7 +32,6 @@ export class ChatService {
     const userId = this.user.uid;
     const path = `/users/${userId}`;
     return this.db.collection(path).valueChanges();
-    
   }
 
   getUsers() {
