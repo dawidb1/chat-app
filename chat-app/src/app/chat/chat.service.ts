@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection,AngularFirestoreDocument} from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 import { ChatMessage } from '../model/chat-message.model';
 import { User } from '../model/user.model';
+import { userInfo } from 'os';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +13,11 @@ export class ChatService {
   user: firebase.User;
   chatMessages: AngularFirestoreCollection<ChatMessage>;
   chatMessages$: Observable<ChatMessage[]>;
+  private usersCollection: AngularFirestoreCollection<User>;
+  users$: Observable<User[]>;
 
+  private usersDoc: AngularFirestoreDocument<User>;
+  user$: Observable<User>;
   chatMessage: ChatMessage;
   userName$: Observable<string>;
   userName: string;
@@ -22,8 +27,9 @@ export class ChatService {
       if (auth !== undefined && auth !== null) {
         this.user = auth;
       }
-      this.getUser().subscribe((a: any) => {
-        this.userName = a.displayName;
+      this.getUser().subscribe((a:any) => {
+        this.userName = a.user.displayName;
+      
       });
     });
   }
@@ -31,12 +37,12 @@ export class ChatService {
   getUser() {
     const userId = this.user.uid;
     const path = `/users/${userId}`;
-    return this.db.collection(path).valueChanges();
+    return this.db.collection<User>(path).valueChanges();
   }
 
   getUsers() {
     const path = '/users';
-    return this.db.collection(path).valueChanges();
+    return this.db.collection<User>(path).valueChanges();
   }
 
   sendMessage(msg: string) {
