@@ -7,11 +7,12 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { MyMaterialModule } from './material.module';
+import { ReversePipe } from '../pipes/reverse.pipe';
 
 @NgModule({
-  declarations: [NavbarComponent],
+  declarations: [NavbarComponent, ReversePipe],
   imports: [BrowserModule, CommonModule, RouterModule, HttpClientModule, MyMaterialModule],
   entryComponents: [NavbarComponent],
-  exports: [NavbarComponent, RouterModule, NavbarComponent, MyMaterialModule]
+  exports: [NavbarComponent, RouterModule, NavbarComponent, MyMaterialModule, ReversePipe]
 })
 export class SharedModule {}

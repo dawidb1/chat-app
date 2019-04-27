@@ -58,7 +58,7 @@ export class ChatService {
 
   getMessages(): Observable<ChatMessage[]> {
     // query to create our message feed binding
-    this.chatMessages = this.db.collection<ChatMessage>('messages', ref => ref.orderBy('timeSent').limit(25));
+    this.chatMessages = this.db.collection<ChatMessage>('messages', ref => ref.orderBy('timeSent', 'desc').limit(25));
     this.chatMessages$ = this.chatMessages.valueChanges();
     return this.chatMessages$;
 

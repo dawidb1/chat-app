@@ -6,22 +6,21 @@ import { FeedComponent } from './components/feed/feed.component';
 import { MessageComponent } from './components/message/message.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserItemComponent } from './components/user-item/user-item.component';
-import { ChatroomComponent } from './components/chatroom/chatroom.component';
 import { SharedModule } from '../shared/modules/shared.module';
-import { MedicineListComponent } from './components/medicine-list/medicine-list.component';
 import { ImportModule } from '../shared/modules/import.module';
+import { PatientHistoryModule } from '../patient-history/patient-history.module';
+import { ChatroomComponent } from './components/chatroom/chatroom.component';
 
 @NgModule({
   declarations: [
     ChatListComponent,
     ChatFormComponent,
+    ChatroomComponent,
     FeedComponent,
     MessageComponent,
     UserListComponent,
-    UserItemComponent,
-    ChatroomComponent,
-    MedicineListComponent
+    UserItemComponent
   ],
-  imports: [CommonModule, ImportModule, SharedModule]
+  imports: [CommonModule, ImportModule, SharedModule, PatientHistoryModule]
 })
 export class ChatModule {}

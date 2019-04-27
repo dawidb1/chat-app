@@ -3,7 +3,7 @@
     <app-user-list></app-user-list>
   </div>
   <div class="chatContainer">
-    <div #scroller class="feedWrapper">
+    <div #scroller class="feedWrapper" (scroll)="onScroll()">
       <app-feed></app-feed>
     </div>
     <div class="chatFormWrapper">
