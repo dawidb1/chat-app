@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { RouterModule } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
-import { MyMaterialModule } from './material.module';
+import { NavbarComponent } from '../components/navbar/navbar.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { MyMaterialModule } from './material.module';
 
 @NgModule({
   declarations: [NavbarComponent],

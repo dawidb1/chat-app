@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HistoryComponent } from './patient-history/history/history.component';
-import { SignupFormComponent } from './authorization/signup-form/signup-form.component';
-import { LoginFormComponent } from './authorization/login-form/login-form.component';
-import { ChatroomComponent } from './chat/chatroom/chatroom.component';
+import { HistoryComponent } from '../../patient-history/components/history/history.component';
+import { SignupFormComponent } from '../../authorization/components/signup-form/signup-form.component';
+import { LoginFormComponent } from '../../authorization/components/login-form/login-form.component';
+import { ChatroomComponent } from '../../chat/components/chatroom/chatroom.component';
 
 const routes: Routes = [
   {

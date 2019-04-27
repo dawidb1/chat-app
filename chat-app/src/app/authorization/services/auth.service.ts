@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import { Credentials } from '../model/credentials.model';
-import { User } from '../model/user.model';
+import { Credentials } from '../../model/credentials.model';
+import { User } from '../../model/user.model';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { UserService } from './user.service';
 import { Router } from '@angular/router';

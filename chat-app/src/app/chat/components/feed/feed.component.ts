@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestoreCollection } from '@angular/fire/firestore';
 import { ChatMessage } from 'src/app/model/chat-message.model';
-import { ChatService } from '../chat.service';
+import { ChatService } from '../../services/chat.service';
 import { Observable } from 'rxjs';
 
 @Component({

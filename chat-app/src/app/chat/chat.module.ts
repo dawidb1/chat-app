@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChatListComponent } from './chat-list/chat-list.component';
-import { ChatFormComponent } from './chat-form/chat-form.component';
-import { FeedComponent } from './feed/feed.component';
-import { MessageComponent } from './message/message.component';
-import { UserListComponent } from './user-list/user-list.component';
-import { UserItemComponent } from './user-item/user-item.component';
-import { ChatroomComponent } from './chatroom/chatroom.component';
-import { SharedModule } from '../shared/shared.module';
-import { ImportModule } from '../shared/import/import.module';
-import { MedicineListComponent } from './medicine-list/medicine-list.component';
+import { ChatListComponent } from './components/chat-list/chat-list.component';
+import { ChatFormComponent } from './components/chat-form/chat-form.component';
+import { FeedComponent } from './components/feed/feed.component';
+import { MessageComponent } from './components/message/message.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { UserItemComponent } from './components/user-item/user-item.component';
+import { ChatroomComponent } from './components/chatroom/chatroom.component';
+import { SharedModule } from '../shared/modules/shared.module';
+import { MedicineListComponent } from './components/medicine-list/medicine-list.component';
+import { ImportModule } from '../shared/modules/import.module';
 
 @NgModule({
   declarations: [

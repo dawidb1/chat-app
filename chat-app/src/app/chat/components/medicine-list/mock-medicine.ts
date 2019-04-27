@@ -1,4 +1,4 @@
-import { Medicines } from './../../model/medicine-list.model'; 
+import { Medicines } from '../../../model/medicine-list.model';
 
 export const MEDICINES: Medicines[] = [
   { id: 11, name: 'Apap' },

@@ -3,7 +3,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
-import { ChatMessage } from '../model/chat-message.model';
+import { ChatMessage } from '../../model/chat-message.model';
 
 @Injectable({
   providedIn: 'root'
