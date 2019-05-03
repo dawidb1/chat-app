@@ -37,6 +37,7 @@ export class UserService {
     const userId = user.id;
     delete user.id;
     this.firestore.doc(this.userCollection + '/' + userId).update(user);
+    user.id = userId;
   }
 
   changeUserStatus(user: User, status: UserStatus) {}

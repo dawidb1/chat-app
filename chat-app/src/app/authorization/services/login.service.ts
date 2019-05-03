@@ -28,19 +28,26 @@ export class LoginService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password).then(user => {
       this.authState = user;
       this.authUid = user.user.uid;
-
-      this.getLoggedInUser().subscribe(res => {
-        this.user = res;
-        this.setUserStatus(UserStatus.ONLINE);
-      });
-
-      this.router.navigate([Routing.CHAT]);
+      // subscription.unsubscribe();
     });
   }
 
+  setLoginUser() {
+    return this.getLoggedInUser().pipe(
+      map(res => {
+        this.user = res;
+        this.setUserStatus(UserStatus.ONLINE);
+        this.router.navigate([Routing.CHAT]);
+        console.log('getLoggedInUser subscription was called');
+      })
+    );
+  }
+
   logout() {
-    this.afAuth.auth.signOut();
     this.setUserStatus(UserStatus.OFFLINE);
+    this.afAuth.auth.signOut();
+
+    this.router.navigate([Routing.LOGIN]);
   }
 
   private setUserStatus(status: UserStatus) {
@@ -49,7 +56,6 @@ export class LoginService {
   }
 
   getLoggedInUser() {
-    const userId = this.currentUserId;
     const result = this.userService
       .getUsers()
       .pipe(map(users => users.filter(user => user.uid === this.currentUserId)));
