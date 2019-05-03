@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
-  email = 'test@test.pl';
-  password = 'test1234';
+  email = 'email2@email.com';
+  password = 'token1user';
   errorMsg: string;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: LoginService, private router: Router) {}
 
   login() {
     console.log('login() called from login-form component');

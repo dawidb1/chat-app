@@ -1,36 +1,47 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestoreCollection, AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { User } from '../../model/user.model';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { map } from 'rxjs/operators';
+import { UserStatus } from '../model/user-status.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private usersCollection: AngularFirestoreCollection<User>;
-  users$: Observable<User[]>;
+  userCollection = 'users';
 
-  private usersDoc: AngularFirestoreDocument<User>;
-  user$: Observable<User>;
+  constructor(private firestore: AngularFirestore) {}
 
-  constructor(private afs: AngularFirestore, private db: AngularFireDatabase) {
-    this.usersCollection = afs.collection<User>('users');
-    this.users$ = this.usersCollection.valueChanges();
+  getUsersSnapshot() {
+    return this.firestore.collection(this.userCollection).snapshotChanges();
   }
 
-  addUser(item: User) {
-    const url = `users/${item.uid}`;
-    this.db.object(url).update(item);
+  getUsers() {
+    return this.getUsersSnapshot().pipe(
+      map(items => {
+        return items.map(item => {
+          return {
+            id: item.payload.doc.id,
+            ...item.payload.doc.data()
+          } as User;
+        });
+      })
+    );
   }
 
-  updateUser(userUID: string, user: any) {
-    const url = `users/${userUID}`;
-    this.db.object(url).update(user);
+  addUser(user: User) {
+    return this.firestore.collection(this.userCollection).add(user);
+  }
 
-    // const url = 'users/' + item.uid;
-    // this.usersDoc = this.afs.doc<User>(url);
-    // this.user$ = this.usersDoc.valueChanges();
-    // this.usersDoc.update(item).catch(err => console.log(err));
+  updateUser(user: User) {
+    const userId = user.id;
+    delete user.id;
+    this.firestore.doc(this.userCollection + '/' + userId).update(user);
+  }
+
+  changeUserStatus(user: User, status: UserStatus) {}
+
+  deleteUser(userId) {
+    this.firestore.doc(this.userCollection + '/' + userId).delete();
   }
 }

@@ -4,15 +4,16 @@ import { HistoryComponent } from '../../patient-history/components/history/histo
 import { SignupFormComponent } from '../../authorization/components/signup-form/signup-form.component';
 import { LoginFormComponent } from '../../authorization/components/login-form/login-form.component';
 import { ChatroomComponent } from '../../chat/components/chatroom/chatroom.component';
+import { Routing } from 'src/app/model/routing.enum';
 
 const routes: Routes = [
   {
     path: 'history',
     component: HistoryComponent
   },
-  { path: 'signup', component: SignupFormComponent },
-  { path: 'login', component: LoginFormComponent },
-  { path: 'chat', component: ChatroomComponent },
+  { path: Routing.SIGNUP, component: SignupFormComponent },
+  { path: Routing.LOGIN, component: LoginFormComponent },
+  { path: Routing.CHAT, component: ChatroomComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
