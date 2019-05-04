@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { AngularFirestoreCollection } from '@angular/fire/firestore';
 import { ChatMessage } from 'src/app/model/chat-message.model';
 import { ChatService } from '../../services/chat.service';
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.scss']
 })
-export class FeedComponent implements OnInit {
+export class FeedComponent implements OnInit, OnChanges {
   feed: AngularFirestoreCollection<ChatMessage>;
   feed$: Observable<ChatMessage[]>;
 

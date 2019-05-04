@@ -1,7 +1,6 @@
 <div class="userItem">
-    <span class="status" [ngClass]=(user.status)>
-    </span>
-   <span class="userName" [ngClass]=(user.username) >
-      {{user.displayName}}
-    </span>
-  </div>
+  <span class="status" [ngClass]="user.status"> </span>
+  <span class="userName" [ngClass]="user.username">
+    {{ user.username }}
+  </span>
+</div>

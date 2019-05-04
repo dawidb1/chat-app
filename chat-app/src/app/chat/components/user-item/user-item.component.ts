@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../../model/user.model';
-import { ChatService } from '../chat.service';
-
+import { User } from 'src/app/model/user.model';
 
 @Component({
   selector: 'app-user-item',
@@ -9,12 +7,9 @@ import { ChatService } from '../chat.service';
   styleUrls: ['./user-item.component.scss']
 })
 export class UserItemComponent implements OnInit {
-
   @Input() user: User;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

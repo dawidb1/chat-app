@@ -9,8 +9,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit, OnDestroy {
-  email = 'email2@email.com';
-  password = 'token1user';
+  email = 'email4@email.com';
+  password = 'token4user';
   errorMsg: string;
 
   loginSubscription: Subscription;
@@ -20,16 +20,20 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   login() {
     console.log('login() called from login-form component');
     this.authService
-      .login(this.email, this.password)
+      .authorize(this.email, this.password)
       .catch(error => (this.errorMsg = error.message))
       .then(() => {
         this.loginSubscription = this.authService.setLoginUser().subscribe();
       });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.loginSubscription = new Subscription();
+  }
 
   ngOnDestroy() {
+    console.log(this.loginSubscription);
+
     this.loginSubscription.unsubscribe();
   }
 }

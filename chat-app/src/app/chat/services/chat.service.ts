@@ -1,77 +1,42 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
-import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 import { ChatMessage } from '../../model/chat-message.model';
 import { User } from 'src/app/model/user.model';
+import { LoginService } from 'src/app/authorization/services/login.service';
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
-  user: firebase.User;
   chatMessages: AngularFirestoreCollection<ChatMessage>;
   chatMessages$: Observable<ChatMessage[]>;
-  private usersCollection: AngularFirestoreCollection<User>;
   users$: Observable<User[]>;
 
-  private usersDoc: AngularFirestoreDocument<User>;
   user$: Observable<User>;
   chatMessage: ChatMessage;
-  userName$: Observable<string>;
-  userName: string;
 
-  constructor(private db: AngularFirestore, private afAuth: AngularFireAuth) {
-    this.afAuth.authState.subscribe(auth => {
-      if (auth !== undefined && auth !== null) {
-        this.user = auth;
-      }
-      this.getUser().subscribe((a: any) => {
-        this.userName = a.user.displayName;
-      });
-    });
-  }
+  currentUser: User;
 
-  getUser() {
-    const userId = this.user.uid;
-    const path = `/users/${userId}`;
-    return this.db.collection<User>(path).valueChanges();
-  }
-
-  getUsers() {
-    const path = '/users';
-    return this.db.collection<User>(path).valueChanges();
-  }
+  constructor(private firestore: AngularFirestore, private loginService: LoginService) {}
 
   sendMessage(msg: string) {
-    const timestamp = this.getTimeStamp();
-    // const email = this.user.email;
-    const email = 'email@example.pl'; // todo
-    this.userName = 'test dawid';
-
-    this.chatMessages$ = this.getMessages();
+    // this.chatMessages$ = this.getMessages();
     this.chatMessages.add({
       message: msg,
-      timeSent: new Date(timestamp),
-      userName: this.userName,
-      email
-    });
+      timeSent: new Date(this.getTimeStamp()),
+      userName: this.currentUser.username,
+      email: this.currentUser.email
+    } as ChatMessage);
 
     console.log('sendMessage called');
   }
 
   getMessages(): Observable<ChatMessage[]> {
-    // query to create our message feed binding
-    this.chatMessages = this.db.collection<ChatMessage>('messages', ref => ref.orderBy('timeSent', 'desc').limit(25));
+    this.chatMessages = this.firestore.collection<ChatMessage>('messages', ref =>
+      ref.orderBy('timeSent', 'desc').limit(25)
+    );
     this.chatMessages$ = this.chatMessages.valueChanges();
     return this.chatMessages$;
-
-    // return this.db.list('messages', {
-    //   query: {
-    //     limitToLast: 25,
-    //     orderByKey: true
-    //   }
-    // });
   }
 
   getTimeStamp() {

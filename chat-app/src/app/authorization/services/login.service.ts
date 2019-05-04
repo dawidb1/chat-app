@@ -7,28 +7,35 @@ import { UserService } from './user.service';
 import { Router } from '@angular/router';
 import { UserStatus } from '../model/user-status.enum';
 import { Routing } from 'src/app/model/routing.enum';
-import { filter, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  authState: firebase.auth.UserCredential;
   user: User;
-  authUid: string;
+  firebaseUser$: Observable<firebase.User>;
 
   constructor(
     public afAuth: AngularFireAuth,
     public db: AngularFireDatabase,
     private userService: UserService,
     private router: Router
-  ) {}
+  ) {
+    this.setFirebaseUser();
+  }
 
-  login(email: string, password: string) {
-    return this.afAuth.auth.signInWithEmailAndPassword(email, password).then(user => {
-      this.authState = user;
-      this.authUid = user.user.uid;
-    });
+  setFirebaseUser() {
+    this.firebaseUser$ = this.afAuth.authState;
+  }
+
+  authUser() {
+    return this.firebaseUser$;
+  }
+
+  authorize(email: string, password: string) {
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
   setLoginUser() {
@@ -43,25 +50,33 @@ export class LoginService {
   }
 
   logout() {
-    this.setUserStatus(UserStatus.OFFLINE);
-    this.afAuth.auth.signOut();
+    console.log('logout called');
 
-    this.router.navigate([Routing.LOGIN]);
+    return this.getLoggedInUser().pipe(
+      map(user => {
+        this.user = user;
+        this.setUserStatus(UserStatus.OFFLINE);
+        this.afAuth.auth.signOut().then(x => {
+          this.router.navigate([Routing.LOGIN]);
+        });
+      })
+    );
   }
 
   getLoggedInUser() {
-    const result = this.userService
-      .getUsers()
-      .pipe(map(users => users.filter(user => user.uid === this.currentUserId)));
-    return result.pipe(map(users => users[0]));
+    return this.userService.getUserById(this.currentUserId);
   }
 
   private setUserStatus(status: UserStatus) {
+    // this.getLoggedInUser().subscribe(user => {
     this.user.status = status;
     this.userService.updateUser(this.user);
   }
 
   get currentUserId(): string {
-    return this.authState !== null ? this.authState.user.uid : '';
+    const uid = this.afAuth.auth.currentUser.uid;
+    console.log(uid);
+
+    return uid;
   }
 }
