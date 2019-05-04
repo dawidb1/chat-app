@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 import { ChatMessage } from '../../model/chat-message.model';
-
+import { User } from 'src/app/model/user.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,32 +12,36 @@ export class ChatService {
   user: firebase.User;
   chatMessages: AngularFirestoreCollection<ChatMessage>;
   chatMessages$: Observable<ChatMessage[]>;
+  private usersCollection: AngularFirestoreCollection<User>;
+  users$: Observable<User[]>;
 
+  private usersDoc: AngularFirestoreDocument<User>;
+  user$: Observable<User>;
   chatMessage: ChatMessage;
   userName$: Observable<string>;
   userName: string;
 
   constructor(private db: AngularFirestore, private afAuth: AngularFireAuth) {
-    // this.afAuth.authState.subscribe(auth => {
-    //   if (auth !== undefined && auth !== null) {
-    //     this.user = auth;
-    //   }
-    //   // this.getUser().subscribe(a => {
-    //   //   this.userName = a.displayName;
-    //   // });
-    // });
+    this.afAuth.authState.subscribe(auth => {
+      if (auth !== undefined && auth !== null) {
+        this.user = auth;
+      }
+      this.getUser().subscribe((a: any) => {
+        this.userName = a.user.displayName;
+      });
+    });
   }
 
-  // getUser() {
-  //   const userId = this.user.uid;
-  //   const path = `/users/${userId}`;
-  //   return this.db.object(path);
-  // }
+  getUser() {
+    const userId = this.user.uid;
+    const path = `/users/${userId}`;
+    return this.db.collection<User>(path).valueChanges();
+  }
 
-  // getUsers() {
-  //   const path = '/users';
-  //   return this.db.list(path);
-  // }
+  getUsers() {
+    const path = '/users';
+    return this.db.collection<User>(path).valueChanges();
+  }
 
   sendMessage(msg: string) {
     const timestamp = this.getTimeStamp();
