@@ -3,6 +3,9 @@
     <app-user-list (changeUserRoom)="changeUserRoomEvent($event)"></app-user-list>
   </div>
   <div *ngIf="roomUser" class="chatContainer">
+    <div class="usernameWrapper">
+      <h1 class="header">{{ roomUser.username }}</h1>
+    </div>
     <div #scroller class="feedWrapper" (scroll)="onScroll()">
       <app-feed [roomUser]="roomUser"></app-feed>
     </div>
