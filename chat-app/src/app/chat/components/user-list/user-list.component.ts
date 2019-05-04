@@ -21,7 +21,6 @@ export class UserListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.setUsers();
-    this.changeRoom(this.users[0]);
   }
 
   ngOnDestroy() {
@@ -31,6 +30,7 @@ export class UserListComponent implements OnInit, OnDestroy {
   setUsers() {
     this.usersSubscription = this.userService.getUsers().subscribe((users: User[]) => {
       this.users = users;
+      this.changeRoom(this.users[0]);
     });
   }
 
