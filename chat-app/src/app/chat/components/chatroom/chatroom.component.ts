@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { User } from 'src/app/model/user.model';
+import { LoginService } from 'src/app/authorization/services/login.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-chatroom',
@@ -10,11 +12,19 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
   @ViewChild('scroller') scroller: ElementRef;
   disableScrollDown = false;
 
+  currentUser: User;
   roomUser: User;
 
-  constructor() {}
+  currentUserSubscription: Subscription;
 
-  ngOnInit() {}
+  constructor(private loginService: LoginService) {}
+
+  ngOnInit() {
+    this.currentUserSubscription = this.loginService.getLoggedInUser().subscribe(user => {
+      this.currentUser = user;
+      this.currentUserSubscription.unsubscribe();
+    });
+  }
 
   ngAfterViewChecked() {
     this.scrollToBottom();
