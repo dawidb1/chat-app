@@ -12,6 +12,10 @@
   transition: ease-in 0.2s;
 
   cursor: pointer;
+
+  &.active {
+    background-color: red;
+  }
 }
 
 .userItem:hover {

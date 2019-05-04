@@ -9,12 +9,18 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
   @ViewChild('scroller') scroller: ElementRef;
   disableScrollDown = false;
 
+  roomUserId: string;
+
   constructor() {}
 
   ngOnInit() {}
 
   ngAfterViewChecked() {
     this.scrollToBottom();
+  }
+
+  changeUserRoomEvent(event: string) {
+    this.roomUserId = event;
   }
 
   onScroll() {

@@ -1,13 +1,13 @@
 <div class="mainContent">
   <div class="userListWrapper">
-    <app-user-list></app-user-list>
+    <app-user-list (changeUserRoom)="changeUserRoomEvent($event)"></app-user-list>
   </div>
   <div class="chatContainer">
     <div #scroller class="feedWrapper" (scroll)="onScroll()">
-      <app-feed></app-feed>
+      <app-feed [roomUserId]="roomUserId"></app-feed>
     </div>
     <div class="chatFormWrapper">
-      <app-chat-form></app-chat-form>
+      <app-chat-form [roomUserId]="roomUserId"></app-chat-form>
     </div>
   </div>
 

@@ -8,6 +8,7 @@ import { User } from 'src/app/model/user.model';
 })
 export class UserItemComponent implements OnInit {
   @Input() user: User;
+  @Input() active: boolean;
 
   constructor() {}
 

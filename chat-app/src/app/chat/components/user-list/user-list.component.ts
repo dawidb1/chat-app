@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, EventEmitter, Output } from '@angular/core';
 import { User } from 'src/app/model/user.model';
 import { ChatService } from '../../services/chat.service';
 import { UserService } from 'src/app/authorization/services/user.service';
@@ -13,10 +13,15 @@ export class UserListComponent implements OnInit, OnDestroy {
   users: User[];
   usersSubscription: Subscription;
 
+  currentRoomUser: string;
+
+  @Output() changeUserRoom: EventEmitter<string> = new EventEmitter();
+
   constructor(private chat: ChatService, private userService: UserService) {}
 
   ngOnInit() {
     this.setUsers();
+    this.changeRoom(this.users[0]);
   }
 
   ngOnDestroy() {
@@ -26,7 +31,11 @@ export class UserListComponent implements OnInit, OnDestroy {
   setUsers() {
     this.usersSubscription = this.userService.getUsers().subscribe((users: User[]) => {
       this.users = users;
-      console.log(this.users);
     });
+  }
+
+  changeRoom(user: User) {
+    this.changeUserRoom.emit(user.id);
+    this.currentRoomUser = user.id;
   }
 }

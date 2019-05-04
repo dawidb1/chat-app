@@ -1,5 +1,5 @@
 <div *ngIf="users">
   <div class="userList" *ngFor="let user of users">
-    <app-user-item [user]="user"> </app-user-item>
+    <app-user-item (click)="changeRoom(user)" [user]="user" [active]="currentRoomUser === user.id"></app-user-item>
   </div>
 </div>

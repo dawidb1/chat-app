@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { ChatMessage } from '../../model/chat-message.model';
 import { User } from 'src/app/model/user.model';
@@ -17,23 +17,30 @@ export class ChatService {
 
   currentUser: User;
 
-  constructor(private firestore: AngularFirestore, private loginService: LoginService) {}
+  constructor(private firestore: AngularFirestore, private loginService: LoginService) {
+    // warning service subscribe
+    this.loginService.getLoggedInUser().subscribe(res => (this.currentUser = res));
+  }
 
-  sendMessage(msg: string) {
-    // this.chatMessages$ = this.getMessages();
+  sendMessage(msg: string, toUserId: string) {
     this.chatMessages.add({
       message: msg,
       timeSent: new Date(this.getTimeStamp()),
       userName: this.currentUser.username,
-      email: this.currentUser.email
-    } as ChatMessage);
-
-    console.log('sendMessage called');
+      email: this.currentUser.email,
+      fromUserId: this.currentUser.id,
+      toUserId,
+      id: null
+    });
   }
 
-  getMessages(): Observable<ChatMessage[]> {
+  getMessages(toUserId: string): Observable<ChatMessage[]> {
     this.chatMessages = this.firestore.collection<ChatMessage>('messages', ref =>
-      ref.orderBy('timeSent', 'desc').limit(25)
+      ref
+        .orderBy('timeSent', 'desc')
+        .limit(25)
+        .where('fromUserId', '==', this.currentUser.id)
+        .where('toUserId', '==', toUserId)
     );
     this.chatMessages$ = this.chatMessages.valueChanges();
     return this.chatMessages$;
