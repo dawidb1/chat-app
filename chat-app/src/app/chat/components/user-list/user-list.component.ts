@@ -15,7 +15,7 @@ export class UserListComponent implements OnInit, OnDestroy {
 
   currentRoomUser: string;
 
-  @Output() changeUserRoom: EventEmitter<string> = new EventEmitter();
+  @Output() changeUserRoom: EventEmitter<User> = new EventEmitter();
 
   constructor(private chat: ChatService, private userService: UserService) {}
 
@@ -35,7 +35,7 @@ export class UserListComponent implements OnInit, OnDestroy {
   }
 
   changeRoom(user: User) {
-    this.changeUserRoom.emit(user.id);
+    this.changeUserRoom.emit(user);
     this.currentRoomUser = user.id;
   }
 }

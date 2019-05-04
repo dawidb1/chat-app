@@ -9,24 +9,23 @@ import { LoginService } from 'src/app/authorization/services/login.service';
 })
 export class MessageComponent implements OnInit {
   @Input() chatMessage: ChatMessage;
+  @Input() roomUserId: string;
+
   userEmail: string;
   userName: string;
   messageContent: string;
   timeStamp: Date = new Date();
-  isOwnMessage: boolean;
   ownEmail: string;
 
-  constructor(private authService: LoginService) {
-    // authService.authUser().subscribe(user => {
-    //   this.ownEmail = user.email;
-    //   this.isOwnMessage = this.ownEmail === this.userEmail;
-    // });
-  }
+  isOwnMessage: boolean;
+
+  constructor() {}
 
   ngOnInit(chatMessage = this.chatMessage) {
     this.messageContent = chatMessage.message;
     this.timeStamp = chatMessage.timeSent.toDate();
     this.userEmail = chatMessage.email;
     this.userName = chatMessage.userName;
+    this.isOwnMessage = this.roomUserId === chatMessage.toUserId;
   }
 }

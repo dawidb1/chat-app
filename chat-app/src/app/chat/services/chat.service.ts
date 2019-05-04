@@ -23,25 +23,37 @@ export class ChatService {
   }
 
   sendMessage(msg: string, toUserId: string) {
-    this.chatMessages.add({
-      message: msg,
-      timeSent: new Date(this.getTimeStamp()),
-      userName: this.currentUser.username,
-      email: this.currentUser.email,
-      fromUserId: this.currentUser.id,
-      toUserId,
-      id: null
-    });
+    const messagesCollId = this.getMessegesCollId(this.currentUser.id, toUserId);
+
+    this.firestore
+      .collection<ChatMessage>('messages')
+      .doc(messagesCollId)
+      .collection('messages')
+      .add({
+        message: msg,
+        timeSent: new Date(this.getTimeStamp()),
+        userName: this.currentUser.username,
+        email: this.currentUser.email,
+        fromUserId: this.currentUser.id,
+        toUserId
+      });
+  }
+
+  getMessegesCollId(from: string, to: string): string {
+    if (from > to) {
+      return from + to;
+    }
+    return to + from;
   }
 
   getMessages(toUserId: string): Observable<ChatMessage[]> {
-    this.chatMessages = this.firestore.collection<ChatMessage>('messages', ref =>
-      ref
-        .orderBy('timeSent', 'desc')
-        .limit(25)
-        .where('fromUserId', '==', this.currentUser.id)
-        .where('toUserId', '==', toUserId)
-    );
+    const messagesCollId = this.getMessegesCollId(this.currentUser.id, toUserId);
+
+    this.chatMessages = this.firestore
+      .collection('messages')
+      .doc(messagesCollId)
+      .collection<ChatMessage>('messages', ref => ref.orderBy('timeSent', 'desc').limit(25));
+
     this.chatMessages$ = this.chatMessages.valueChanges();
     return this.chatMessages$;
   }

@@ -1,5 +1,4 @@
 export class ChatMessage {
-  id: string;
   fromUserId: string;
   toUserId: string;
 

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, AfterViewChecked } from '@angular/core';
+import { User } from 'src/app/model/user.model';
 
 @Component({
   selector: 'app-chatroom',
@@ -9,7 +10,7 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
   @ViewChild('scroller') scroller: ElementRef;
   disableScrollDown = false;
 
-  roomUserId: string;
+  roomUser: User;
 
   constructor() {}
 
@@ -19,8 +20,8 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
     this.scrollToBottom();
   }
 
-  changeUserRoomEvent(event: string) {
-    this.roomUserId = event;
+  changeUserRoomEvent(event: User) {
+    this.roomUser = event;
   }
 
   onScroll() {

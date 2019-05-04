@@ -2,12 +2,12 @@
   <div class="userListWrapper">
     <app-user-list (changeUserRoom)="changeUserRoomEvent($event)"></app-user-list>
   </div>
-  <div *ngIf="roomUserId" class="chatContainer">
+  <div *ngIf="roomUser" class="chatContainer">
     <div #scroller class="feedWrapper" (scroll)="onScroll()">
-      <app-feed [roomUserId]="roomUserId"></app-feed>
+      <app-feed [roomUser]="roomUser"></app-feed>
     </div>
     <div class="chatFormWrapper">
-      <app-chat-form [roomUserId]="roomUserId"></app-chat-form>
+      <app-chat-form [roomUserId]="roomUser.id"></app-chat-form>
     </div>
   </div>
 
