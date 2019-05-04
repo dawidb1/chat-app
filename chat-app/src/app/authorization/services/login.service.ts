@@ -28,7 +28,6 @@ export class LoginService {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password).then(user => {
       this.authState = user;
       this.authUid = user.user.uid;
-      // subscription.unsubscribe();
     });
   }
 
@@ -50,16 +49,16 @@ export class LoginService {
     this.router.navigate([Routing.LOGIN]);
   }
 
-  private setUserStatus(status: UserStatus) {
-    this.user.status = status;
-    this.userService.updateUser(this.user);
-  }
-
   getLoggedInUser() {
     const result = this.userService
       .getUsers()
       .pipe(map(users => users.filter(user => user.uid === this.currentUserId)));
     return result.pipe(map(users => users[0]));
+  }
+
+  private setUserStatus(status: UserStatus) {
+    this.user.status = status;
+    this.userService.updateUser(this.user);
   }
 
   get currentUserId(): string {
