@@ -3,6 +3,7 @@ import { User } from 'src/app/model/user.model';
 import { ChatService } from '../../services/chat.service';
 import { UserService } from 'src/app/authorization/services/user.service';
 import { Subscription } from 'rxjs';
+import { LoginService } from 'src/app/authorization/services/login.service';
 
 @Component({
   selector: 'app-user-list',
@@ -13,13 +14,15 @@ export class UserListComponent implements OnInit, OnDestroy {
   users: User[];
   usersSubscription: Subscription;
 
+  currentUser: string;
   currentRoomUser: string;
 
   @Output() changeUserRoom: EventEmitter<User> = new EventEmitter();
 
-  constructor(private chat: ChatService, private userService: UserService) {}
+  constructor(private userService: UserService, private loginService: LoginService) {}
 
   ngOnInit() {
+    this.currentUser = this.loginService.currentUserId;
     this.setUsers();
   }
 
