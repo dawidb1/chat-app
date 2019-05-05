@@ -19,6 +19,70 @@
     {
       "id": 4,
       "name": "Aviomarin"
+    },
+    {
+      "id": 5,
+      "name": "Ketonal forte"
+    },
+    {
+      "id": 6,
+      "name": "Dexak"
+    },
+    {
+      "id": 7,
+      "name": "Otrivin Allergy"
+    },
+    {
+      "id": 8,
+      "name": "Ibuprom"
+    },
+    {
+      "id": 9,
+      "name": "Astaksantyna"
+    },
+    {
+      "id": 10,
+      "name": "Hydrominum"
+    },
+    {
+      "id":11,
+      "name": "Levopront"
+    },
+    {
+      "id": 12,
+      "name": "Acard"
+    },
+    {
+      "id": 13,
+      "name": "Magnesium Diasporal"
+    },
+    {
+      "id": 14,
+      "name": "Karnityna Ambio"
+    },
+    {
+      "id": 15,
+      "name": "Panadol"
+    },
+    {
+      "id": 16,
+      "name": "Tacni"
+    },
+    {
+      "id": 17,
+      "name": "Witagin"
+    },
+    {
+      "id": 18,
+      "name": "Zalasta"
+    },
+    {
+      "id": 19,
+      "name": "Sachol"
+    },
+    {
+      "id": 20,
+      "name": "Baikaderm"
     }
   ],
   "users": [
@@ -71,6 +135,18 @@
         {
           "id": 1,
           "name": "apap"
+        },
+        {
+          "id": 20,
+          "name": "Baikaderm"
+        },
+        {
+          "id": 16,
+          "name": "Tacni"
+        },
+        {
+          "id": 13,
+          "name": "Magnesium Diasporal"
         }
       ]
     },
@@ -88,6 +164,18 @@
         {
           "id": 4,
           "name": "Aviomarin"
+        },
+        {
+          "id": 17,
+          "name": "Witagin"
+        },
+        {
+          "id": 12,
+          "name": "Acard"
+        },
+        {
+          "id": 9,
+          "name": "Astaksantyna"
         }
       ]
     },
@@ -105,6 +193,18 @@
         {
           "id": 3,
           "name": "Fenistil żel"
+        },
+        {
+          "id": 18,
+          "name": "Zalasta"
+        },
+        {
+          "id": 10,
+          "name": "Hydrominum"
+        },
+        {
+          "id": 6,
+          "name": "Dexak"
         }
       ] 
     },
@@ -122,6 +222,18 @@
         {
           "id": 2,
           "name": "Acatar Acti-Tabs"
+        },
+        {
+          "id": 15,
+          "name": "Panadol"
+        },
+        {
+          "id":11,
+          "name": "Levopront"
+        },
+        {
+          "id": 7,
+          "name": "Otrivin Allergy"
         }
       ] 
     },
@@ -139,6 +251,18 @@
         {
           "id": 3,
           "name": "Fenistil żel"
+        },
+        {
+          "id": 19,
+          "name": "Sachol"
+        },
+        {
+          "id": 14,
+          "name": "Karnityna Ambio"
+        },
+        {
+          "id": 8,
+          "name": "Ibuprom"
         }
       ] 
     }
