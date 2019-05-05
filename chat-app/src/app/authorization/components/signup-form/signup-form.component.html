@@ -1,0 +1,35 @@
+<mat-toolbar>
+  <span>Rejestracja</span>
+</mat-toolbar>
+<mat-card class="my-card">
+  <mat-card-content>
+    <form [formGroup]="registerForm" class="my-form">
+      <mat-form-field class="full-width">
+        <mat-label>Token</mat-label>
+        <input matInput placeholder="Token" formControlName="token" required />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Nazwa użytkownika</mat-label>
+        <input matInput placeholder="Nazwa użytkownika" formControlName="username" required />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Hasło</mat-label>
+        <input type="password" matInput placeholder="Hasło" formControlName="password" required />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Powtórz hasło</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Powtórz hasło"
+          formControlName="repeat_password"
+          name="passwordr"
+        />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="signUp()" color="primary">Zarejestruj</button>
+  </mat-card-actions>
+</mat-card>

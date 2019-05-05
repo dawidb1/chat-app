@@ -1,0 +1,49 @@
+@import 'base/animations';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
+
+@import 'abstract/functions';
+@import 'abstract/mixins';
+@import 'abstract/variables';
+
+// /* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: $font-size;
+  font-weight: 400;
+
+  overflow-y: hidden;
+  height: 100%;
+}
+
+app-chatroom {
+  display: flex;
+  flex-direction: column;
+}
+
+// app-navbar {
+//   width: 100%;
+// }
+
+app-chat-form {
+  width: 100%;
+  display: flex;
+  white-space: nowrap;
+  overflow: none;
+}
+
+// .message {
+//   display: block;
+//   height: auto;
+// }
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

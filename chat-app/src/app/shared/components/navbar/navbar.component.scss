@@ -1,0 +1,9 @@
+@import '../../../../sass/abstract/variables';
+
+.mat-toolbar-multiple-rows {
+  min-height: $mat-toolbar-height;
+
+  .mat-toolbar-row {
+    height: $mat-toolbar-height;
+  }
+}

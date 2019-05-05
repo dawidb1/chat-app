@@ -30,3 +30,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 If there is compilation problem try to run 'npm install'.
 If you first time run angular project run 'npm install -g @angular/cli'.
+
+## Running json server
+
+json-server --watch mock_db.json
