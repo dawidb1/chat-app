@@ -1,7 +1,12 @@
+import { UserType } from '../authorization/model/user-type.enum';
+
 export class User {
-  uid?: string;
-  email?: string;
-  username?: string;
+  id?: string;
+  email: string;
+  username: string;
   password?: string;
-  status?: string;
+
+  userType: UserType;
+  status: string;
+  uid: string;
 }

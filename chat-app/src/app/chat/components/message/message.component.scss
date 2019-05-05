@@ -2,6 +2,8 @@
   display: flex;
   height: auto;
   margin: auto;
+  position: relative;
+  left: -5%;
   width: 70%;
   min-width: 400px;
   border-radius: 5px;
@@ -12,6 +14,7 @@
 
 .isOwnMessageContainer {
   background-color: #01579b;
+  left: 5%;
 }
 
 .messageData {
@@ -46,6 +49,9 @@
   padding: 10px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+
+  word-break: break-all;
+  table-layout: fixed;
 }
 
 .isOwnMessageContent {

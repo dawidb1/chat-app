@@ -1,3 +1,6 @@
-<p>
-  user-item works!
-</p>
+<div class="userItem" [ngClass]="{ active: active }">
+  <span class="status" [ngClass]="user.status"> </span>
+  <span class="userName" [ngClass]="user.username">
+    {{ user.username }}
+  </span>
+</div>

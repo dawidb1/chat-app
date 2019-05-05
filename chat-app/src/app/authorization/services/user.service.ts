@@ -1,36 +1,69 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestoreCollection, AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { AngularFirestore, DocumentChangeAction, DocumentSnapshot, Action } from '@angular/fire/firestore';
 import { User } from '../../model/user.model';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private usersCollection: AngularFirestoreCollection<User>;
-  users$: Observable<User[]>;
+  userCollection = 'users';
 
-  private usersDoc: AngularFirestoreDocument<User>;
-  user$: Observable<User>;
+  constructor(private firestore: AngularFirestore) {}
 
-  constructor(private afs: AngularFirestore, private db: AngularFireDatabase) {
-    this.usersCollection = afs.collection<User>('users');
-    this.users$ = this.usersCollection.valueChanges();
+  getUsers() {
+    return this.getUsersSnapshot().pipe(
+      map(items => {
+        return items.map((item: DocumentChangeAction<User>) => this.mapUser(item));
+      })
+    );
   }
 
-  addUser(item: User) {
-    const url = `users/${item.uid}`;
-    this.db.object(url).update(item);
+  mapUser(item: DocumentChangeAction<User>) {
+    return {
+      id: item.payload.doc.id,
+      ...item.payload.doc.data()
+    };
   }
 
-  updateUser(userUID: string, user: any) {
-    const url = `users/${userUID}`;
-    this.db.object(url).update(user);
+  getUsersSnapshot() {
+    return this.firestore.collection(this.userCollection).snapshotChanges();
+  }
 
-    // const url = 'users/' + item.uid;
-    // this.usersDoc = this.afs.doc<User>(url);
-    // this.user$ = this.usersDoc.valueChanges();
-    // this.usersDoc.update(item).catch(err => console.log(err));
+  getUserSnapshot(id: string) {
+    return this.firestore
+      .collection(this.userCollection)
+      .doc(id)
+      .snapshotChanges();
+  }
+
+  getUserById(id: string) {
+    const user$ = this.getUserSnapshot(id);
+    return user$.pipe(
+      map((user: Action<DocumentSnapshot<User>>) => {
+        return {
+          id: user.payload.id,
+          ...user.payload.data()
+        } as User;
+      })
+    );
+  }
+
+  addUser(user: User) {
+    return this.firestore
+      .collection(`${this.userCollection}`)
+      .doc(user.uid)
+      .set(user);
+  }
+
+  updateUser(user: User) {
+    const userId = user.id;
+    delete user.id;
+    this.firestore.doc(this.userCollection + '/' + userId).update(user);
+    user.id = userId;
+  }
+
+  deleteUser(userId) {
+    this.firestore.doc(this.userCollection + '/' + userId).delete();
   }
 }

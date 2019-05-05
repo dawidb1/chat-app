@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ChatService } from '../../services/chat.service';
 
 @Component({
@@ -7,14 +7,17 @@ import { ChatService } from '../../services/chat.service';
   styleUrls: ['./chat-form.component.scss']
 })
 export class ChatFormComponent implements OnInit {
+  @Input() roomUserId: string;
   message: string;
 
   constructor(private chat: ChatService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.roomUserId);
+  }
 
   send() {
-    this.chat.sendMessage(this.message);
+    this.chat.sendMessage(this.message, this.roomUserId);
     this.message = '';
   }
 

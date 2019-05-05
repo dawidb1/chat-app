@@ -1,5 +1,5 @@
-<div class="feed">
-  <div *ngFor="let message of feed$ | async | reverse" class="message">
-    <app-message [chatMessage]="message"></app-message>
+<div *ngIf="feed$ | async as feeds" class="feed">
+  <div *ngFor="let message of feeds | reverse" class="message">
+    <app-message [chatMessage]="message" [roomUserId]="roomUser.id"></app-message>
   </div>
 </div>

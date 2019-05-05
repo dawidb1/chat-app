@@ -1,24 +1,96 @@
 {
   "Medicine_list": [
-      {
-          "id": 0,
-          "name": "paracetamol"
-      },
-      {
-          "id": 1,
-          "name": "apap"
-      },
-      {
-          "id": 2,
-          "name": "Acatar Acti-Tabs"
-      },
-      {
-          "id": 3,
-          "name": "Fenistil żel"
-      },
-      {
-          "id": 4,
-          "name": "Aviomarin"
-      }
+    {
+      "id": 0,
+      "name": "paracetamol"
+    },
+    {
+      "id": 1,
+      "name": "apap"
+    },
+    {
+      "id": 2,
+      "name": "Acatar Acti-Tabs"
+    },
+    {
+      "id": 3,
+      "name": "Fenistil żel"
+    },
+    {
+      "id": 4,
+      "name": "Aviomarin"
+    }
+  ],
+  "users": [
+    {
+      "token": "token1",
+      "email": "email1@email.com",
+      "firstName": "firstName1",
+      "lastName": "lastName1",
+      "userType": "0"
+    },
+    {
+      "token": "token2",
+      "email": "email2@email.com",
+      "firstName": "firstName2",
+      "lastName": "lastName2",
+      "userType": "0"
+    },
+    {
+      "token": "token3",
+      "email": "email3@email.com",
+      "firstName": "firstName3",
+      "lastName": "lastName3",
+      "userType": "0"
+    },
+    {
+      "token": "token4",
+      "email": "email4@email.com",
+      "firstName": "firstName4",
+      "lastName": "lastName4",
+      "userType": "0"
+    },
+    {
+      "token": "token5",
+      "email": "email5@email.com",
+      "firstName": "firstName5",
+      "lastName": "lastName5",
+      "userType": "0"
+    },
+    {
+      "token": "token11",
+      "email": "email11@email.com",
+      "firstName": "firstName11",
+      "lastName": "lastName11",
+      "userType": "1"
+    },
+    {
+      "token": "token12",
+      "email": "email12@email.com",
+      "firstName": "firstName12",
+      "lastName": "lastName12",
+      "userType": "1"
+    },
+    {
+      "token": "token13",
+      "email": "email13@email.com",
+      "firstName": "firstName13",
+      "lastName": "lastName13",
+      "userType": "1"
+    },
+    {
+      "token": "token14",
+      "email": "email14@email.com",
+      "firstName": "firstName14",
+      "lastName": "lastName14",
+      "userType": "1"
+    },
+    {
+      "token": "token15",
+      "email": "email15@email.com",
+      "firstName": "firstName15",
+      "lastName": "lastName15",
+      "userType": "1"
+    }
   ]
-} 
+}

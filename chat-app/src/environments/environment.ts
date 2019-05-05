@@ -11,7 +11,8 @@ export const environment = {
     projectId: 'med-chat-63cf5',
     storageBucket: 'med-chat-63cf5.appspot.com',
     messagingSenderId: '541220649365'
-  }
+  },
+  clinicServer: 'http://localhost:3000'
 };
 
 /*
