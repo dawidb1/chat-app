@@ -25,35 +25,35 @@
     {
       "token": "token1",
       "email": "jan.kowalski@email.com",
-      "firstName": "Jan",
+      "firstName":"dr Jan",
       "lastName": "Kowalski",
       "userType": "0"
     },
     {
       "token": "token2",
       "email": "michal.nowak@email.com",
-      "firstName": "Michał",
+      "firstName": "dr Michał",
       "lastName": "Nowak",
       "userType": "0"
     },
     {
       "token": "token3",
       "email": "jan.pawlak@email.com",
-      "firstName": "Jan",
+      "firstName": "dr Jan",
       "lastName": "Pawlak",
       "userType": "0"
     },
     {
       "token": "token4",
       "email": "anna.byrska@email.com",
-      "firstName": "Anna",
+      "firstName": "dr Anna",
       "lastName": "Byrska",
       "userType": "0"
     },
     {
       "token": "token5",
       "email": "mateusz.nowak@email.com",
-      "firstName": "Mateusz",
+      "firstName": "dr Mateusz",
       "lastName": "Nowak",
       "userType": "0"
     },
@@ -62,35 +62,85 @@
       "email": "jakub.kowalski@email.com",
       "firstName": "Jakub",
       "lastName": "Kowalski",
-      "userType": "1"
+      "userType": "1",
+      "Medicine_list": [
+        {
+          "id": 0,
+          "name": "paracetamol"
+        },
+        {
+          "id": 1,
+          "name": "apap"
+        }
+      ]
     },
     {
       "token": "token12",
       "email": "julia.zalewska@email.com",
       "firstName": "Julia",
       "lastName": "Zalewska",
-      "userType": "1"
+      "userType": "1",
+      "Medicine_list": [
+        {
+          "id": 1,
+          "name": "apap"
+        },
+        {
+          "id": 4,
+          "name": "Aviomarin"
+        }
+      ]
     },
     {
       "token": "token13",
       "email": "agata.kowalska@email.com",
       "firstName": "Agata",
       "lastName": "Kowalska",
-      "userType": "1"
+      "userType": "1",
+      "Medicine_list": [
+        {
+          "id": 2,
+          "name": "Acatar Acti-Tabs"
+        },
+        {
+          "id": 3,
+          "name": "Fenistil żel"
+        }
+      ] 
     },
     {
       "token": "token14",
       "email": "damian.nowak@email.com",
       "firstName": "Damian",
       "lastName": "Nowak",
-      "userType": "1"
+      "userType": "1",
+      "Medicine_list": [
+        {
+          "id": 0,
+          "name": "paracetamol"
+        },
+        {
+          "id": 2,
+          "name": "Acatar Acti-Tabs"
+        }
+      ] 
     },
     {
       "token": "token15",
       "email": "beata.nowak@email.com",
       "firstName": "Beata",
       "lastName": "Nowak",
-      "userType": "1"
+      "userType": "1",
+      "Medicine_list": [
+        {
+          "id": 0,
+          "name": "paracetamol"
+        },
+        {
+          "id": 3,
+          "name": "Fenistil żel"
+        }
+      ] 
     }
   ]
 }
