@@ -49,6 +49,9 @@
   padding: 10px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+
+  word-break: break-all;
+  table-layout: fixed;
 }
 
 .isOwnMessageContent {
