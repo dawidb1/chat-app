@@ -12,19 +12,19 @@
   <span>Logowanie</span>
 </mat-toolbar>
 <mat-card class="my-card">
-   <mat-card-content>
-      <form class="my-form">
-         <mat-form-field class="full-width">
-            <mat-label>Email</mat-label>
-            <input  [(ngModel)]="email"  matInput  placeholder="email"  name="uname"  required>
-         </mat-form-field>
-         <mat-form-field class="full-width">
-            <mat-label>Hasło</mat-label>
-            <input [(ngModel)]="password" matInput  placeholder="Hasło" name="password">
-         </mat-form-field>
-      </form>
-   </mat-card-content>
-   <mat-card-actions>
-      <button mat-raised-button (click)="login()" color="primary">Zaloguj</button>
-   </mat-card-actions>
+  <mat-card-content>
+    <form class="my-form">
+      <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input [(ngModel)]="email" matInput placeholder="email" name="uname" required />
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Hasło</mat-label>
+        <input [(ngModel)]="password" matInput placeholder="Hasło" name="password" required />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="login()" color="primary">Zaloguj</button>
+  </mat-card-actions>
 </mat-card>

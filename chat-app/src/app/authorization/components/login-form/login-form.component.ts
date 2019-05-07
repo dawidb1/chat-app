@@ -9,8 +9,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit, OnDestroy {
-  email = 'email4@email.com';
-  password = 'token4user';
+  email: string; // = 'email4@email.com';
+  password: string; // = 'token4user';
   errorMsg: string;
 
   loginSubscription: Subscription;
