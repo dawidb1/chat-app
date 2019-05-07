@@ -19,7 +19,9 @@ export class ChatService {
 
   constructor(private firestore: AngularFirestore, private loginService: LoginService) {
     // warning service subscribe
-    this.loginService.getLoggedInUser().subscribe(res => (this.currentUser = res));
+    this.loginService.getLoggedInUser().subscribe(res => {
+      this.currentUser = res;
+    });
   }
 
   sendMessage(msg: string, toUserId: string) {
@@ -47,7 +49,7 @@ export class ChatService {
   }
 
   getMessages(toUserId: string): Observable<ChatMessage[]> {
-    const messagesCollId = this.getMessegesCollId(this.currentUser.id, toUserId);
+    const messagesCollId = this.getMessegesCollId(this.loginService.afAuth.auth.currentUser.uid, toUserId);
 
     this.chatMessages = this.firestore
       .collection('messages')
