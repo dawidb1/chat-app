@@ -1,8 +1,10 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <!--  <span>HOME</span> -->
     <span class="spacer"></span>
-
+      <a class="navbar-item">
+        <img src="assets/img/logo.png" width="68" height="68" >
+      </a>
+ 
     <a *ngIf="!(user | async)?.uid" mat-button routerLink="/signup">Rejestracja</a>
     <a *ngIf="!(user | async)?.uid" mat-button routerLink="/login">Logowanie</a>
 
