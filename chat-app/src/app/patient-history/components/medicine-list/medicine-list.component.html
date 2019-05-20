@@ -2,7 +2,7 @@ Lista leków
 <div>
   <ul class="medicines">
     <li
-      *ngFor="let medicine of medicines; let i = index"
+      *ngFor="let medicine of med; let i = index"
       [class.selected]="medicine === selectedMedicine"
       (click)="onSelect(medicine)"
     >

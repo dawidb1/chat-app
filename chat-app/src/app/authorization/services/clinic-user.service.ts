@@ -16,4 +16,9 @@ export class ClinicUserService {
     const url = `${this.userUrl}/?token=${token}`;
     return this.http.get<ClinicUser>(url).pipe(map(x => x[0]));
   }
+
+  getUserByEmail(email: string) {
+    const url = `${this.userUrl}/?email=${email}`;
+    return this.http.get<ClinicUser>(url).pipe(map(x => x[0]));
+  }
 }

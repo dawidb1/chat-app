@@ -1,6 +1,6 @@
-import { Medicines } from '../../../model/medicine-list.model';
+import { Medicine } from '../../../model/medicine-list.model';
 
-export const MEDICINES: Medicines[] = [
+export const MEDICINES: Medicine[] = [
   { id: 11, name: 'Apap' },
   { id: 12, name: 'Polopiryna' },
   { id: 13, name: 'Nospa' },

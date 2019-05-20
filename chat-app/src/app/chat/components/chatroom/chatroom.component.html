@@ -15,6 +15,6 @@
   </div>
 
   <div class="medicineFormWrapper">
-    <app-medicine-list></app-medicine-list>
+    <app-medicine-list [roomUserEmail]="roomUser.email" [currentUserEmail]="currentUser.email" [userType]="currentUser.userType"></app-medicine-list>
   </div>
 </div>
