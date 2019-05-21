@@ -18,7 +18,6 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   constructor(private authService: LoginService, private router: Router) {}
 
   login() {
-    console.log('login() called from login-form component');
     this.authService
       .authorize(this.email, this.password)
       .catch(error => (this.errorMsg = error.message))
@@ -32,8 +31,6 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    console.log(this.loginSubscription);
-
     this.loginSubscription.unsubscribe();
   }
 }

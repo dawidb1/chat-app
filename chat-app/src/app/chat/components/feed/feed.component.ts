@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, OnDestroy } from '@angular/core';
 import { AngularFirestoreCollection } from '@angular/fire/firestore';
 import { ChatMessage } from 'src/app/model/chat-message.model';
 import { ChatService } from '../../services/chat.service';
@@ -10,8 +10,7 @@ import { User } from 'src/app/model/user.model';
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.scss']
 })
-export class FeedComponent implements OnInit, OnChanges {
-  feed: AngularFirestoreCollection<ChatMessage>;
+export class FeedComponent implements OnInit, OnChanges, OnDestroy {
   feed$: Observable<ChatMessage[]>;
 
   @Input() roomUser: User;
@@ -25,4 +24,6 @@ export class FeedComponent implements OnInit, OnChanges {
   ngOnChanges() {
     this.feed$ = this.chat.getMessages(this.roomUser.id);
   }
+
+  ngOnDestroy(): void {}
 }

@@ -5,11 +5,12 @@ import { MedicineListComponent } from './components/medicine-list/medicine-list.
 import { ImportModule } from '../shared/modules/import.module';
 import { SharedModule } from '../shared/modules/shared.module';
 import { MedicineDialogComponent } from './components/medicine-dialog/medicine-dialog.component';
+import { AddMedicineDialogComponent } from './components/add-medicine-dialog/add-medicine-dialog.component';
 
 @NgModule({
-  declarations: [HistoryComponent, MedicineListComponent, MedicineDialogComponent],
+  declarations: [HistoryComponent, MedicineListComponent, MedicineDialogComponent, AddMedicineDialogComponent],
   imports: [CommonModule, ImportModule, SharedModule],
   exports: [MedicineListComponent],
-  entryComponents: [MedicineDialogComponent]
+  entryComponents: [MedicineDialogComponent, AddMedicineDialogComponent]
 })
 export class PatientHistoryModule {}

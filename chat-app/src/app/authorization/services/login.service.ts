@@ -44,14 +44,11 @@ export class LoginService {
         this.user = res;
         this.setUserStatus(UserStatus.ONLINE);
         this.router.navigate([Routing.CHAT]);
-        console.log('getLoggedInUser subscription was called');
       })
     );
   }
 
   logout() {
-    console.log('logout called');
-
     return this.getLoggedInUser().pipe(
       map(user => {
         this.user = user;
@@ -75,7 +72,6 @@ export class LoginService {
 
   get currentUserId(): string {
     const uid = this.afAuth.auth.currentUser.uid;
-    console.log(uid);
 
     return uid;
   }

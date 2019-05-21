@@ -16,18 +16,13 @@ export class AuthGuardGuard implements CanActivate {
       .authUser()
       .pipe(
         map(e => {
-          console.log(e);
-
           if (e.uid) {
-            console.log('returning true auth');
             return true;
           }
         })
       )
       .pipe(
         catchError(() => {
-          console.log('navigating login');
-
           this.router.navigate([Routing.LOGIN]);
           return of(false);
         })

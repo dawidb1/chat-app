@@ -19,9 +19,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.logoutSubscription = new Subscription();
     this.user = this.loginService.authUser();
-    this.user.subscribe(user => {
+
+    this.user.subscribe((user: firebase.User) => {
       if (user) {
-        this.username = user.email;
+        this.loginService.getLoggedInUser().subscribe(user => (this.username = user.firstName));
       }
     });
   }
