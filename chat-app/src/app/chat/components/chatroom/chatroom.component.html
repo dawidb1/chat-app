@@ -1,26 +1,29 @@
 <div class="mainContent">
-  <div class="userListWrapper">
-    <app-user-list [currentUser]="currentUser" (changeUserRoom)="changeUserRoomEvent($event)"></app-user-list>
-  </div>
-  <ng-container *ngIf="roomUser && currentUser">
-    <div class="chatContainer">
-      <div class="usernameWrapper">
-        <h1 class="header">{{ roomUser.firstName }} {{ roomUser.lastName }}</h1>
-      </div>
-      <div #scroller class="feedWrapper" (scroll)="onScroll()">
-        <app-feed [roomUser]="roomUser"></app-feed>
-      </div>
-      <div class="chatFormWrapper">
-        <app-chat-form [currentUser]="currentUser" [roomUserId]="roomUser.id"></app-chat-form>
-      </div>
+  <ng-container *ngIf="currentUser.userType == UserType.ADMIN"> </ng-container>
+  <ng-container *ngIf="currentUser.userType === UserType.DOCTOR || currentUser.userType === UserType.PATIENT">
+    <div class="userListWrapper">
+      <app-user-list [currentUser]="currentUser" (changeUserRoom)="changeUserRoomEvent($event)"></app-user-list>
     </div>
+    <ng-container *ngIf="roomUser && currentUser">
+      <div class="chatContainer">
+        <div class="usernameWrapper">
+          <h1 class="header">{{ roomUser.firstName }} {{ roomUser.lastName }}</h1>
+        </div>
+        <div #scroller class="feedWrapper" (scroll)="onScroll()">
+          <app-feed [roomUser]="roomUser"></app-feed>
+        </div>
+        <div class="chatFormWrapper">
+          <app-chat-form [currentUser]="currentUser" [roomUserId]="roomUser.id"></app-chat-form>
+        </div>
+      </div>
 
-    <div class="medicineFormWrapper">
-      <app-medicine-list
-        [roomUserEmail]="roomUser.email"
-        [currentUserEmail]="currentUser.email"
-        [userType]="currentUser.userType"
-      ></app-medicine-list>
-    </div>
+      <div class="medicineFormWrapper">
+        <app-medicine-list
+          [roomUserEmail]="roomUser.email"
+          [currentUserEmail]="currentUser.email"
+          [userType]="currentUser.userType"
+        ></app-medicine-list>
+      </div>
+    </ng-container>
   </ng-container>
 </div>

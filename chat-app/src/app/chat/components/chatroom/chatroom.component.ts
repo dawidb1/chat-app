@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, AfterViewCheck
 import { User } from 'src/app/model/user.model';
 import { LoginService } from 'src/app/authorization/services/login.service';
 import { Subscription } from 'rxjs';
+import { UserType } from 'src/app/authorization/model/user-type.enum';
 
 @Component({
   selector: 'app-chatroom',
@@ -16,6 +17,8 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
   roomUser: User;
 
   currentUserSubscription: Subscription;
+
+  UserType: typeof UserType = UserType;
 
   constructor(private loginService: LoginService) {}
 
