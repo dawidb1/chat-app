@@ -1,0 +1,53 @@
+/* HeroesComponent's private CSS styles */
+@import '../../../../sass/abstract/variables';
+
+.title {
+  padding: 15px;
+}
+
+.mat-expansion-panel {
+  background-color: #453968;
+}
+
+.history {
+  margin: 0 0 0 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+  color: white;
+}
+
+.history .text {
+  position: relative;
+  top: -3px;
+}
+
+.history li {
+  cursor: pointer;
+  height: auto;
+  padding: 10px;
+  width: 90%;
+  align-items: flex-start;
+  background-color: #201835;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  color: white;
+  border-radius: 8px;
+  transition: ease-in 0.2s;
+  position: relative;
+  left: 0;
+  margin: 0.5em;
+}
+
+.history li:hover {
+  background-color: #453968;
+  color: #ddd;
+  transition: ease-in 0.1s;
+}
+
+.history .badge {
+  display: inline-block;
+}
+
+.mat-expansion-panel-header-title{
+  color: red;
+}

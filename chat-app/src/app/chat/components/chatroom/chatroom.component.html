@@ -16,11 +16,22 @@
     </div>
 
     <div class="medicineFormWrapper">
-      <app-medicine-list
+      <div><button mat-button (click)=checkMedicineOrHistory()>Zmień</button></div>
+      <div *ngIf="medicine==true">
+        <div><app-medicine-list
         [roomUserEmail]="roomUser.email"
         [currentUserEmail]="currentUser.email"
         [userType]="currentUser.userType"
-      ></app-medicine-list>
+      ></app-medicine-list></div>
+      </div>
+      <div *ngIf="medicine==false">
+          <div><app-history
+          [roomUserEmail]="roomUser.email"
+          [currentUserEmail]="currentUser.email"
+          [userType]="currentUser.userType"
+          ></app-history></div>
+      
+      </div>      
     </div>
   </ng-container>
 </div>

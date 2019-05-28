@@ -77,6 +77,22 @@
           "endDate": "21.05.2019",
           "dosePerDay": 2
         }
+      ],
+      "History_list":[
+        {
+          "id": 1,
+          "doctorType": "Lekarz rodzinny",
+          "date": "16.05.2019",
+          "disease": "grypa",
+          "symptoms": "gorączka, ból głowy"
+        },
+        {
+          "id": 2,
+          "doctorType": "Lekarz rodzinny",
+          "date": "18.05.2019",
+          "disease": "przeziębienie",
+          "symptoms": "katar"
+        }
       ]
     },
     {
