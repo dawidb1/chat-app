@@ -49,15 +49,18 @@ export class ChatService {
   }
 
   getMessages(toUserId: string): Observable<ChatMessage[]> {
-    const messagesCollId = this.getMessegesCollId(this.loginService.afAuth.auth.currentUser.uid, toUserId);
+    if (this.loginService.afAuth.auth.currentUser) {
+      const messagesCollId = this.getMessegesCollId(this.loginService.afAuth.auth.currentUser.uid, toUserId);
 
-    this.chatMessages = this.firestore
-      .collection('messages')
-      .doc(messagesCollId)
-      .collection<ChatMessage>('messages', ref => ref.orderBy('timeSent', 'desc').limit(25));
+      this.chatMessages = this.firestore
+        .collection('messages')
+        .doc(messagesCollId)
+        .collection<ChatMessage>('messages', ref => ref.orderBy('timeSent', 'desc').limit(25));
 
-    this.chatMessages$ = this.chatMessages.valueChanges();
-    return this.chatMessages$;
+      this.chatMessages$ = this.chatMessages.valueChanges();
+      return this.chatMessages$;
+    }
+    return null;
   }
 
   getTimeStamp() {

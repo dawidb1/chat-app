@@ -1,6 +1,11 @@
 <div class="userItem" [ngClass]="{ active: active }">
-  <span class="status" [ngClass]="user.status"> </span>
-  <span class="userName" [ngClass]="user.username">
-    {{ user.username }}
-  </span>
+  <div class="userInfo">
+    <span class="userName" [ngClass]="user.username"> {{ user.firstName }} {{ user.lastName }} </span>
+    <span *ngIf="user.userType == UserType.DOCTOR" class="userSpecs">
+      Kardiolog
+    </span>
+  </div>
+  <div class="userStatus">
+    <span class="status" [ngClass]="user.status"> </span>
+  </div>
 </div>

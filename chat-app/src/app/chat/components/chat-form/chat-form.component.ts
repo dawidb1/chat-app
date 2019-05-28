@@ -12,9 +12,7 @@ export class ChatFormComponent implements OnInit {
 
   constructor(private chat: ChatService) {}
 
-  ngOnInit() {
-    console.log(this.roomUserId);
-  }
+  ngOnInit() {}
 
   send() {
     this.chat.sendMessage(this.message, this.roomUserId);

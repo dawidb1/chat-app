@@ -63,13 +63,6 @@ export class SignupFormComponent implements OnInit {
       password: new FormControl(),
       repeat_password: new FormControl()
     });
-
-    // this.registerForm = new FormGroup({
-    //   token: new FormControl('token1'),
-    //   username: new FormControl('token1user'),
-    //   password: new FormControl('token1user'),
-    //   repeat_password: new FormControl('token1user')
-    // });
   }
 
   getRegisterFormUser(): RegisterFormUser {
@@ -87,6 +80,8 @@ export class SignupFormComponent implements OnInit {
       password: formUser.password,
       status: UserStatus.OFFLINE,
       userType: clinicUser.userType,
+      firstName: clinicUser.firstName,
+      lastName: clinicUser.lastName,
       uid: null
     };
     return user;

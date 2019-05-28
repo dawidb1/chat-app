@@ -6,7 +6,12 @@ export class User {
   username: string;
   password?: string;
 
+  firstName: string;
+  lastName: string;
+
   userType: UserType;
   status: string;
   uid: string;
+
+  info?: string;
 }

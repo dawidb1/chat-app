@@ -5,15 +5,15 @@
   flex: 10;
   font-size: $font-size;
   font-family: 'Open Sans', sans-serif;
-  background-color: #eee;
+  background-color: #a098a549;
   color: #000;
   transition: 0.1s ease-out;
   padding-left: 80px;
+
+  border-top: rgb(117, 117, 117) solid 1px;
 }
 
 .chatInput:focus {
-  background-color: #e4f1fe;
-  color: #222;
   transition: 0.2s ease-in;
 }
 

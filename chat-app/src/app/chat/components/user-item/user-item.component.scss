@@ -1,49 +1,71 @@
 .userItem {
-  height: auto;
-  padding: 10px 20px 10px 10px;
+  height: 50px;
+  width: 170px;
+
+  display: flex;
+
+  margin: auto 4px;
   margin-top: 10px;
-  border-radius: 1px;
+  border-radius: 6px;
   align-items: flex-start;
   background-color: #201835;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  color: #a098a5;
-  border-radius: 8px;
+  color: #dbdbdb;
   transition: ease-in 0.2s;
 
   cursor: pointer;
 
   &.active {
-    background-color: #5C6BC0;
+    background-color: #5c6bc0;
   }
-}
 
-.userItem:hover {
-  background-color: #453968;
-  color: #ddd;
-  transition: ease-in 0.1s;
-}
+  &:hover {
+    background-color: #453968;
+    color: #ddd;
+    transition: ease-in 0.1s;
+  }
 
-.online {
-  background-color: #0fa;
-}
+  .userInfo {
+    width: 80%;
+    padding-left: 5px;
+    margin: auto;
 
-.busy {
-  background-color: #fb0;
-}
+    .userName {
+      display: inline-block;
+      font-size: 14px;
+      padding: 5px;
+    }
 
-.offline {
-  background-color: #888;
-}
+    .userSpecs {
+      font-size: 12px;
+      display: block;
+      padding-left: 5px;
+    }
+  }
 
-.status {
-  border: 1px solid black;
-  display: inline-block;
-  min-width: 10px;
-  min-height: 10px;
-  border-radius: 50%;
-  margin: 10px 12px 0px 4px;
-}
+  .userStatus {
+    width: 20%;
+    margin: auto;
 
-.userName {
-  display: inline-block;
+    .status {
+      border: 1px solid black;
+      display: inline-block;
+      min-width: 10px;
+      min-height: 10px;
+      border-radius: 50%;
+      margin: 10px 12px 0px 4px;
+
+      &.online {
+        background-color: #0fa;
+      }
+
+      &.busy {
+        background-color: #fb0;
+      }
+
+      &.offline {
+        background-color: #888;
+      }
+    }
+  }
 }
