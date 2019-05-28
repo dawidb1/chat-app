@@ -37,6 +37,14 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
     this.roomUser = event;
   }
 
+  scrollToBottom(): void {
+    if (!this.disableScrollDown) {
+      try {
+        this.scroller.nativeElement.scrollTop = this.scroller.nativeElement.scrollHeight;
+      } catch (err) {}
+    }
+  }
+
   onScroll() {
     const element = this.scroller.nativeElement;
     const atBottom = element.scrollHeight - element.scrollTop === element.clientHeight;
@@ -44,14 +52,6 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
       this.disableScrollDown = false;
     } else {
       this.disableScrollDown = true;
-    }
-  }
-
-  scrollToBottom(): void {
-    if (!this.disableScrollDown) {
-      try {
-        this.scroller.nativeElement.scrollTop = this.scroller.nativeElement.scrollHeight;
-      } catch (err) {}
     }
   }
 }
