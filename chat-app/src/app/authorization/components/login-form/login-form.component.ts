@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { Routing } from 'src/app/model/routing.enum';
 
 @Component({
   selector: 'app-login-form',
@@ -22,7 +23,9 @@ export class LoginFormComponent implements OnInit, OnDestroy {
       .authorize(this.email, this.password)
       .catch(error => (this.errorMsg = error.message))
       .then(() => {
-        this.loginSubscription = this.authService.setLoginUser().subscribe();
+        this.loginSubscription = this.authService.setLoginUser().subscribe(() => {
+          this.router.navigate([Routing.CHAT]);
+        });
       });
   }
 
