@@ -8,6 +8,8 @@ import { RegisterFormUser } from '../../model/register-form-user.model';
 import { UserStatus } from '../../model/user-status.enum';
 import { SignUpService } from '../../services/sign-up.service';
 import { Routing } from 'src/app/model/routing.enum';
+import { MatDialog } from '@angular/material';
+import { SignupModalComponent } from './signup-modal/signup-modal.component';
 
 @Component({
   selector: 'app-signup-form',
@@ -25,7 +27,8 @@ export class SignupFormComponent implements OnInit {
   constructor(
     private signUpService: SignUpService,
     private clinicUserService: ClinicUserService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -52,6 +55,13 @@ export class SignupFormComponent implements OnInit {
       },
       err => {
         this.setErrorMessage(err);
+        /*
+        this.setErrorMessage(err=> {
+          const dialogRef = this.dialog.open(SignupModalComponent, {
+          height: '170px',
+          width: '300px'
+         });
+         })*/
       }
     );
   }
@@ -93,8 +103,23 @@ export class SignupFormComponent implements OnInit {
   }
 
   setErrorMessage(err) {
+
     console.log(err);
     this.errorMessage = err.message;
-    this.successMessage = '';
+    this.successMessage = ''; 
+
+    /*console.log(err=> {
+        const dialogRef = this.dialog.open(SignupModalComponent, {
+   height: '170px',
+   width: '300px'
+  });
+  })*/
+
+   /* this.errorMessage  
+      const dialogRef = this.dialog.open(SignupModalComponent, {
+      height: '170px',
+      width: '300px'
+     });*/
+    
   }
 }
