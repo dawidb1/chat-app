@@ -23,6 +23,15 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
   }
 
   ngOnInit() {
+    this.setCurrentUser();
+    this.scrollToBottom();
+  }
+
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
+
+  setCurrentUser() {
     this.currentUserSubscription = this.loginService.getLoggedInUser().subscribe(user => {
       this.currentUser = user;
       this.currentUserSubscription.unsubscribe();
@@ -33,12 +42,14 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
     this.medicine = !this.medicine;
   }
 
-  ngAfterViewChecked() {
-    this.scrollToBottom();
-  }
-
   changeUserRoomEvent(event: User) {
     this.roomUser = event;
+  }
+
+  isNewUnreadedMessage(e: boolean) {
+    if (e) {
+      alert('new message');
+    }
   }
 
   onScroll() {
