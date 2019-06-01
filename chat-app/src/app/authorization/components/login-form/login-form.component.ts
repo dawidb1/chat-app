@@ -1,10 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LoginService } from '../../services/login.service';
-import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { LoginModalComponent } from '../login-modal/login-modal.component';
-import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
-
+import { MatDialog } from '@angular/material';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-login-form',
@@ -12,22 +11,24 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit, OnDestroy {
-  email: string; // = 'email4@email.com';
-  password: string; // = 'token4user';
+  email: string;
+  password: string;
   errorMsg: string;
 
   loginSubscription: Subscription;
 
-  constructor(private authService: LoginService, private router: Router, public dialog: MatDialog) {}
+  constructor(private ngxLoader: NgxUiLoaderService, private authService: LoginService, public dialog: MatDialog) {}
 
   login() {
+    this.ngxLoader.start();
     this.authService
       .authorize(this.email, this.password)
       .catch(error => {
-             const dialogRef = this.dialog.open(LoginModalComponent, {
-        height: '170px',
-        width: '300px'
-      });
+        this.ngxLoader.stop();
+        const dialogRef = this.dialog.open(LoginModalComponent, {
+          height: '170px',
+          width: '300px'
+        });
       })
       .then(() => {
         this.loginSubscription = this.authService.setLoginUser().subscribe();

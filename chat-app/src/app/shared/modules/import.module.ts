@@ -20,6 +20,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from 'src/environments/environment.prod';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [],
@@ -40,6 +41,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     MatSidenavModule,
     MatListModule,
 
+    NgxUiLoaderModule,
+
     AngularFireModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -47,6 +50,14 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  exports: [MatSidenavModule, MatCheckboxModule, MatIconModule, MatToolbarModule, FormsModule, ReactiveFormsModule]
+  exports: [
+    MatSidenavModule,
+    MatCheckboxModule,
+    MatIconModule,
+    MatToolbarModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxUiLoaderModule
+  ]
 })
 export class ImportModule {}
