@@ -1,3 +1,27 @@
-<p>
-  history works!
-</p>
+<div class="title">
+    <h4>Historia chorób</h4>
+  </div>
+  <div>
+    <ul>
+      <li style="padding-block-end: 5px;"
+        *ngFor="let hist of his">    
+      <mat-accordion >
+          <mat-expansion-panel class="my">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                  {{ hist.date }}
+              </mat-panel-title>
+              <mat-panel-description>
+                  {{ hist.doctorType }}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>Rozpoznanie: {{ hist.disease }}</p>
+            <p>Objawy: {{ hist.symptoms}}</p>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </li>
+    </ul>
+  </div>
+
+  
+  

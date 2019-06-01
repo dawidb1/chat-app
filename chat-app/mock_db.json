@@ -77,6 +77,22 @@
           "endDate": "21.05.2019",
           "dosePerDay": 2
         }
+      ],
+      "History_list":[
+        {
+          "id": 1,
+          "doctorType": "Lekarz rodzinny",
+          "date": "16.05.2019",
+          "disease": "grypa",
+          "symptoms": "gorączka, ból głowy"
+        },
+        {
+          "id": 2,
+          "doctorType": "Lekarz rodzinny",
+          "date": "18.05.2019",
+          "disease": "przeziębienie",
+          "symptoms": "katar"
+        }
       ]
     },
     {
@@ -120,6 +136,22 @@
           "startDate": "16.05.2019",
           "endDate": "21.05.2019",
           "dosePerDay": 2
+        }
+      ],
+      "History_list":[
+        {
+          "id": 1,
+          "doctorType": "Kardiolog",
+          "date": "29.04.2019",
+          "disease": "Nadciśnienie",
+          "symptoms": "Ból w klatce piersiowej"
+        },
+        {
+          "id": 2,
+          "doctorType": "Lekarz rodzinny",
+          "date": "31.05.2019",
+          "disease": "Anemia",
+          "symptoms": "Zawroty głowy"
         }
       ]
     },
@@ -208,6 +240,22 @@
           "startDate": "16.05.2019",
           "endDate": "21.05.2019",
           "dosePerDay": 2
+        }
+      ],
+      "History_list":[
+        {
+          "id": 1,
+          "doctorType": "Alergolog",
+          "date": "2.01.2019",
+          "disease": "Alergia na mleko",
+          "symptoms": "Wysypka na przedramieniu"
+        },
+        {
+          "id": 2,
+          "doctorType": "Lekarz rodzinny",
+          "date": "1.04.2019",
+          "disease": "Grypa",
+          "symptoms": "Gorączka, zmęczenie"
         }
       ]
     },

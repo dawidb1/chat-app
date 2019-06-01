@@ -14,10 +14,12 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
 
   currentUser: User;
   roomUser: User;
-
+  medicine: boolean;
   currentUserSubscription: Subscription;
 
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService,) {
+    this.medicine=true;
+  }
 
   ngOnInit() {
     this.currentUserSubscription = this.loginService.getLoggedInUser().subscribe(user => {
@@ -25,7 +27,10 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
       this.currentUserSubscription.unsubscribe();
     });
   }
-
+  checkMedicineOrHistory()
+  {
+    this.medicine=!this.medicine;
+  }
   ngAfterViewChecked() {
     this.scrollToBottom();
   }
