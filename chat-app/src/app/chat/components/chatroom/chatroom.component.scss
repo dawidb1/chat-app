@@ -8,13 +8,20 @@ $usernameWrapper-height: 50px;
 }
 
 .userListWrapper {
-  background-color: #2a2845;
+  background-color: white;
   color: #fff;
   display: flex;
   font-size: $font-size;
   flex: 1;
   order: 1;
   border-right: 1px solid #222;
+  .img-chat{
+
+margin-top: 470px;
+
+ 
+  }
+ 
 }
 
 .chatContainer {
@@ -54,3 +61,4 @@ $usernameWrapper-height: 50px;
   order: 3;
   border-right: 1px solid #222;
 }
+

@@ -1,24 +1,27 @@
-<div class="container">
+<div class="container" >
   <mat-card class="my-card">
-    <mat-toolbar>
-      <span>Logowanie</span>
+  
+    <mat-toolbar >
+      <label class="label" class="label">Logowanie</label>
     </mat-toolbar>
     <mat-card-content>
       <img class="img-logo" src="assets/img/logo.png" />
 
       <form class="my-form">
-        <mat-form-field class="full-width">
-          <mat-label>Email</mat-label>
-          <input type="email" [(ngModel)]="email" matInput placeholder="Email" name="uname" required />
-        </mat-form-field>
-        <mat-form-field class="full-width">
-          <mat-label>Hasło</mat-label>
-          <input type="password" [(ngModel)]="password" matInput placeholder="Hasło" name="password" required />
-        </mat-form-field>
+      
+          <mat-form-field class="full-width" >
+              <mat-label class="mat-label">Email</mat-label>
+              <input type="email" [(ngModel)]="email" matInput placeholder="Email" name="uname" required />
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <mat-label>Hasło</mat-label>
+              <input type="password" [(ngModel)]="password" matInput placeholder="Hasło" name="password" required />
+            </mat-form-field>
+ 
       </form>
     </mat-card-content>
     <mat-card-actions>
-      <button type="submit" mat-raised-button (click)="login()" color="primary">Zaloguj</button>
+      <button class="btn" type="submit" mat-raised-button (click)="login()" color=primary>Zaloguj</button>
     </mat-card-actions>
   </mat-card>
 </div>

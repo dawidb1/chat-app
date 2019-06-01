@@ -1,7 +1,12 @@
 <div class="mainContent">
   <div class="userListWrapper">
-    <app-user-list [currentUser]="currentUser" (changeUserRoom)="changeUserRoomEvent($event)"></app-user-list>
+    <app-user-list [currentUser]="currentUser" (changeUserRoom)="changeUserRoomEvent($event)">
+     
+
+    </app-user-list>
+    <img class="img-chat" src="assets/img/chat.jpg" width="90px" height="70px" />
   </div>
+ 
   <ng-container *ngIf="roomUser && currentUser">
     <div class="chatContainer">
       <div class="usernameWrapper">

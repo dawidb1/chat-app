@@ -8,6 +8,8 @@
 
   .mat-card {
     border-radius: 0;
+    margin-top: 40px;
+    background: #3f51b5;
 
     .img-logo {
       display: block;
@@ -22,11 +24,25 @@
     width: 100%;
     margin: auto;
   }
-
+  .mat-toolbar {
+    background: #3f51b5;
+    color: #fafafa
+}
   .mat-raised-button {
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .btn{
+    border: 2px solid white;
+      background-color: #3f51b5;
+    color: white;
+    padding: 8px 48px;
+    font-size: 16px;
+  
+  }
+  .label{
+    margin-left: 220px
   }
 }
