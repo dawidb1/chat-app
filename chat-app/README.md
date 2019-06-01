@@ -34,3 +34,7 @@ If you first time run angular project run 'npm install -g @angular/cli'.
 ## Running json server
 
 json-server --watch mock_db.json
+
+## API for production build
+
+https://med-chat-json.azurewebsites.net/

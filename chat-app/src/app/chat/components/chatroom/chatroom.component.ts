@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, AfterViewCheck
 import { User } from 'src/app/model/user.model';
 import { LoginService } from 'src/app/authorization/services/login.service';
 import { Subscription } from 'rxjs';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-chatroom',
@@ -17,8 +18,8 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
   medicine: boolean;
   currentUserSubscription: Subscription;
 
-  constructor(private loginService: LoginService,) {
-    this.medicine=true;
+  constructor(private loginService: LoginService) {
+    this.medicine = true;
   }
 
   ngOnInit() {
@@ -27,10 +28,11 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
       this.currentUserSubscription.unsubscribe();
     });
   }
-  checkMedicineOrHistory()
-  {
-    this.medicine=!this.medicine;
+
+  checkMedicineOrHistory() {
+    this.medicine = !this.medicine;
   }
+
   ngAfterViewChecked() {
     this.scrollToBottom();
   }

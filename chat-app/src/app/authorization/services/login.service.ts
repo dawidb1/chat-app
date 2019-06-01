@@ -65,7 +65,6 @@ export class LoginService {
   }
 
   private setUserStatus(status: UserStatus) {
-    // this.getLoggedInUser().subscribe(user => {
     this.user.status = status;
     this.userService.updateUser(this.user);
   }

@@ -1,12 +1,9 @@
-<div class="mainContent">
+<div ngxUiLoaderBlurred *ngIf="currentUser" class="mainContent">
   <div class="userListWrapper">
-    <app-user-list [currentUser]="currentUser" (changeUserRoom)="changeUserRoomEvent($event)">
-     
-
-    </app-user-list>
+    <app-user-list [currentUser]="currentUser" (changeUserRoom)="changeUserRoomEvent($event)"> </app-user-list>
     <img class="img-chat" src="assets/img/chat.jpg" width="90px" height="70px" />
   </div>
- 
+
   <ng-container *ngIf="roomUser && currentUser">
     <div class="chatContainer">
       <div class="usernameWrapper">
@@ -21,22 +18,25 @@
     </div>
 
     <div class="medicineFormWrapper">
-      <div><button mat-button (click)=checkMedicineOrHistory()>Zmień</button></div>
-      <div *ngIf="medicine==true">
-        <div><app-medicine-list
-        [roomUserEmail]="roomUser.email"
-        [currentUserEmail]="currentUser.email"
-        [userType]="currentUser.userType"
-      ></app-medicine-list></div>
+      <div><button mat-button (click)="checkMedicineOrHistory()">Zmień</button></div>
+      <div *ngIf="medicine">
+        <div>
+          <app-medicine-list
+            [roomUserEmail]="roomUser.email"
+            [currentUserEmail]="currentUser.email"
+            [userType]="currentUser.userType"
+          ></app-medicine-list>
+        </div>
       </div>
-      <div *ngIf="medicine==false">
-          <div><app-history
-          [roomUserEmail]="roomUser.email"
-          [currentUserEmail]="currentUser.email"
-          [userType]="currentUser.userType"
-          ></app-history></div>
-      
-      </div>      
+      <div *ngIf="!medicine">
+        <div>
+          <app-history
+            [roomUserEmail]="roomUser.email"
+            [currentUserEmail]="currentUser.email"
+            [userType]="currentUser.userType"
+          ></app-history>
+        </div>
+      </div>
     </div>
   </ng-container>
 </div>

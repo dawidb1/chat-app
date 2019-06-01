@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/ee4ce18b-d73a-4e7e-812b-afb6279837ba/resourceGroups/mgr/providers/Microsoft.Web/sites/med-chat",
+    "appService.deploySubpath": "dist\\chat-app"
+}
