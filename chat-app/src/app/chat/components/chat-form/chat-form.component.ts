@@ -27,7 +27,8 @@ export class ChatFormComponent implements OnInit {
       userName: this.currentUser.username,
       email: this.currentUser.email,
       fromUserId: this.currentUser.id,
-      toUserId: this.roomUserId
+      toUserId: this.roomUserId,
+      read: false
     };
     this.message = '';
 

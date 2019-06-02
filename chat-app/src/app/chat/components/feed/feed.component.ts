@@ -1,48 +1,75 @@
-import { Component, OnInit, OnChanges, Input, OnDestroy, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnChanges,
+  Input,
+  Output,
+  EventEmitter,
+  AfterViewInit,
+  AfterViewChecked,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
 import { ChatMessage } from 'src/app/model/chat-message.model';
 import { ChatService } from '../../services/chat.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { User } from 'src/app/model/user.model';
 import { map } from 'rxjs/operators';
+import { ChatScroll } from '../../classes/chat-scroll';
 
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.scss']
 })
-export class FeedComponent implements OnInit, OnChanges {
+export class FeedComponent implements OnInit, OnChanges, AfterViewInit, AfterViewChecked {
+  @ViewChild('scroller') scroller: ElementRef;
+  chatScroll: ChatScroll;
+
+  feedSubscription: Subscription;
   feed$: Observable<ChatMessage[]>;
+  feeds: ChatMessage[];
+
+  lastMessage: ChatMessage;
 
   @Input() roomUser: User;
-  @Output() isNewUnreadedMessage = new EventEmitter<boolean>();
+  @Output() isNewUnreadedMessage = new EventEmitter<ChatMessage>();
 
   constructor(private chat: ChatService) {}
 
   ngOnInit() {
-    this.feed$ = this.chat.getMessages(this.roomUser.id);
+    this.subscribeFeed();
   }
 
   ngOnChanges() {
-    this.handleNewMessages();
+    this.subscribeFeed();
   }
 
-  handleNewMessages() {
-    this.feed$ = this.chat.getMessages(this.roomUser.id).pipe(
-      map(x => {
-        this.emitNewMessage(x[x.length - 1]);
-        return x;
-      })
-    );
+  ngAfterViewInit() {
+    this.chatScroll = new ChatScroll(this.scroller);
+    this.chatScroll.scrollToBottom();
   }
 
-  emitNewMessage(mess: ChatMessage) {
-    console.log('emiting2');
-
-    const isMy = this.isMyMessage(mess);
-    this.isNewUnreadedMessage.emit(isMy);
+  ngAfterViewChecked() {
+    this.chatScroll.scrollToBottom();
   }
 
-  isMyMessage(mess: ChatMessage) {
-    return mess.toUserId === this.roomUser.id;
+  subscribeFeed() {
+    this.feed$ = this.chat.getMessages(this.roomUser.id);
+    this.feed$.subscribe(res => {
+      this.feeds = res;
+      this.lastMessage = res[0];
+    });
+  }
+
+  onScroll() {
+    this.chatScroll.manageAutoScroll();
+    if (this.chatScroll.atBottom && !this.lastMessage.read) {
+      this.setMessageRead();
+    }
+  }
+
+  setMessageRead() {
+    this.chat.setMessageRead(this.lastMessage);
   }
 }

@@ -39,6 +39,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
       })
       .then(() => {
         this.loginSubscription = this.authService.setLoginUser().subscribe(() => {
+          console.log(this.authService.afAuth.auth.currentUser);
+
           this.router.navigate([Routing.CHAT]);
         });
       });

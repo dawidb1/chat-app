@@ -9,11 +9,9 @@
       <div class="usernameWrapper">
         <h1 class="header">{{ roomUser.firstName }} {{ roomUser.lastName }}</h1>
       </div>
-      <div #scroller class="feedWrapper" (scroll)="onScroll()">
-        <app-feed [roomUser]="roomUser" (isNewUnreadedMessage)="isNewUnreadedMessage($event)"></app-feed>
-      </div>
+      <app-feed [roomUser]="roomUser" (isNewUnreadedMessage)="isNewUnreadedMessage($event)"></app-feed>
       <div class="chatFormWrapper">
-        <app-chat-form [roomUserId]="roomUser.id"></app-chat-form>
+        <app-chat-form [currentUser]="currentUser" [roomUserId]="roomUser.id"></app-chat-form>
       </div>
     </div>
 
