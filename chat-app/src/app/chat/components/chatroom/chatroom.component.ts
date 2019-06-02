@@ -16,6 +16,8 @@ export class ChatroomComponent implements OnInit {
   roomUser: User;
   medicine: boolean;
 
+  unreadMessage: ChatMessage;
+
   UserType: typeof UserType = UserType;
 
   constructor(private loginService: LoginService, private messageService: ChatService) {
@@ -39,5 +41,9 @@ export class ChatroomComponent implements OnInit {
 
   changeUserRoomEvent(event: User) {
     this.roomUser = event;
+  }
+
+  isNewUnreadedMessage(e: ChatMessage) {
+    this.unreadMessage = e;
   }
 }

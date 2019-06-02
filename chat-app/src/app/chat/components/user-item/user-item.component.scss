@@ -19,6 +19,10 @@
     background-color: #5c6bc0;
   }
 
+  &.unread {
+    background-color: yellow;
+  }
+
   &:hover {
     background-color: #453968;
     color: #ddd;
@@ -68,5 +72,4 @@
       }
     }
   }
-
 }

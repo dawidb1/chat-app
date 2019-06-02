@@ -1,4 +1,4 @@
-<div class="userItem" [ngClass]="{ active: active }">
+<div class="userItem" [ngClass]="{ active: active, unread: unread }">
   <div class="userInfo">
     <span class="userName" [ngClass]="user.username"> {{ user.firstName }} {{ user.lastName }} </span>
     <span *ngIf="user.userType == UserType.DOCTOR" class="userSpecs">
@@ -8,5 +8,4 @@
   <div class="userStatus">
     <span class="status" [ngClass]="user.status"> </span>
   </div>
- 
 </div>

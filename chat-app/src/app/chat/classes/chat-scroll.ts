@@ -7,17 +7,23 @@ export class ChatScroll {
 
   constructor(private scroller: ElementRef) {}
 
-  scrollToBottom(): void {
+  scrollIfPossible(): void {
     if (!this.disableScrollDown) {
-      try {
-        this.scroller.nativeElement.scrollTop = this.scroller.nativeElement.scrollHeight;
-      } catch (err) {}
+      this.scroll();
+    }
+  }
+
+  private scroll() {
+    try {
+      this.scrollNative.scrollTop = this.scrollNative.scrollHeight;
+    } catch (err) {
+      console.error('cant scroll bottom');
     }
   }
 
   reset() {
     this.disableScrollDown = false;
-    this.scrollToBottom();
+    this.scrollIfPossible();
   }
 
   manageAutoScroll() {

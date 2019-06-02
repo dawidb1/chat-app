@@ -26,8 +26,10 @@ export class ChatService {
   }
 
   getMessages(toUserId: string): Observable<ChatMessage[]> {
-    if (this.loginService.afAuth.auth.currentUser) {
-      const messagesCollId = this.getMessegesCollectionId(this.loginService.afAuth.auth.currentUser.uid, toUserId);
+    const fuser = this.loginService.afAuth.auth.currentUser;
+
+    if (fuser) {
+      const messagesCollId = this.getMessegesCollectionId(fuser.uid, toUserId);
 
       this.chatMessages = this.firestore
         .collection(this.msgCollection)
@@ -41,7 +43,7 @@ export class ChatService {
       );
       return this.chatMessages$;
     }
-    return null;
+    throw new Error('Trying to get messages from nullable user');
   }
 
   mapCollection(item: DocumentChangeAction<any>) {
@@ -49,7 +51,6 @@ export class ChatService {
       id: item.payload.doc.id,
       ...item.payload.doc.data()
     };
-    console.log(ids);
 
     return ids;
   }

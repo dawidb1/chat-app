@@ -10,6 +10,7 @@ import { UserType } from 'src/app/authorization/model/user-type.enum';
 export class UserItemComponent implements OnInit {
   @Input() user: User;
   @Input() active: boolean;
+  @Input() unread: boolean;
 
   UserType: typeof UserType = UserType;
 

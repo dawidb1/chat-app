@@ -1,15 +1,16 @@
-import { Component, OnInit, OnDestroy, EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, EventEmitter, Output, Input, OnChanges } from '@angular/core';
 import { User } from 'src/app/model/user.model';
 import { UserService } from 'src/app/authorization/services/user.service';
 import { Subscription } from 'rxjs';
 import { LoginService } from 'src/app/authorization/services/login.service';
+import { ChatMessage } from 'src/app/model/chat-message.model';
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
-export class UserListComponent implements OnInit, OnDestroy {
+export class UserListComponent implements OnInit, OnDestroy, OnChanges {
   users: User[];
   usersSubscription: Subscription;
 
@@ -17,11 +18,16 @@ export class UserListComponent implements OnInit, OnDestroy {
 
   @Output() changeUserRoom: EventEmitter<User> = new EventEmitter();
   @Input() currentUser: User;
+  @Input() unreadMessage: ChatMessage;
 
   constructor(private userService: UserService, private loginService: LoginService) {}
 
   ngOnInit() {
     this.setUsers();
+  }
+
+  ngOnChanges() {
+    // this.unreadMessage;
   }
 
   ngOnDestroy() {
