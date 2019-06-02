@@ -19,6 +19,89 @@ Osi¹gniêcie celu wymaga³o realizacji nastêpuj¹cych etapów:
 \section{Funkcje wewnêtrzne}
 \section{Przypadki testowe}
 
+
+Przetestowano aplikacjê przez opisywanie zachowania programu w formie historyjek u¿ytkownika (ang. user stories).  Zachowanie programu opisane jest w schemacie \textit{Given, When, Then}. Skutkuje to otrzymaniem jednoznacznie sprawdzalnych przypadków testowych.
+Wykonane testy akceptacyjne z³o¿one s¹ z trzech sekcji.
+\begin{itemize}
+\item \textit{Given} jest równoznaczna z warunkami pocz¹tkowymi,
+\item \textit{When} jest to akcja do wykonania,
+\item \textit{Then} prezentuje oczekiwany rezultat.
+\end{itemize}
+
+
+
+%Testowanie dotyczy funkcjonalnoœci zwi¹zanej z obszarem æwiczeñ.
+\subsubsection{Test 1}
+
+\textbf{Given:} widok logowania. Wprowadzenie loginu i b³êdnego has³a,
+
+
+\textbf{when:} u¿ytkownik naciska przycisk ,,Zaloguj",
+
+
+\textbf{then:} powinien wyœwietliæ siê komunikat ,,B³¹d logowania".
+
+\subsubsection{Test 2}
+
+\textbf{Given:} widok logowania. Wprowadzenie poprawnego loginu i has³a,
+
+
+\textbf{when:} u¿ytkownik naciska przycisk ,,Zaloguj",
+
+
+\textbf{then:} powinien wyœwietliæ siê g³ówny widok czatu.
+
+
+
+\subsubsection{Test 3}
+
+\textbf{Given:} widok czatu. Wprowadzenie treœci wiadomoœci,
+
+\textbf{when:} u¿ytkownik naciska przycisk ,,Wyœlij",
+
+\textbf{then:} wiadomoœæ powinna wyœwietliæ siê w polu konwersacji.
+
+\subsubsection{Test 4}
+
+\textbf{Given:} obszar listy u¿ytkowników,
+
+\textbf{when:} u¿ytkownik naciska element listy,
+
+\textbf{then:} element powinien zostaæ podœwietlony na niebiesko.
+
+\subsubsection{Test 5}
+
+\textbf{Given:} obszar listy u¿ytkowników,
+
+\textbf{when:} u¿ytkownik naciska element listy, zawieraj¹cego imiê i nazwisko,
+
+\textbf{then:} w nag³ówku konwersacji powinno wyœwietliæ siê imiê i nazwisko wybranej z listy osoby.
+
+\subsubsection{Test 6}
+
+\textbf{Given:} obszar listy leków,
+
+\textbf{when:} u¿ytkownik naciska element listy,
+
+\textbf{then:} powinien zostaæ wyœwietlony komunikat ze szczegó³owymi informacjami.
+
+\subsubsection{Test 7}
+
+\textbf{Given:} komunikat ze komunikat ze szczegó³owymi informacjami o leku,
+
+\textbf{when:} u¿ytkownik naciska przycisk ,,OK",
+
+\textbf{then:} komunikat przestaje byæ widoczny.
+
+\subsubsection{Test 8}
+
+\textbf{Given:} obszar historii chorób,
+
+\textbf{when:} u¿ytkownik naciska element listy,
+
+\textbf{then:} element powinien zostaæ powiêkszony o dodatkowe informacje.
+
+
 \chapter{Wnioski}
 
 %\begin{figure}[!htb]
