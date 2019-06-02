@@ -5,10 +5,7 @@
       (click)="changeRoom(user)"
       [user]="user"
       [active]="currentRoomUser === user.id"
+      [unread]="unreadMessage ? unreadMessage.fromUserId === user.id : false"
     ></app-user-item>
-    
   </div>
-
-
-
 </div>

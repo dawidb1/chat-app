@@ -1,73 +1,74 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, DocumentChangeAction } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { ChatMessage } from '../../model/chat-message.model';
-import { User } from 'src/app/model/user.model';
 import { LoginService } from 'src/app/authorization/services/login.service';
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class ChatService {
   chatMessages: AngularFirestoreCollection<ChatMessage>;
   chatMessages$: Observable<ChatMessage[]>;
-  users$: Observable<User[]>;
 
-  user$: Observable<User>;
-  chatMessage: ChatMessage;
+  private msgCollection = 'messages';
 
-  currentUser: User;
+  constructor(private firestore: AngularFirestore, private loginService: LoginService) {}
 
-  constructor(private firestore: AngularFirestore, private loginService: LoginService) {
-    // warning service subscribe
-    this.loginService.getLoggedInUser().subscribe(res => {
-      this.currentUser = res;
-    });
-  }
-
-  sendMessage(msg: string, toUserId: string) {
-    const messagesCollId = this.getMessegesCollId(this.currentUser.id, toUserId);
+  sendMessage(msg: ChatMessage) {
+    const messagesCollId = this.getMessegesCollectionId(msg.fromUserId, msg.toUserId);
 
     this.firestore
-      .collection<ChatMessage>('messages')
+      .collection<ChatMessage>(this.msgCollection)
       .doc(messagesCollId)
-      .collection('messages')
-      .add({
-        message: msg,
-        timeSent: new Date(this.getTimeStamp()),
-        userName: this.currentUser.username,
-        email: this.currentUser.email,
-        fromUserId: this.currentUser.id,
-        toUserId
-      });
+      .collection(this.msgCollection)
+      .add(msg);
   }
 
-  getMessegesCollId(from: string, to: string): string {
+  getMessages(toUserId: string): Observable<ChatMessage[]> {
+    const fuser = this.loginService.afAuth.auth.currentUser;
+
+    if (fuser) {
+      const messagesCollId = this.getMessegesCollectionId(fuser.uid, toUserId);
+
+      this.chatMessages = this.firestore
+        .collection(this.msgCollection)
+        .doc(messagesCollId)
+        .collection<ChatMessage>(this.msgCollection, ref => ref.orderBy('timeSent', 'desc').limit(25));
+
+      this.chatMessages$ = this.chatMessages.snapshotChanges().pipe(
+        map(items => {
+          return items.map((item: DocumentChangeAction<ChatMessage>) => this.mapCollection(item));
+        })
+      );
+      return this.chatMessages$;
+    }
+    throw new Error('Trying to get messages from nullable user');
+  }
+
+  mapCollection(item: DocumentChangeAction<any>) {
+    const ids = {
+      id: item.payload.doc.id,
+      ...item.payload.doc.data()
+    };
+
+    return ids;
+  }
+
+  getMessegesCollectionId(from: string, to: string): string {
     if (from > to) {
       return from + to;
     }
     return to + from;
   }
 
-  getMessages(toUserId: string): Observable<ChatMessage[]> {
-    if (this.loginService.afAuth.auth.currentUser) {
-      const messagesCollId = this.getMessegesCollId(this.loginService.afAuth.auth.currentUser.uid, toUserId);
+  setMessageRead(msg: ChatMessage) {
+    const id = msg.id;
+    delete msg.id;
 
-      this.chatMessages = this.firestore
-        .collection('messages')
-        .doc(messagesCollId)
-        .collection<ChatMessage>('messages', ref => ref.orderBy('timeSent', 'desc').limit(25));
+    const chanelId = this.getMessegesCollectionId(msg.fromUserId, msg.toUserId);
 
-      this.chatMessages$ = this.chatMessages.valueChanges();
-      return this.chatMessages$;
-    }
-    return null;
-  }
-
-  getTimeStamp() {
-    const now = new Date();
-    const date = now.getUTCFullYear() + '/' + (now.getUTCMonth() + 1) + '/' + now.getUTCDate();
-    const time = now.getUTCHours() + ':' + now.getUTCMinutes() + ':' + now.getUTCSeconds();
-
-    return date + ' ' + time;
+    this.firestore.doc(`${this.msgCollection}/${chanelId}/${this.msgCollection}/${id}`).update({ read: true });
+    msg.id = id;
   }
 }

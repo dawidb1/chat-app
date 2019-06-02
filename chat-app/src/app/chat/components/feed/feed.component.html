@@ -1,5 +1,7 @@
-<div *ngIf="feed$ | async as feeds" class="feed">
-  <div *ngFor="let message of feeds | reverse" class="message">
-    <app-message [chatMessage]="message" [roomUserId]="roomUser.id"></app-message>
+<div #scroller class="feedWrapper" (scroll)="onScroll()">
+  <div *ngIf="feeds" class="feed">
+    <div *ngFor="let message of feeds | reverse" class="message">
+      <app-message [chatMessage]="message" [roomUserId]="roomUser.id"></app-message>
+    </div>
   </div>
 </div>

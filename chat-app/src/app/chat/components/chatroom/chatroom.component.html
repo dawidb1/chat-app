@@ -1,6 +1,11 @@
 <div ngxUiLoaderBlurred *ngIf="currentUser" class="mainContent">
   <div class="userListWrapper">
-    <app-user-list [currentUser]="currentUser" (changeUserRoom)="changeUserRoomEvent($event)"> </app-user-list>
+    <app-user-list
+      [currentUser]="currentUser"
+      (changeUserRoom)="changeUserRoomEvent($event)"
+      [unreadMessage]="unreadMessage"
+    >
+    </app-user-list>
     <img class="img-chat" src="assets/img/chat.jpg" width="90px" height="70px" />
   </div>
 
@@ -9,11 +14,9 @@
       <div class="usernameWrapper">
         <h1 class="header">{{ roomUser.firstName }} {{ roomUser.lastName }}</h1>
       </div>
-      <div #scroller class="feedWrapper" (scroll)="onScroll()">
-        <app-feed [roomUser]="roomUser"></app-feed>
-      </div>
+      <app-feed [roomUser]="roomUser" (isNewUnreadedMessage)="isNewUnreadedMessage($event)"></app-feed>
       <div class="chatFormWrapper">
-        <app-chat-form [roomUserId]="roomUser.id"></app-chat-form>
+        <app-chat-form [currentUser]="currentUser" [roomUserId]="roomUser.id"></app-chat-form>
       </div>
     </div>
 

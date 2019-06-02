@@ -15,13 +15,9 @@ $usernameWrapper-height: 50px;
   flex: 1;
   order: 1;
   border-right: 1px solid #222;
-  .img-chat{
-
-margin-top: 470px;
-
- 
+  .img-chat {
+    margin-top: 470px;
   }
- 
 }
 
 .chatContainer {
@@ -31,18 +27,6 @@ margin-top: 470px;
 
   .usernameWrapper {
     height: $usernameWrapper-height;
-  }
-
-  .feedWrapper {
-    // background: linear-gradient(181deg, rgba(100, 200, 255, 0.6), rgba(0, 0, 0, 0.9)),
-    //   url('../../assets/img/chat-bg-1.png') center center no-repeat;
-    font-size: $font-size;
-    overflow-y: auto;
-    height: calc(100% - #{$chat-form-height} - #{$usernameWrapper-height});
-  }
-
-  #scroll-style::-webkit-scrollbar-track {
-    border-radius: 10px;
   }
 
   .chatFormWrapper {
@@ -61,4 +45,3 @@ margin-top: 470px;
   order: 3;
   border-right: 1px solid #222;
 }
-

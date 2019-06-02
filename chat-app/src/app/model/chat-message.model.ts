@@ -1,4 +1,5 @@
 export class ChatMessage {
+  id?: string;
   fromUserId: string;
   toUserId: string;
 
@@ -6,4 +7,6 @@ export class ChatMessage {
   userName?: string;
   message?: string;
   timeSent?: Date | any;
+
+  read: boolean;
 }
