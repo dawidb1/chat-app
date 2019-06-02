@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs';
 import { LoginModalComponent } from '../login-modal/login-modal.component';
 import { MatDialog } from '@angular/material';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { Router } from '@angular/router';
+import { Routing } from 'src/app/model/routing.enum';
 
 @Component({
   selector: 'app-login-form',
@@ -17,7 +19,12 @@ export class LoginFormComponent implements OnInit, OnDestroy {
 
   loginSubscription: Subscription;
 
-  constructor(private ngxLoader: NgxUiLoaderService, private authService: LoginService, public dialog: MatDialog) {}
+  constructor(
+    private ngxLoader: NgxUiLoaderService,
+    private authService: LoginService,
+    public dialog: MatDialog,
+    private router: Router
+  ) {}
 
   login() {
     this.ngxLoader.start();
@@ -31,7 +38,9 @@ export class LoginFormComponent implements OnInit, OnDestroy {
         });
       })
       .then(() => {
-        this.loginSubscription = this.authService.setLoginUser().subscribe();
+        this.loginSubscription = this.authService.setLoginUser().subscribe(() => {
+          this.router.navigate([Routing.CHAT]);
+        });
       });
   }
 

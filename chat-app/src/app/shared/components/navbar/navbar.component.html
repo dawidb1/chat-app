@@ -6,11 +6,11 @@
 
     <span class="spacer"></span>
 
-    <a *ngIf="!(user | async)?.uid" mat-button routerLink="/signup">Rejestracja</a>
-    <a *ngIf="!(user | async)?.uid" mat-button routerLink="/login">Logowanie</a>
+    <a *ngIf="!(user$ | async)?.uid" mat-button routerLink="/signup">Rejestracja</a>
+    <a *ngIf="!(user$ | async)?.uid" mat-button routerLink="/login">Logowanie</a>
 
-    <a *ngIf="(user | async)?.uid" mat-button>Witaj {{ username }}</a>
+    <a *ngIf="(user$ | async)?.uid" mat-button>Witaj {{ username }}</a>
 
-    <a *ngIf="(user | async)?.uid" (click)="logout()" mat-button>Wyloguj</a>
+    <a *ngIf="(user$ | async)?.uid" (click)="logout()" mat-button>Wyloguj</a>
   </mat-toolbar-row>
 </mat-toolbar>

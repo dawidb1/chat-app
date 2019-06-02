@@ -10,47 +10,22 @@ import { LoginService } from 'src/app/authorization/services/login.service';
 export class ChatService {
   chatMessages: AngularFirestoreCollection<ChatMessage>;
   chatMessages$: Observable<ChatMessage[]>;
-  users$: Observable<User[]>;
 
-  user$: Observable<User>;
-  chatMessage: ChatMessage;
+  constructor(private firestore: AngularFirestore, private loginService: LoginService) {}
 
-  currentUser: User;
-
-  constructor(private firestore: AngularFirestore, private loginService: LoginService) {
-    // warning service subscribe
-    this.loginService.getLoggedInUser().subscribe(res => {
-      this.currentUser = res;
-    });
-  }
-
-  sendMessage(msg: string, toUserId: string) {
-    const messagesCollId = this.getMessegesCollId(this.currentUser.id, toUserId);
+  sendMessage(msg: ChatMessage) {
+    const messagesCollId = this.getMessegesCollectionId(msg.fromUserId, msg.toUserId);
 
     this.firestore
       .collection<ChatMessage>('messages')
       .doc(messagesCollId)
       .collection('messages')
-      .add({
-        message: msg,
-        timeSent: new Date(this.getTimeStamp()),
-        userName: this.currentUser.username,
-        email: this.currentUser.email,
-        fromUserId: this.currentUser.id,
-        toUserId
-      });
-  }
-
-  getMessegesCollId(from: string, to: string): string {
-    if (from > to) {
-      return from + to;
-    }
-    return to + from;
+      .add(msg);
   }
 
   getMessages(toUserId: string): Observable<ChatMessage[]> {
     if (this.loginService.afAuth.auth.currentUser) {
-      const messagesCollId = this.getMessegesCollId(this.loginService.afAuth.auth.currentUser.uid, toUserId);
+      const messagesCollId = this.getMessegesCollectionId(this.loginService.afAuth.auth.currentUser.uid, toUserId);
 
       this.chatMessages = this.firestore
         .collection('messages')
@@ -63,11 +38,10 @@ export class ChatService {
     return null;
   }
 
-  getTimeStamp() {
-    const now = new Date();
-    const date = now.getUTCFullYear() + '/' + (now.getUTCMonth() + 1) + '/' + now.getUTCDate();
-    const time = now.getUTCHours() + ':' + now.getUTCMinutes() + ':' + now.getUTCSeconds();
-
-    return date + ' ' + time;
+  getMessegesCollectionId(from: string, to: string): string {
+    if (from > to) {
+      return from + to;
+    }
+    return to + from;
   }
 }

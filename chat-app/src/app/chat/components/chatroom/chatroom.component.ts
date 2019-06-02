@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
 import { User } from 'src/app/model/user.model';
 import { LoginService } from 'src/app/authorization/services/login.service';
 import { Subscription } from 'rxjs';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { UserType } from 'src/app/authorization/model/user-type.enum';
 
 @Component({
   selector: 'app-chatroom',
@@ -17,6 +17,8 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
   roomUser: User;
   medicine: boolean;
   currentUserSubscription: Subscription;
+
+  UserType: typeof UserType = UserType;
 
   constructor(private loginService: LoginService) {
     this.medicine = true;
@@ -52,6 +54,14 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
     }
   }
 
+  scrollToBottom(): void {
+    if (!this.disableScrollDown) {
+      try {
+        this.scroller.nativeElement.scrollTop = this.scroller.nativeElement.scrollHeight;
+      } catch (err) {}
+    }
+  }
+
   onScroll() {
     const element = this.scroller.nativeElement;
     const atBottom = element.scrollHeight - element.scrollTop === element.clientHeight;
@@ -59,14 +69,6 @@ export class ChatroomComponent implements OnInit, AfterViewChecked {
       this.disableScrollDown = false;
     } else {
       this.disableScrollDown = true;
-    }
-  }
-
-  scrollToBottom(): void {
-    if (!this.disableScrollDown) {
-      try {
-        this.scroller.nativeElement.scrollTop = this.scroller.nativeElement.scrollHeight;
-      } catch (err) {}
     }
   }
 }

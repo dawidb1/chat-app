@@ -12,23 +12,11 @@ export class NoauthGuard implements CanActivate {
   constructor(private loginService: LoginService, private router: Router) {}
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return this.loginService
-      .authUser()
-      .pipe(
-        map(e => {
-          if (!e) {
-            return true;
-          } else {
-            this.router.navigate([Routing.CHAT]);
-            return false;
-          }
-        })
-      )
-      .pipe(
-        catchError(() => {
-          this.router.navigate([Routing.CHAT]);
-          return of(false);
-        })
-      );
+    if (this.loginService.authUser()) {
+      this.router.navigate([Routing.CHAT]);
+      return false;
+    } else {
+      return true;
+    }
   }
 }
