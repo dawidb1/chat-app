@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.3)  2 JUN 2019 20:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.3)  2 JUN 2019 21:43
 entering extended mode
 **./Praca.tex
 (Praca.tex
@@ -669,7 +669,7 @@ Here is how much of TeX's memory you used:
  12844 multiletter control sequences out of 15000+200000
  28657 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,9n,42p,406b,370s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,9n,42p,414b,370s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/patry/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plms.enc
 }{C:/Users/patry/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}
 {C:/Users/patry/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plmi.enc}{
@@ -682,7 +682,7 @@ l/plsl12.pfb><C:/Users/patry/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/pl/plsy10.pfb><C:/Users/patry/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
 urw/helvetic/uhvb8a.pfb><C:/Users/patry/AppData/Local/Programs/MiKTeX 2.9/fonts
 /type1/urw/helvetic/uhvr8a.pfb>
-Output written on Praca.pdf (7 pages, 280209 bytes).
+Output written on Praca.pdf (7 pages, 280221 bytes).
 PDF statistics:
  129 PDF objects out of 1000 (max. 8388607)
  21 named destinations out of 1000 (max. 500000)
