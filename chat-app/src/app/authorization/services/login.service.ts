@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
   user: User;
-  firebaseUser$: Observable<firebase.User>;
+  firebaseUser: firebase.User;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -27,11 +27,15 @@ export class LoginService {
   }
 
   setFirebaseUser() {
-    this.firebaseUser$ = this.afAuth.authState;
+    this.firebaseUser = this.afAuth.auth.currentUser;
   }
 
-  authUser() {
-    return this.firebaseUser$;
+  authUser(): firebase.User {
+    return this.afAuth.auth.currentUser;
+  }
+
+  authUser$(): Observable<firebase.User> {
+    return this.afAuth.authState;
   }
 
   authorize(email: string, password: string) {
@@ -43,15 +47,11 @@ export class LoginService {
       map(res => {
         this.user = res;
         this.setUserStatus(UserStatus.ONLINE);
-        this.router.navigate([Routing.CHAT]);
-        console.log('getLoggedInUser subscription was called');
       })
     );
   }
 
   logout() {
-    console.log('logout called');
-
     return this.getLoggedInUser().pipe(
       map(user => {
         this.user = user;
@@ -63,19 +63,17 @@ export class LoginService {
     );
   }
 
-  getLoggedInUser() {
+  getLoggedInUser(): Observable<User> {
     return this.userService.getUserById(this.currentUserId);
   }
 
   private setUserStatus(status: UserStatus) {
-    // this.getLoggedInUser().subscribe(user => {
     this.user.status = status;
     this.userService.updateUser(this.user);
   }
 
   get currentUserId(): string {
     const uid = this.afAuth.auth.currentUser.uid;
-    console.log(uid);
 
     return uid;
   }

@@ -1,55 +1,64 @@
-import { Component, OnInit, Input} from '@angular/core';
-import { AppPage } from 'e2e/src/app.po';
-import { MEDICINES } from './mock-medicine';
+import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
 import { Medicine } from 'src/app/model/medicine-list.model';
 import { ClinicUserService } from 'src/app/authorization/services/clinic-user.service';
 import { ClinicUser } from 'src/app/authorization/model/clinic-user.model';
 import { UserType } from 'src/app/authorization/model/user-type.enum';
-import { MatDatepickerInputEvent } from '@angular/material';
-import { Subscriber } from 'rxjs';
+import { MatDialog } from '@angular/material';
+import { MedicineDialogComponent } from '../medicine-dialog/medicine-dialog.component';
+import { AddMedicineDialogComponent } from '../add-medicine-dialog/add-medicine-dialog.component';
 
 @Component({
   selector: 'app-medicine-list',
   templateUrl: './medicine-list.component.html',
   styleUrls: ['./medicine-list.component.scss']
 })
-export class MedicineListComponent implements OnInit {
+export class MedicineListComponent implements OnInit, OnChanges {
+  constructor(private clinicUserService: ClinicUserService, public dialog: MatDialog) {}
   @Input() roomUserEmail: string;
-  @Input() userType: string;
-  @Input() currentUserEmail:string;
+  @Input() userType: UserType;
+  @Input() currentUserEmail: string;
   med: Medicine[];
-  constructor(
-    private clinicUserService: ClinicUserService) {
-      
-    }
+
+  // med=MEDICINES;
+  selectedMedicine: Medicine;
 
   ngOnInit() {
     this.getMedicineList();
   }
-   
-  //med=MEDICINES;
-  selectedMedicine: Medicine;
 
-  
+  ngOnChanges(changes: SimpleChanges): void {
+    this.getMedicineList();
+  }
+
   onSelect(medicine: Medicine): void {
     this.selectedMedicine = medicine;
+
+    const dialogRef = this.dialog.open(MedicineDialogComponent, {
+      height: '300px',
+      width: '400px',
+      data: medicine
+    });
   }
-  
-  getMedicineList()
-  {
-    if(this.userType=="1")
-    {
-        this.clinicUserService.getUserByEmail(this.currentUserEmail).subscribe((res: ClinicUser) => {
+
+  add() {
+    const dialogRef = this.dialog.open(AddMedicineDialogComponent, {
+      height: '400px',
+      width: '400px'
+    });
+  }
+
+  getMedicineList() {
+    if (this.userType == UserType.PATIENT) {
+      this.clinicUserService.getUserByEmail(this.currentUserEmail).subscribe((res: ClinicUser) => {
         const clinicUser: ClinicUser = res;
-        this.med=res.Medicine_list;
-        return (res.Medicine_list);            
+        this.med = res.Medicine_list;
+        return res.Medicine_list;
       });
-    }
-    else if(this.userType=='0'){
+    } else if (this.userType == UserType.DOCTOR) {
       this.clinicUserService.getUserByEmail(this.roomUserEmail).subscribe((res: ClinicUser) => {
         const clinicUser: ClinicUser = res;
-        this.med=res.Medicine_list;
-        return (res.Medicine_list);      
+        this.med = res.Medicine_list;
+        return res.Medicine_list;
       });
     }
   }

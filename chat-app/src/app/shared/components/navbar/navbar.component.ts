@@ -10,7 +10,7 @@ import { Observable, Subscription } from 'rxjs';
 export class NavbarComponent implements OnInit, OnDestroy {
   username: string;
   isLoggedIn: boolean;
-  user: Observable<firebase.User>;
+  user$: Observable<firebase.User>;
 
   logoutSubscription: Subscription;
 
@@ -18,10 +18,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.logoutSubscription = new Subscription();
-    this.user = this.loginService.authUser();
-    this.user.subscribe(user => {
-      if (user) {
-        this.username = user.email;
+    this.user$ = this.loginService.authUser$();
+
+    this.user$.subscribe(res => {
+      if (res) {
+        this.loginService.getLoggedInUser().subscribe(user => (this.username = user.firstName));
       }
     });
   }

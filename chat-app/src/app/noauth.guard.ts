@@ -13,7 +13,7 @@ export class NoauthGuard implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     return this.loginService
-      .authUser()
+      .authUser$()
       .pipe(
         map(e => {
           if (!e) {

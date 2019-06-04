@@ -1,4 +1,6 @@
-Lista leków
+<div class="title">
+  <h4>Lista leków</h4>
+</div>
 <div>
   <ul class="medicines">
     <li
@@ -10,14 +12,6 @@ Lista leków
     </li>
   </ul>
 </div>
-
-<div *ngIf="selectedMedicine">
-  {{ selectedMedicine.name | uppercase }} Details
-  <div><span>id: </span>{{ selectedMedicine.id }}</div>
-  <div>
-    <label
-      >name:
-      <input [(ngModel)]="selectedMedicine.name" placeholder="name" />
-    </label>
-  </div>
+<div class="add">
+  <button (click)="add()" mat-fab color="primary">+</button>
 </div>

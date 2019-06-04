@@ -1,9 +1,48 @@
-.my-form{
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-}
- 
 .full-width {
   width: 100%;
+}
+
+.container {
+  margin: auto;
+  width: 600px;
+
+  .mat-card {
+    border-radius: 0;
+    margin-top: 40px;
+    background: #3f51b5;
+
+    .img-logo {
+      display: block;
+      margin: auto;
+      width: 100px;
+    }
+  }
+
+  .my-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+  }
+  .mat-toolbar {
+    background: #3f51b5;
+    color: #fafafa
+}
+  .mat-raised-button {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn{
+    border: 2px solid white;
+      background-color: #3f51b5;
+    color: white;
+    padding: 8px 48px;
+    font-size: 16px;
+  
+  }
+  .label{
+    margin-left: 220px
+  }
 }
