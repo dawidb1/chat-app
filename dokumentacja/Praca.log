@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.29)  28 MAY 2019 16:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.29)  4 JUN 2019 11:01
 entering extended mode
 **./Praca.tex
 (Praca.tex
@@ -515,7 +515,7 @@ LaTeX Font Info:    Try loading font information for T1+phv on input line 17.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-<./rysunki/logoPS.png, id=43, 354.6048pt x 354.8457pt>
+<./rysunki/logoPS.png, id=75, 354.6048pt x 354.8457pt>
 File: ./rysunki/logoPS.png Graphic file (type png)
 <use ./rysunki/logoPS.png>
 Package pdftex.def Info: ./rysunki/logoPS.png  used on input line 17. on input 
@@ -596,17 +596,124 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7 \chapter
-            {System} [1
+l.26 \item f
+            iltrowanie danych - Angular oferuje wbudowane mechanizmy filtrow...
+[1
 
 
 ]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 45.
+
+<./rysunki/rynek1.jpg, id=153, 771.63281pt x 267.24844pt>
+File: ./rysunki/rynek1.jpg Graphic file (type jpg)
+<use ./rysunki/rynek1.jpg>
+Package pdftex.def Info: ./rysunki/rynek1.jpg  used on input line 68. on input 
+line 68.
+Package pdftex.def Info: Requested size: 352.81552pt x 122.19359pt on input lin
+e 68.
+<./rysunki/rynek2.jpg, id=155, 694.09312pt x 481.04718pt>
+File: ./rysunki/rynek2.jpg Graphic file (type jpg)
+<use ./rysunki/rynek2.jpg>
+Package pdftex.def Info: ./rysunki/rynek2.jpg  used on input line 77. on input 
+line 77.
+Package pdftex.def Info: Requested size: 352.81552pt x 244.53073pt on input lin
+e 77.
+[2]
+
+LaTeX Warning: Text page 3 contains only floats.
+
+
+Overfull \vbox (3.08217pt too high) has occurred while \output is active []
+
+
+[3 <./rysunki/rynek1.jpg>]
+<./rysunki/rynek3.jpg, id=168, 728.7225pt x 262.73157pt>
+File: ./rysunki/rynek3.jpg Graphic file (type jpg)
+<use ./rysunki/rynek3.jpg>
+Package pdftex.def Info: ./rysunki/rynek3.jpg  used on input line 86. on input 
+line 86.
+Package pdftex.def Info: Requested size: 352.81552pt x 127.20015pt on input lin
+e 86.
+<./rysunki/rynek4.jpg, id=170, 679.78969pt x 418.56375pt>
+File: ./rysunki/rynek4.jpg Graphic file (type jpg)
+<use ./rysunki/rynek4.jpg>
+Package pdftex.def Info: ./rysunki/rynek4.jpg  used on input line 95. on input 
+line 95.
+Package pdftex.def Info: Requested size: 352.81552pt x 217.23926pt on input lin
+e 95.
+ [4 <./rysunki/rynek2.jpg> <./rysunki/rynek3.jpg>]
+<./rysunki/rynek5.jpg, id=176, 637.63219pt x 491.58656pt>
+File: ./rysunki/rynek5.jpg Graphic file (type jpg)
+<use ./rysunki/rynek5.jpg>
+Package pdftex.def Info: ./rysunki/rynek5.jpg  used on input line 105. on input
+ line 105.
+Package pdftex.def Info: Requested size: 352.81552pt x 272.00116pt on input lin
+e 105.
+
+[5 <./rysunki/rynek4.jpg>] [6 <./rysunki/rynek5.jpg>]
 Rozdzia\PlPrIeC {\l } 2.
-[2
+<./rysunki/system-modul.png, id=186, 688.07062pt x 296.60812pt>
+File: ./rysunki/system-modul.png Graphic file (type png)
+<use ./rysunki/system-modul.png>
+Package pdftex.def Info: ./rysunki/system-modul.png  used on input line 115. on
+ input line 115.
+Package pdftex.def Info: Requested size: 352.81552pt x 152.08731pt on input lin
+e 115.
+<./rysunki/system-vsc.png, id=188, 261.97874pt x 204.765pt>
+File: ./rysunki/system-vsc.png Graphic file (type png)
+<use ./rysunki/system-vsc.png>
+Package pdftex.def Info: ./rysunki/system-vsc.png  used on input line 123. on i
+nput line 123.
+Package pdftex.def Info: Requested size: 220.50887pt x 172.35759pt on input lin
+e 123.
+<./rysunki/system.png, id=190, 797.98125pt x 282.30469pt>
+File: ./rysunki/system.png Graphic file (type png)
+<use ./rysunki/system.png>
+Package pdftex.def Info: ./rysunki/system.png  used on input line 131. on input
+ line 131.
+Package pdftex.def Info: Requested size: 352.81552pt x 124.8175pt on input line
+ 131.
+[7
 
-]
+ <./rysunki/system-modul.png> <./rysunki/system-vsc.png>]
+<./rysunki/system-przeplyw.png, id=196, 894.34125pt x 286.82156pt>
+File: ./rysunki/system-przeplyw.png Graphic file (type png)
+<use ./rysunki/system-przeplyw.png>
+Package pdftex.def Info: ./rysunki/system-przeplyw.png  used on input line 139.
+ on input line 139.
+Package pdftex.def Info: Requested size: 485.1222pt x 155.58595pt on input line
+ 139.
+
+Overfull \hbox (44.10446pt too wide) in paragraph at lines 139--140
+ [][] 
+ []
+
+<./rysunki/funkcje-auth.png, id=198, 240.14719pt x 111.41624pt>
+File: ./rysunki/funkcje-auth.png Graphic file (type png)
+<use ./rysunki/funkcje-auth.png>
+Package pdftex.def Info: ./rysunki/funkcje-auth.png  used on input line 154. on
+ input line 154.
+Package pdftex.def Info: Requested size: 352.81552pt x 163.7034pt on input line
+ 154.
+
+Overfull \hbox (1.51796pt too wide) in paragraph at lines 159--160
+ []\OT4/cmr/m/sl/12 Komponenty mo-du-ªu au-to-ry-za-cji[] \OT4/cmr/m/n/12 Mo-du
+ª au-to-ry-za-cji za-wie-ra 4 kom-po-nen-ty (Rys. [][]2.5[][]): 
+ []
+
+[8 <./rysunki/system.png> <./rysunki/system-przeplyw.png>]
+<./rysunki/funkcje-chat.png, id=205, 187.45032pt x 215.30438pt>
+File: ./rysunki/funkcje-chat.png Graphic file (type png)
+<use ./rysunki/funkcje-chat.png>
+Package pdftex.def Info: ./rysunki/funkcje-chat.png  used on input line 169. on
+ input line 169.
+Package pdftex.def Info: Requested size: 176.40439pt x 202.62924pt on input lin
+e 169.
+ [9 <./rysunki/funkcje-auth.png> <./rysunki/funkcje-chat.png>] [10] [11]
 Rozdzia\PlPrIeC {\l } 3.
-) [3
+) [12
 
 ]
 
@@ -619,27 +726,39 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 44.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 44.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 44.
 Package rerunfilecheck Info: File `Praca.out' has not changed.
-(rerunfilecheck)             Checksum: 64FBB752F526C14841F7CAA958DD0C81;573.
+(rerunfilecheck)             Checksum: 90FE0746A111B9DBB7E9E937C9C8EF2D;1086.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
  ) 
 Here is how much of TeX's memory you used:
- 9197 strings out of 493312
- 136979 string characters out of 3138899
- 245705 words of memory out of 3000000
- 12562 multiletter control sequences out of 15000+200000
- 28657 words of font info for 47 fonts, out of 3000000 for 9000
+ 9323 strings out of 493312
+ 139084 string characters out of 3138899
+ 251705 words of memory out of 3000000
+ 12633 multiletter control sequences out of 15000+200000
+ 30744 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,9n,42p,267b,370s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files/Mi
-KTeX 2.9/fonts/enc/dvips/pl/plmi.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvi
-ps/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plmi12.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/pl/plsl12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/
-uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on Praca.pdf (7 pages, 275000 bytes).
+ 46i,14n,42p,521b,395s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{figure.caption.19} has been referenced but does n
+ot exist, replaced by a fixed one
+
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plit.enc}{C:/Program Files/MiKT
+eX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips
+/pl/plms.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plmi.enc}{C:/Progr
+am Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/pl/plbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+pl/plmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/pl/plsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/pl/plsl12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plsy1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on Praca.pdf (16 pages, 924406 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 287 PDF objects out of 1000 (max. 8388607)
+ 61 named destinations out of 1000 (max. 500000)
+ 205 words of extra memory for PDF output out of 10000 (max. 10000000)
 

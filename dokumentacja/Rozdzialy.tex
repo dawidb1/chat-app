@@ -1,16 +1,284 @@
+\renewcommand{\arraystretch}{1.2}
+
 \chapter{Wstêp}
 \section{Cel projektu}
+Celem niniejszej pracy by³o utworzenie aplikacji webowej, wspomagaj¹cej kontakt pomiêdzy lekarzem, a pacjentem. Docelowo, aplikacja powinna umo¿liwiaæ wymianê danych na bie¿¹co. Pacjent powinien mieæ mo¿liwoœæ rozpoczêcia rozmowy z wszystkimi lekarzami dostêpnymi on--line. Za³o¿ono, i¿ aplikacja stanowi narzêdzie, wspomagaj¹ce pracê istniej¹cej ju¿ przychodni lekarskiej.
+
+Osi¹gniêcie celu wymaga³o realizacji nastêpuj¹cych etapów:
+\begin{itemize}
+\item przydzia³u zadañ poszczególnym osobom w grupie,
+\item wyboru narzêdzi,
+\item opracowania architektury bazy danych,
+\item stworzenia interfejsu u¿ytkownika,
+\item implementacji poszczególnych funkcjonalnoœci.
+\end{itemize}
 \section{Platforma projektowa}
+\subsection{Angular}
+Otwarty framework i platforma do tworzenia SPA, napisany w jêzyku TypeScript i wspierany oraz rozwijany przez Google.
+
+Elementy Angular:
+\begin{itemize}
+\item architektura MVW - aplikacje mog¹ byæ oparte o ró¿ne wzorce architektoniczne, z którymi Angular sobie poradzi;
+\item wstrzykiwanie zale¿noœci - wprowadzone przez nas funkcjonalnoœci w kodzie staj¹ siê bardziej zautomatyzowane;
+\item modu³y - modu³ jest podstawowym noœnikiem danych tak jak klasa, jednak nie mo¿emy tworzyæ instacji modu³u, opiera siê on na nieco innej funkcjonalnoœci;
+\item dwukierunkowe wi¹zanie danych - mechanizm dwukierunkowego wi¹zania danych zapewnia dynamiczn¹ synchronizacjê danych miêdzy warstw¹ widoku, a warstw¹ modelu danych;
+\item nawigacja - mo¿liwoœæ przekierowywania, ingerowania w wyœwietlanie widoku strony dla odpowiedniego adresu;
+\item filtrowanie danych - Angular oferuje wbudowane mechanizmy filtrowania, które poniek¹d wyrêczaj¹ deweloperów od pisania w³asnych funkcji filtruj¹cych dane.
+
+\end{itemize}
+\subsection{Firebase}
+Jest to BaaS odpowiedzialny za nasz¹ architekturê backendow¹, za marketing, monitoring wydajnoœci, zarz¹dzanie uploadowanymi plikami, testowanie, modyfikowanie aplikacji i przechowywanie w bezpieczny sposób.
+\subsection{JSON}
+Jest prostym formatem wymiany danych. Jego definicja opiera siê o podzbiór jêzyka programowania JavaScript, Standard ECMA-262 3rd Edition - December 1999. JSON jest formatem tekstowym, ca³kowicie niezale¿nym od jêzyków programowania, ale u¿ywa konwencji, które s¹ znane programistom korzystaj¹cym z jêzyków z rodziny C.
+
+
+JSON powsta³ w oparciu o dwie struktury:
+\begin{itemize}
+\item Zbiór par nazwa/wartoœæ. W ró¿nych jêzykach jast to implementowane jako obiekt, rekord, struktura, s³ownik, tabela hash, lista z kluczem, albo tabela asocjacyjna.
+\item Uporz¹dkowana lista wartoœci. W wiêkszoœci jêzyków implementuje siê to za pomoc¹ tabeli, wektora, listy, lub sekwencji.
+
+\end{itemize}
+
+Wspomniane struktury danych s¹ uniwersalne. Prawie wszystkie nowoczesne jêzyki programowania pos³uguj¹ siê nim w tej lub innej formie. Ma to sens, by format danych, który jest przenoœny pomiêdzy ró¿nymi jêzykami programowania opiera³ swoj¹ budowê na wspomnianych strukturach.
+
 \section{Harmonogram prac}
+\begin{table}[]
+\centering
+\caption{Harmonogram prac.}
+\label{harmonogram}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Termin} & \textbf{Wykonane prace}                                                                                                                                                      \\ \hline
+26.02.2019       & Ustalenie tematu projektowego                                                                                                                                                \\ \hline
+12.03.2019      & \begin{tabular}[c]{@{}l@{}}Zdefiniowanie problemu\\   Wybór kierownika projektu \\   Wybór platformy projektowej\end{tabular}                                                \\ \hline
+26.03.2019      & \begin{tabular}[c]{@{}l@{}}analiza rynku\\   opracowanie architektury\\   systemu\\   zdefiniowanie\\   funkcjonalnoœci\\   schematy u¿ycia\\   projekt GUI\end{tabular}     \\ \hline
+09.04.2019      & \begin{tabular}[c]{@{}l@{}}zamockowanie bazy danych\\   Utworzenie ekranu logowania\\   i logiki\\   Utworzenie bazy danych\\   leków\\   wczytanie listy leków\end{tabular} \\ \hline
+07.05.2019      & \begin{tabular}[c]{@{}l@{}}implementacja czatu\\   wczytanie listy lekarzy/pacjentów\end{tabular}                                                                            \\ \hline
+21.05.2019      & \begin{tabular}[c]{@{}l@{}}Implementacja dodawania leków\\   Walidacja logowania\end{tabular}                                                                                \\ \hline
+04.06.2019      & \begin{tabular}[c]{@{}l@{}}Dokumentacja\\   Testowanie\\   Dodanie historii chorób\end{tabular}                                                                              \\ \hline
+\end{tabular}
+\end{table}
+
+Harmonogram prac zosta³ przedstawiony w tabeli (Tab.~\ref{harmonogram}).
+
 \section{Przegl¹d rynku}
+\subsection{Doktormed}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{rynek1}
+	\caption{Doktormed.}\label{l:rynek1}
+\end{figure}
+
+Jest to platforma umo¿liwiaj¹ca zadawanie pytañ do grona lekarzy w sposób anonimowy, koszt porady to 50 z³otych i otrzymujemy odpowiedz od specjalisty z dziedziny zadanego przez nas pytania (Rys.~\ref{l:rynek1}). 
+
+\subsection{Edoktor24}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{rynek2}
+	\caption{Edoktor24.}\label{l:rynek2}
+\end{figure}
+
+Jest to platforma umo¿liwiaj¹ca zadnie pytañ przez wybranie specjalisty zadanie pytania do którego jest mo¿liwe do³¹czenie wyników badañ a nastêpnie po wniesieniu op³aty otrzymujemy odpowiedz w ci¹gu 24 godzin.  Mo¿liwe s¹ tak¿e konsultacje telefoniczne lub wideo konsultacje z wybranym specjalist¹ (Rys.~\ref{l:rynek2}).
+
+\subsection{Grupa Luxmed}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{rynek3}
+	\caption{Grupa Luxmed.}\label{l:rynek3}
+\end{figure}
+
+Jest to platforma umo¿liwiaj¹ca czat z pielêgniarkami lub lekarzami wybranych specjalizacji w wyznaczonym czasie kiedy s¹ dostêpni (Rys.~\ref{l:rynek3}).
+
+\subsection{Kardiologonline}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{rynek4}
+	\caption{Kardiologonline.}\label{l:rynek4}
+\end{figure}
+
+Jest to platforma umo¿liwiaj¹ca umówienie siê na konsultacje z wybranym specjalist¹ które odbêd¹ siê za pomoc¹ menad¿era lub facebooka (Rys.~\ref{l:rynek4}).
+
+\subsection{Medicover}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{rynek5}
+	\caption{Medicover.}\label{l:rynek5}
+\end{figure}
+
+Jest to czat dostêpny za pomoc¹ przegl¹darki internetowej w którym pacjent mo¿e otrzymaæ odpowiedz na proste zadane pytanie do lekarza (Rys.~\ref{l:rynek5}).
 
 \chapter{System}
 \section{Architektura systemu}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{system-modul}
+	\caption{Podzia³ modu³u w Angular.}\label{l:system-modul}
+\end{figure}
+
+Framework Angular wymaga pomaga utrzymaæ architekturê zgodn¹ z praktykami dobrego programowania. Aplikacja dzieli siê na modu³y. Modu³ jest odzwierciedleniem wzorca MVC (Rys.~\ref{l:system-modul}).
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.5\textwidth]{system-vsc}
+	\caption{Podzia³ modu³u w Angular.}\label{l:system-vsc}
+\end{figure}
+
+Przyk³adowa implementacja modu³u autoryzacji zosta³a przedstawiona na rysunku (Rys.~\ref{l:system-vsc}).
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{system}
+	\caption{Architektura systemu.}\label{l:system}
+\end{figure}
+
+Aplikacja zosta³a podzielona na 4 g³ówne modu³y, wed³ug funkcjonalnoœci. Jest to g³ówna architektura systemu (Rys.~\ref{l:system}). 
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1.1\textwidth]{system-przeplyw}
+	\caption{Podzia³ modu³u w Angular.}\label{l:system-przeplyw}
+\end{figure}
+
+Aplikacja pobiera dane z bazy danych kliniki. S¹ to informacje o danych osobowych u¿ytkownika, historia stosowanych leków oraz przebytych chorób. Baza ta zosta³a napisana w formacie json i jest kompilowana za poœrednictwem biblioteki \textit{json-server}, która jest na licencji \textit{Open-source}. Mo¿na j¹ znaleŸæ w serwisie \textit{Github} pod adresem https://github.com/typicode/json-server. Api do bazy danych zosta³o opublikowane za pomoc¹ \textit{Microsoft Azure}. 
+
+Do logowania oraz obs³ugi czatu u¿yto bazy danych \textit{Firebase Cloud}. Dziêki niech mo¿liwe jest pisanie i odbieranie wiadomoœci w czasie rzeczywistym. P³atnoœæ jest zgodnie z u¿yciem. 
+
+Dok³adny przep³yw danych w aplikacji zosta³ przedstawiony na rysunku (Rys.~\ref{l:system-przeplyw}).
+
 \section{Funkcje wewnêtrzne}
+Zachowanie i podzia³ na funkcje wewnêtrzne aplikacji, najlepiej opisuje podzia³ na komponenty wewn¹trz modu³ów. W tej sekcji zosta³y opisane obowi¹zki poszczególnych komponentów.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{funkcje-auth}
+	\caption{Komponenty modu³u autoryzacji.}\label{l:funkcje-auth}
+\end{figure}
+
+\paragraph{Komponenty modu³u autoryzacji}
+Modu³ autoryzacji zawiera 4 komponenty (Rys.~\ref{l:funkcje-auth}):
+\begin{itemize}
+\item \textit{error-login-modal} - wyœwietlanie b³êdu podczas próby logowania z b³êdnym loginem lub has³em,
+\item \textit{login-form} - formularz logowania,
+\item \textit{signup-form} - formularz rejestracji,
+\end{itemize}
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.4\textwidth]{funkcje-chat}
+	\caption{Komponenty modu³u czatu.}\label{l:funkcje-chat}
+\end{figure}
+
+\paragraph{Komponenty modu³u czatu}
+Modu³ czatu zawiera 6 komponentów (Rys.~\ref{l:funkcje-chat}):
+\begin{itemize}
+\item \textit{chatroom} - g³ówne okienko czatu, zawieraj¹ce wszystkie pozosta³e komponenty czatu;
+\item \textit{chat-form} - formularz nowej wiadomoœci;
+\item \textit{feed} - wyœwietlenie wiadomoœci czatu;
+\item \textit{message} - wyœwietlenie pojedynczej wiadomoœci;
+\item \textit{user-list} - wyœwietlenie listy u¿ytkowników;
+\item \textit{user-item} - wyœwietlenie pojedynczego u¿ytkownika.
+\end{itemize}
+
 \section{Przypadki testowe}
 
-\chapter{Wnioski}
+Przetestowano aplikacjê przez opisywanie zachowania programu w formie historyjek u¿ytkownika (ang. user stories).  Zachowanie programu opisane jest w schemacie \textit{Given, When, Then}. Skutkuje to otrzymaniem jednoznacznie sprawdzalnych przypadków testowych.
+Wykonane testy akceptacyjne z³o¿one s¹ z trzech sekcji.
+\begin{itemize}
+\item \textit{Given} jest równoznaczna z warunkami pocz¹tkowymi,
+\item \textit{When} jest to akcja do wykonania,
+\item \textit{Then} prezentuje oczekiwany rezultat.
+\end{itemize}
 
+
+
+%Testowanie dotyczy funkcjonalnoœci zwi¹zanej z obszarem æwiczeñ.
+\subsubsection{Test 1}
+
+\textbf{Given:} widok logowania. Wprowadzenie loginu i b³êdnego has³a,
+
+
+\textbf{when:} u¿ytkownik naciska przycisk ,,Zaloguj",
+
+
+\textbf{then:} powinien wyœwietliæ siê komunikat ,,B³¹d logowania".
+
+\subsubsection{Test 2}
+
+\textbf{Given:} widok logowania. Wprowadzenie poprawnego loginu i has³a,
+
+
+\textbf{when:} u¿ytkownik naciska przycisk ,,Zaloguj",
+
+
+\textbf{then:} powinien wyœwietliæ siê g³ówny widok czatu.
+
+
+
+\subsubsection{Test 3}
+
+\textbf{Given:} widok czatu. Wprowadzenie treœci wiadomoœci,
+
+\textbf{when:} u¿ytkownik naciska przycisk ,,Wyœlij",
+
+\textbf{then:} wiadomoœæ powinna wyœwietliæ siê w polu konwersacji.
+
+\subsubsection{Test 4}
+
+\textbf{Given:} obszar listy u¿ytkowników,
+
+\textbf{when:} u¿ytkownik naciska element listy,
+
+\textbf{then:} element powinien zostaæ podœwietlony na niebiesko.
+
+\subsubsection{Test 5}
+
+\textbf{Given:} obszar listy u¿ytkowników,
+
+\textbf{when:} u¿ytkownik naciska element listy, zawieraj¹cego imiê i nazwisko,
+
+\textbf{then:} w nag³ówku konwersacji powinno wyœwietliæ siê imiê i nazwisko wybranej z listy osoby.
+
+\subsubsection{Test 6}
+
+\textbf{Given:} obszar listy leków,
+
+\textbf{when:} u¿ytkownik naciska element listy,
+
+\textbf{then:} powinien zostaæ wyœwietlony komunikat ze szczegó³owymi informacjami.
+
+\subsubsection{Test 7}
+
+\textbf{Given:} komunikat ze komunikat ze szczegó³owymi informacjami o leku,
+
+\textbf{when:} u¿ytkownik naciska przycisk ,,OK",
+
+\textbf{then:} komunikat przestaje byæ widoczny.
+
+\subsubsection{Test 8}
+
+\textbf{Given:} obszar historii chorób,
+
+\textbf{when:} u¿ytkownik naciska element listy,
+
+\textbf{then:} element powinien zostaæ powiêkszony o dodatkowe informacje.
+
+
+\chapter{Wnioski}
+Cel pracy zosta³ osi¹gniêty--zosta³a utworzona aplikacja, umo¿liwiaj¹ca bezpoœredni kontakt pomiêdzy pacjentem a lekarzem, bez koniecznoœci wczeœniejszego planowania wizyty. Dziêki wykorzystaniu najnowszych technologii, utworzono us³ugê œwiadczenia opieki zdrowotnej na odleg³oœæ. 
+Do najwa¿niejszych zalet powsta³ej aplikacji zalicza siê:
+\begin{itemize}
+\item zmniejszenie kosztów opieki medycznej,
+\item dostêp do lekarzy bez d³ugiego czasu oczekiwania na wizytê,
+\item kontakt z personelem medycznym w czasie urlopu,
+\item szybkie konsultacje lekarskie -- mo¿liwoœæ poruszenia pilnych tematów, wymagaj¹cych weryfikacji osoby doœwiadczonej,
+\item mo¿liwoœæ podgl¹du przepisanych leków,
+\item zredukowana liczba koniecznych dojazdów do placówki,
+\item szybki i ³atwy dostêp do historii chorób zarówno ze strony lekarza, jak i od strony u¿ytkownika.
+\end{itemize}
+
+W przysz³oœci, aplikacja mo¿e zostaæ rozbudowana o kolejne modu³y, zwiêkszaj¹ce funkcjonalnoœæ. Mo¿na stworzyæ przydzia³ danego lekarza do specjalizacji, mo¿liwoœæ wysy³ania za³¹czników lub przeprowadzania rozmów wideo.
 %\begin{figure}[!htb]
 %	\centering
 %	\includegraphics[width=1\textwidth]{lstm_schema}
