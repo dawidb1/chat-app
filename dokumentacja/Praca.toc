@@ -13,13 +13,16 @@
 \contentsline {subsection}{\numberline {1.4.5}Medicover}{5}{subsection.1.4.5}
 \contentsline {chapter}{\numberline {2.}System}{7}{chapter.2}
 \contentsline {section}{\numberline {2.1}Architektura systemu}{7}{section.2.1}
-\contentsline {section}{\numberline {2.2}Przypadki testowe}{8}{section.2.2}
-\contentsline {subsubsection}{Test 1}{9}{section*.15}
-\contentsline {subsubsection}{Test 2}{9}{section*.16}
-\contentsline {subsubsection}{Test 3}{9}{section*.17}
-\contentsline {subsubsection}{Test 4}{9}{section*.18}
-\contentsline {subsubsection}{Test 5}{9}{section*.19}
-\contentsline {subsubsection}{Test 6}{9}{section*.20}
-\contentsline {subsubsection}{Test 7}{10}{section*.21}
-\contentsline {subsubsection}{Test 8}{10}{section*.22}
-\contentsline {chapter}{\numberline {3.}Wnioski}{11}{chapter.3}
+\contentsline {section}{\numberline {2.2}Funkcje wewn\k etrzne}{8}{section.2.2}
+\contentsline {paragraph}{Komponenty modu\IeC {\l }u autoryzacji}{9}{section*.16}
+\contentsline {paragraph}{Komponenty modu\IeC {\l }u czatu}{9}{section*.18}
+\contentsline {section}{\numberline {2.3}Przypadki testowe}{10}{section.2.3}
+\contentsline {subsubsection}{Test 1}{10}{section*.19}
+\contentsline {subsubsection}{Test 2}{10}{section*.20}
+\contentsline {subsubsection}{Test 3}{10}{section*.21}
+\contentsline {subsubsection}{Test 4}{10}{section*.22}
+\contentsline {subsubsection}{Test 5}{11}{section*.23}
+\contentsline {subsubsection}{Test 6}{11}{section*.24}
+\contentsline {subsubsection}{Test 7}{11}{section*.25}
+\contentsline {subsubsection}{Test 8}{11}{section*.26}
+\contentsline {chapter}{\numberline {3.}Wnioski}{12}{chapter.3}

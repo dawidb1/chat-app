@@ -146,6 +146,41 @@ Do logowania oraz obs³ugi czatu u¿yto bazy danych \textit{Firebase Cloud}. Dziêk
 
 Dok³adny przep³yw danych w aplikacji zosta³ przedstawiony na rysunku (Rys.~\ref{l:system-przeplyw}).
 
+\section{Funkcje wewnêtrzne}
+Zachowanie i podzia³ na funkcje wewnêtrzne aplikacji, najlepiej opisuje podzia³ na komponenty wewn¹trz modu³ów. W tej sekcji zosta³y opisane obowi¹zki poszczególnych komponentów.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{funkcje-auth}
+	\caption{Komponenty modu³u autoryzacji.}\label{l:funkcje-auth}
+\end{figure}
+
+\paragraph{Komponenty modu³u autoryzacji}
+Modu³ autoryzacji zawiera 4 komponenty (Rys.~\ref{l:funkcje-auth}):
+\begin{itemize}
+\item \textit{error-login-modal} - wyœwietlanie b³êdu podczas próby logowania z b³êdnym loginem lub has³em,
+\item \textit{login-form} - formularz logowania,
+\item \textit{signup-form} - formularz rejestracji,
+\end{itemize}
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.4\textwidth]{funkcje-chat}
+	\caption{Komponenty modu³u czatu.}\label{l:funkcje-chat}
+\end{figure}
+
+\paragraph{Komponenty modu³u czatu}
+Modu³ czatu zawiera 6 komponentów (Rys.~\ref{l:funkcje-chat}):
+\begin{itemize}
+\item \textit{chatroom} - g³ówne okienko czatu, zawieraj¹ce wszystkie pozosta³e komponenty czatu;
+\item \textit{chat-form} - formularz nowej wiadomoœci;
+\item \textit{feed} - wyœwietlenie wiadomoœci czatu;
+\item \textit{message} - wyœwietlenie pojedynczej wiadomoœci;
+\item \textit{user-list} - wyœwietlenie listy u¿ytkowników;
+\item \textit{user-item} - wyœwietlenie pojedynczego u¿ytkownika.
+\end{itemize}
+
 \section{Przypadki testowe}
 
 Przetestowano aplikacjê przez opisywanie zachowania programu w formie historyjek u¿ytkownika (ang. user stories).  Zachowanie programu opisane jest w schemacie \textit{Given, When, Then}. Skutkuje to otrzymaniem jednoznacznie sprawdzalnych przypadków testowych.
