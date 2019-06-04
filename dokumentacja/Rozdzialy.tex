@@ -110,9 +110,43 @@ Jest to czat dostêpny za pomoc¹ przegl¹darki internetowej w którym pacjent mo¿e 
 
 \chapter{System}
 \section{Architektura systemu}
-\section{Funkcje wewnêtrzne}
-\section{Przypadki testowe}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{system-modul}
+	\caption{Podzia³ modu³u w Angular.}\label{l:system-modul}
+\end{figure}
 
+Framework Angular wymaga pomaga utrzymaæ architekturê zgodn¹ z praktykami dobrego programowania. Aplikacja dzieli siê na modu³y. Modu³ jest odzwierciedleniem wzorca MVC (Rys.~\ref{l:system-modul}).
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.5\textwidth]{system-vsc}
+	\caption{Podzia³ modu³u w Angular.}\label{l:system-vsc}
+\end{figure}
+
+Przyk³adowa implementacja modu³u autoryzacji zosta³a przedstawiona na rysunku (Rys.~\ref{l:system-vsc}).
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{system}
+	\caption{Architektura systemu.}\label{l:system}
+\end{figure}
+
+Aplikacja zosta³a podzielona na 4 g³ówne modu³y, wed³ug funkcjonalnoœci. Jest to g³ówna architektura systemu (Rys.~\ref{l:system}). 
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1.1\textwidth]{system-przeplyw}
+	\caption{Podzia³ modu³u w Angular.}\label{l:system-przeplyw}
+\end{figure}
+
+Aplikacja pobiera dane z bazy danych kliniki. S¹ to informacje o danych osobowych u¿ytkownika, historia stosowanych leków oraz przebytych chorób. Baza ta zosta³a napisana w formacie json i jest kompilowana za poœrednictwem biblioteki \textit{json-server}, która jest na licencji \textit{Open-source}. Mo¿na j¹ znaleŸæ w serwisie \textit{Github} pod adresem https://github.com/typicode/json-server. Api do bazy danych zosta³o opublikowane za pomoc¹ \textit{Microsoft Azure}. 
+
+Do logowania oraz obs³ugi czatu u¿yto bazy danych \textit{Firebase Cloud}. Dziêki niech mo¿liwe jest pisanie i odbieranie wiadomoœci w czasie rzeczywistym. P³atnoœæ jest zgodnie z u¿yciem. 
+
+Dok³adny przep³yw danych w aplikacji zosta³ przedstawiony na rysunku (Rys.~\ref{l:system-przeplyw}).
+
+\section{Przypadki testowe}
 
 Przetestowano aplikacjê przez opisywanie zachowania programu w formie historyjek u¿ytkownika (ang. user stories).  Zachowanie programu opisane jest w schemacie \textit{Given, When, Then}. Skutkuje to otrzymaniem jednoznacznie sprawdzalnych przypadków testowych.
 Wykonane testy akceptacyjne z³o¿one s¹ z trzech sekcji.
