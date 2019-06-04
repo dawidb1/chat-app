@@ -1,0 +1,22 @@
+<h2>Dodaj lek</h2>
+<mat-form-field class="full-width">
+  <mat-label>Nazwa leku</mat-label>
+  <input type="text" [(ngModel)]="name" matInput placeholder="Nazwa" />
+</mat-form-field>
+<div mat-dialog-content>
+  <mat-form-field class="full-width">
+    <mat-label>Data rozpoczęcia terapii</mat-label>
+    <input type="text" [(ngModel)]="startDate" matInput placeholder="Start" />
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Data zakończenia terapii</mat-label>
+    <input type="text" [(ngModel)]="endDate" matInput placeholder="Koniec" />
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Ilość dawek dziennie</mat-label>
+    <input type="number" [(ngModel)]="dosePerDay" matInput placeholder="Dawkowanie" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()" cdkFocusInitial>Ok</button>
+</div>

@@ -1,95 +1,9 @@
 {
-  "Medicine_list": [
-    {
-      "id": 0,
-      "name": "paracetamol"
-    },
-    {
-      "id": 1,
-      "name": "apap"
-    },
-    {
-      "id": 2,
-      "name": "Acatar Acti-Tabs"
-    },
-    {
-      "id": 3,
-      "name": "Fenistil żel"
-    },
-    {
-      "id": 4,
-      "name": "Aviomarin"
-    },
-    {
-      "id": 5,
-      "name": "Ketonal forte"
-    },
-    {
-      "id": 6,
-      "name": "Dexak"
-    },
-    {
-      "id": 7,
-      "name": "Otrivin Allergy"
-    },
-    {
-      "id": 8,
-      "name": "Ibuprom"
-    },
-    {
-      "id": 9,
-      "name": "Astaksantyna"
-    },
-    {
-      "id": 10,
-      "name": "Hydrominum"
-    },
-    {
-      "id":11,
-      "name": "Levopront"
-    },
-    {
-      "id": 12,
-      "name": "Acard"
-    },
-    {
-      "id": 13,
-      "name": "Magnesium Diasporal"
-    },
-    {
-      "id": 14,
-      "name": "Karnityna Ambio"
-    },
-    {
-      "id": 15,
-      "name": "Panadol"
-    },
-    {
-      "id": 16,
-      "name": "Tacni"
-    },
-    {
-      "id": 17,
-      "name": "Witagin"
-    },
-    {
-      "id": 18,
-      "name": "Zalasta"
-    },
-    {
-      "id": 19,
-      "name": "Sachol"
-    },
-    {
-      "id": 20,
-      "name": "Baikaderm"
-    }
-  ],
   "users": [
     {
       "token": "token1",
       "email": "jan.kowalski@email.com",
-      "firstName":"dr Jan",
+      "firstName": "dr Jan",
       "lastName": "Kowalski",
       "userType": "0"
     },
@@ -130,23 +44,54 @@
       "Medicine_list": [
         {
           "id": 0,
-          "name": "paracetamol"
+          "name": "Paracetamol",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 1,
-          "name": "apap"
+          "name": "Apap",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 20,
-          "name": "Baikaderm"
+          "name": "Baikaderm",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 16,
-          "name": "Tacni"
+          "name": "Tacni",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 13,
-          "name": "Magnesium Diasporal"
+          "name": "Magnesium Diasporal",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
+        }
+      ],
+      "History_list":[
+        {
+          "id": 1,
+          "doctorType": "Lekarz rodzinny",
+          "date": "16.05.2019",
+          "disease": "grypa",
+          "symptoms": "gorączka, ból głowy"
+        },
+        {
+          "id": 2,
+          "doctorType": "Lekarz rodzinny",
+          "date": "18.05.2019",
+          "disease": "przeziębienie",
+          "symptoms": "katar"
         }
       ]
     },
@@ -159,23 +104,54 @@
       "Medicine_list": [
         {
           "id": 1,
-          "name": "apap"
+          "name": "Apap",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 4,
-          "name": "Aviomarin"
+          "name": "Aviomarin",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 17,
-          "name": "Witagin"
+          "name": "Witagin",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 12,
-          "name": "Acard"
+          "name": "Acard",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 9,
-          "name": "Astaksantyna"
+          "name": "Astaksantyna",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
+        }
+      ],
+      "History_list":[
+        {
+          "id": 1,
+          "doctorType": "Kardiolog",
+          "date": "29.04.2019",
+          "disease": "Nadciśnienie",
+          "symptoms": "Ból w klatce piersiowej"
+        },
+        {
+          "id": 2,
+          "doctorType": "Lekarz rodzinny",
+          "date": "31.05.2019",
+          "disease": "Anemia",
+          "symptoms": "Zawroty głowy"
         }
       ]
     },
@@ -188,25 +164,40 @@
       "Medicine_list": [
         {
           "id": 2,
-          "name": "Acatar Acti-Tabs"
+          "name": "Acatar Acti-Tabs",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 3,
-          "name": "Fenistil żel"
+          "name": "Fenistil żel",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 18,
-          "name": "Zalasta"
+          "name": "Zalasta",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 10,
-          "name": "Hydrominum"
+          "name": "Hydrominum",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 6,
-          "name": "Dexak"
+          "name": "Dexak",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         }
-      ] 
+      ]
     },
     {
       "token": "token14",
@@ -217,25 +208,56 @@
       "Medicine_list": [
         {
           "id": 0,
-          "name": "paracetamol"
+          "name": "Paracetamol",
+          "startDate": "10.04.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 2,
-          "name": "Acatar Acti-Tabs"
+          "name": "Acatar Acti-Tabs",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 15,
-          "name": "Panadol"
+          "name": "Panadol",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
-          "id":11,
-          "name": "Levopront"
+          "id": 11,
+          "name": "Levopront",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 7,
-          "name": "Otrivin Allergy"
+          "name": "Otrivin Allergy",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         }
-      ] 
+      ],
+      "History_list":[
+        {
+          "id": 1,
+          "doctorType": "Alergolog",
+          "date": "2.01.2019",
+          "disease": "Alergia na mleko",
+          "symptoms": "Wysypka na przedramieniu"
+        },
+        {
+          "id": 2,
+          "doctorType": "Lekarz rodzinny",
+          "date": "1.04.2019",
+          "disease": "Grypa",
+          "symptoms": "Gorączka, zmęczenie"
+        }
+      ]
     },
     {
       "token": "token15",
@@ -246,25 +268,40 @@
       "Medicine_list": [
         {
           "id": 0,
-          "name": "paracetamol"
+          "name": "Paracetamol",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 3,
-          "name": "Fenistil żel"
+          "name": "Fenistil żel",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 19,
-          "name": "Sachol"
+          "name": "Sachol",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 14,
-          "name": "Karnityna Ambio"
+          "name": "Karnityna Ambio",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         },
         {
           "id": 8,
-          "name": "Ibuprom"
+          "name": "Ibuprom",
+          "startDate": "16.05.2019",
+          "endDate": "21.05.2019",
+          "dosePerDay": 2
         }
-      ] 
+      ]
     }
   ]
 }

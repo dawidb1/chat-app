@@ -8,14 +8,16 @@ $usernameWrapper-height: 50px;
 }
 
 .userListWrapper {
-  background-color: #2a2845;
+  background-color: white;
   color: #fff;
   display: flex;
   font-size: $font-size;
   flex: 1;
   order: 1;
-  padding: 20px 0px 40px 30px;
   border-right: 1px solid #222;
+  .img-chat {
+    margin-top: 470px;
+  }
 }
 
 .chatContainer {
@@ -25,18 +27,6 @@ $usernameWrapper-height: 50px;
 
   .usernameWrapper {
     height: $usernameWrapper-height;
-  }
-
-  .feedWrapper {
-    // background: linear-gradient(181deg, rgba(100, 200, 255, 0.6), rgba(0, 0, 0, 0.9)),
-    //   url('../../assets/img/chat-bg-1.png') center center no-repeat;
-    font-size: $font-size;
-    overflow-y: auto;
-    height: calc(100% - #{$chat-form-height} - #{$usernameWrapper-height});
-  }
-
-  #scroll-style::-webkit-scrollbar-track {
-    border-radius: 10px;
   }
 
   .chatFormWrapper {
@@ -53,6 +43,5 @@ $usernameWrapper-height: 50px;
   font-size: $font-size;
   flex: 1;
   order: 3;
-  padding: 20px 0px 40px 30px;
   border-right: 1px solid #222;
 }

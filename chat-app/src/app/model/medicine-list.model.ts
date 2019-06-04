@@ -1,4 +1,7 @@
-export class Medicines {
-    id: number;
-    name: string;
-  }
+export class Medicine {
+  id: number;
+  name: string;
+  startDate: string;
+  endDate: string;
+  dosePerDay: number;
+}

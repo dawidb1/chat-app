@@ -1,16 +1,16 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-      <a class="navbar-item">
-          <img src="assets/img/logo.png" width="68" height="68" >
-        </a>
-   
+    <a class="navbar-item">
+      <img src="assets/img/logo.png" width="68" height="68" />
+    </a>
+
     <span class="spacer"></span>
-    
-    <a *ngIf="!(user | async)?.uid" mat-button routerLink="/signup">Rejestracja</a>
-    <a *ngIf="!(user | async)?.uid" mat-button routerLink="/login">Logowanie</a>
 
-    <a *ngIf="(user | async)?.uid" mat-button>Witaj {{ username }}</a>
+    <a *ngIf="!(user$ | async)?.uid" mat-button routerLink="/signup">Rejestracja</a>
+    <a *ngIf="!(user$ | async)?.uid" mat-button routerLink="/login">Logowanie</a>
 
-    <a *ngIf="(user | async)?.uid" (click)="logout()" mat-button>Wyloguj</a>
+    <a *ngIf="(user$ | async)?.uid" mat-button>Witaj {{ username }}</a>
+
+    <a *ngIf="(user$ | async)?.uid" (click)="logout()" mat-button>Wyloguj</a>
   </mat-toolbar-row>
 </mat-toolbar>
