@@ -1,3 +1,5 @@
+\renewcommand{\arraystretch}{1.2}
+
 \chapter{Wstêp}
 \section{Cel projektu}
 Celem niniejszej pracy by³o utworzenie aplikacji webowej, wspomagaj¹cej kontakt pomiêdzy lekarzem, a pacjentem. Docelowo, aplikacja powinna umo¿liwiaæ wymianê danych na bie¿¹co. Pacjent powinien mieæ mo¿liwoœæ rozpoczêcia rozmowy z wszystkimi lekarzami dostêpnymi on--line. Za³o¿ono, i¿ aplikacja stanowi narzêdzie, wspomagaj¹ce pracê istniej¹cej ju¿ przychodni lekarskiej.
@@ -11,8 +13,100 @@ Osi¹gniêcie celu wymaga³o realizacji nastêpuj¹cych etapów:
 \item implementacji poszczególnych funkcjonalnoœci.
 \end{itemize}
 \section{Platforma projektowa}
+\subsection{Angular}
+Otwarty framework i platforma do tworzenia SPA, napisany w jêzyku TypeScript i wspierany oraz rozwijany przez Google.
+
+Elementy Angular:
+\begin{itemize}
+\item architektura MVW - aplikacje mog¹ byæ oparte o ró¿ne wzorce architektoniczne, z którymi Angular sobie poradzi;
+\item wstrzykiwanie zale¿noœci - wprowadzone przez nas funkcjonalnoœci w kodzie staj¹ siê bardziej zautomatyzowane;
+\item modu³y - modu³ jest podstawowym noœnikiem danych tak jak klasa, jednak nie mo¿emy tworzyæ instacji modu³u, opiera siê on na nieco innej funkcjonalnoœci;
+\item dwukierunkowe wi¹zanie danych - mechanizm dwukierunkowego wi¹zania danych zapewnia dynamiczn¹ synchronizacjê danych miêdzy warstw¹ widoku, a warstw¹ modelu danych;
+\item nawigacja - mo¿liwoœæ przekierowywania, ingerowania w wyœwietlanie widoku strony dla odpowiedniego adresu;
+\item filtrowanie danych - Angular oferuje wbudowane mechanizmy filtrowania, które poniek¹d wyrêczaj¹ deweloperów od pisania w³asnych funkcji filtruj¹cych dane.
+
+\end{itemize}
+\subsection{Firebase}
+Jest to BaaS odpowiedzialny za nasz¹ architekturê backendow¹, za marketing, monitoring wydajnoœci, zarz¹dzanie uploadowanymi plikami, testowanie, modyfikowanie aplikacji i przechowywanie w bezpieczny sposób.
+\subsection{JSON}
+Jest prostym formatem wymiany danych. Jego definicja opiera siê o podzbiór jêzyka programowania JavaScript, Standard ECMA-262 3rd Edition - December 1999. JSON jest formatem tekstowym, ca³kowicie niezale¿nym od jêzyków programowania, ale u¿ywa konwencji, które s¹ znane programistom korzystaj¹cym z jêzyków z rodziny C.
+
+
+JSON powsta³ w oparciu o dwie struktury:
+\begin{itemize}
+\item Zbiór par nazwa/wartoœæ. W ró¿nych jêzykach jast to implementowane jako obiekt, rekord, struktura, s³ownik, tabela hash, lista z kluczem, albo tabela asocjacyjna.
+\item Uporz¹dkowana lista wartoœci. W wiêkszoœci jêzyków implementuje siê to za pomoc¹ tabeli, wektora, listy, lub sekwencji.
+
+\end{itemize}
+
+Wspomniane struktury danych s¹ uniwersalne. Prawie wszystkie nowoczesne jêzyki programowania pos³uguj¹ siê nim w tej lub innej formie. Ma to sens, by format danych, który jest przenoœny pomiêdzy ró¿nymi jêzykami programowania opiera³ swoj¹ budowê na wspomnianych strukturach.
+
 \section{Harmonogram prac}
+\begin{table}[]
+\centering
+\caption{Harmonogram prac.}
+\label{harmonogram}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Termin} & \textbf{Wykonane prace}                                                                                                                                                      \\ \hline
+26.02.2019       & Ustalenie tematu projektowego                                                                                                                                                \\ \hline
+12.03.2019      & \begin{tabular}[c]{@{}l@{}}Zdefiniowanie problemu\\   Wybór kierownika projektu \\   Wybór platformy projektowej\end{tabular}                                                \\ \hline
+26.03.2019      & \begin{tabular}[c]{@{}l@{}}analiza rynku\\   opracowanie architektury\\   systemu\\   zdefiniowanie\\   funkcjonalnoœci\\   schematy u¿ycia\\   projekt GUI\end{tabular}     \\ \hline
+09.04.2019      & \begin{tabular}[c]{@{}l@{}}zamockowanie bazy danych\\   Utworzenie ekranu logowania\\   i logiki\\   Utworzenie bazy danych\\   leków\\   wczytanie listy leków\end{tabular} \\ \hline
+07.05.2019      & \begin{tabular}[c]{@{}l@{}}implementacja czatu\\   wczytanie listy lekarzy/pacjentów\end{tabular}                                                                            \\ \hline
+21.05.2019      & \begin{tabular}[c]{@{}l@{}}Implementacja dodawania leków\\   Walidacja logowania\end{tabular}                                                                                \\ \hline
+04.06.2019      & \begin{tabular}[c]{@{}l@{}}Dokumentacja\\   Testowanie\\   Dodanie historii chorób\end{tabular}                                                                              \\ \hline
+\end{tabular}
+\end{table}
+
+Harmonogram prac zosta³ przedstawiony w tabeli (Tab.~\ref{harmonogram}).
+
 \section{Przegl¹d rynku}
+\subsection{Doktormed}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{rynek1}
+	\caption{Doktormed.}\label{l:rynek1}
+\end{figure}
+
+Jest to platforma umo¿liwiaj¹ca zadawanie pytañ do grona lekarzy w sposób anonimowy, koszt porady to 50 z³otych i otrzymujemy odpowiedz od specjalisty z dziedziny zadanego przez nas pytania (Rys.~\ref{l:rynek1}). 
+
+\subsection{Edoktor24}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{rynek2}
+	\caption{Edoktor24.}\label{l:rynek2}
+\end{figure}
+
+Jest to platforma umo¿liwiaj¹ca zadnie pytañ przez wybranie specjalisty zadanie pytania do którego jest mo¿liwe do³¹czenie wyników badañ a nastêpnie po wniesieniu op³aty otrzymujemy odpowiedz w ci¹gu 24 godzin.  Mo¿liwe s¹ tak¿e konsultacje telefoniczne lub wideo konsultacje z wybranym specjalist¹ (Rys.~\ref{l:rynek2}).
+
+\subsection{Grupa Luxmed}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{rynek3}
+	\caption{Grupa Luxmed.}\label{l:rynek3}
+\end{figure}
+
+Jest to platforma umo¿liwiaj¹ca czat z pielêgniarkami lub lekarzami wybranych specjalizacji w wyznaczonym czasie kiedy s¹ dostêpni (Rys.~\ref{l:rynek3}).
+
+\subsection{Kardiologonline}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{rynek4}
+	\caption{Kardiologonline.}\label{l:rynek4}
+\end{figure}
+
+Jest to platforma umo¿liwiaj¹ca umówienie siê na konsultacje z wybranym specjalist¹ które odbêd¹ siê za pomoc¹ menad¿era lub facebooka (Rys.~\ref{l:rynek4}).
+
+\subsection{Medicover}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=.8\textwidth]{rynek5}
+	\caption{Medicover.}\label{l:rynek5}
+\end{figure}
+
+Jest to czat dostêpny za pomoc¹ przegl¹darki internetowej w którym pacjent mo¿e otrzymaæ odpowiedz na proste zadane pytanie do lekarza (Rys.~\ref{l:rynek5}).
 
 \chapter{System}
 \section{Architektura systemu}
