@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { NewMedicine } from 'src/app/model/new-medicine.model';
 import { Medicine } from 'src/app/model/medicine-list.model';
@@ -13,11 +13,13 @@ import { MedicineService } from '../../services/medicine.service';
 export class AddMedicineDialogComponent {
   newMedicine: NewMedicine;
 
-  constructor(public dialogRef: MatDialogRef<AddMedicineDialogComponent>,
+  constructor(
+    public dialogRef: MatDialogRef<AddMedicineDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public patient: User,
-    private medicineService: MedicineService) {
-      this.newMedicine = new NewMedicine();
-    }
+    private medicineService: MedicineService
+  ) {
+    this.newMedicine = new NewMedicine();
+  }
 
   add(): void {
     const stringMed: Medicine = {

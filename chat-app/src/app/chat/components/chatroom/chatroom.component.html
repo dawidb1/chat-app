@@ -24,7 +24,8 @@
       <div><button mat-button (click)="checkMedicineOrHistory()">Zmień</button></div>
       <div *ngIf="medicine">
         <div>
-          <app-medicine-list *ngIf="patient"
+          <app-medicine-list
+            *ngIf="patient"
             [roomUserEmail]="roomUser.email"
             [currentUserEmail]="currentUser.email"
             [patient]="patient"
