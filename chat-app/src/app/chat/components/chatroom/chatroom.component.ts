@@ -16,6 +16,8 @@ export class ChatroomComponent implements OnInit {
   roomUser: User;
   medicine: boolean;
 
+  patient: User;
+
   unreadMessage: ChatMessage;
 
   UserType: typeof UserType = UserType;
@@ -39,8 +41,15 @@ export class ChatroomComponent implements OnInit {
     this.medicine = !this.medicine;
   }
 
-  changeUserRoomEvent(event: User) {
-    this.roomUser = event;
+  changeUserRoomEvent(eventUser: User) {
+    this.roomUser = eventUser;
+
+    if(this.roomUser.userType === UserType.PATIENT){
+      this.patient = this.roomUser;
+
+    } else if (this.roomUser.userType === UserType.DOCTOR) {
+      this.patient = this.currentUser;
+    }
   }
 
   isNewUnreadedMessage(e: ChatMessage) {

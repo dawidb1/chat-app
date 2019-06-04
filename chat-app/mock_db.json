@@ -78,7 +78,7 @@
           "dosePerDay": 2
         }
       ],
-      "History_list":[
+      "History_list": [
         {
           "id": 1,
           "doctorType": "Lekarz rodzinny",
@@ -138,7 +138,7 @@
           "dosePerDay": 2
         }
       ],
-      "History_list":[
+      "History_list": [
         {
           "id": 1,
           "doctorType": "Kardiolog",
@@ -242,7 +242,7 @@
           "dosePerDay": 2
         }
       ],
-      "History_list":[
+      "History_list": [
         {
           "id": 1,
           "doctorType": "Alergolog",
@@ -302,6 +302,24 @@
           "dosePerDay": 2
         }
       ]
+    }
+  ],
+  "newMedicines": [
+    {
+      "patientId": "mbvlFdUey0YEbM7tObDJtoVghFD2",
+      "dosePerDay": 2,
+      "startDate": "2019-06-07",
+      "endDate": "2019-06-09",
+      "name": "fewf",
+      "id": 1
+    },
+    {
+      "patientId": "mbvlFdUey0YEbM7tObDJtoVghFD2",
+      "dosePerDay": 2,
+      "startDate": "2019-06-06",
+      "endDate": "2019-06-06",
+      "name": "dsad",
+      "id": 2
     }
   ]
 }

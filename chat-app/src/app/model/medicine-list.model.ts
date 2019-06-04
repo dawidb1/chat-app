@@ -1,7 +1,8 @@
 export class Medicine {
-  id: number;
+  id?: number;
   name: string;
   startDate: string;
   endDate: string;
   dosePerDay: number;
+  patientId: string;
 }
