@@ -116,7 +116,7 @@ Jest to czat dostêpny za pomoc¹ przegl¹darki internetowej w którym pacjent mo¿e 
 	\caption{Podzia³ modu³u w Angular.}\label{l:system-modul}
 \end{figure}
 
-Framework Angular wymaga pomaga utrzymaæ architekturê zgodn¹ z praktykami dobrego programowania. Aplikacja dzieli siê na modu³y. Modu³ jest odzwierciedleniem wzorca MVC (Rys.~\ref{l:system-modul}).
+Framework Angular pomaga utrzymaæ architekturê zgodn¹ z praktykami dobrego programowania. Aplikacja dzieli siê na modu³y, co jest odzwierciedleniem wzorca MVC (Rys.~\ref{l:system-modul}).
 
 \begin{figure}[!htb]
 	\centering
@@ -142,7 +142,7 @@ Aplikacja zosta³a podzielona na 4 g³ówne modu³y, wed³ug funkcjonalnoœci. Jest to
 
 Aplikacja pobiera dane z bazy danych kliniki. S¹ to informacje o danych osobowych u¿ytkownika, historia stosowanych leków oraz przebytych chorób. Baza ta zosta³a napisana w formacie json i jest kompilowana za poœrednictwem biblioteki \textit{json-server}, która jest na licencji \textit{Open-source}. Mo¿na j¹ znaleŸæ w serwisie \textit{Github} pod adresem https://github.com/typicode/json-server. Api do bazy danych zosta³o opublikowane za pomoc¹ \textit{Microsoft Azure}. 
 
-Do logowania oraz obs³ugi czatu u¿yto bazy danych \textit{Firebase Cloud}. Dziêki niech mo¿liwe jest pisanie i odbieranie wiadomoœci w czasie rzeczywistym. P³atnoœæ jest zgodnie z u¿yciem. 
+Do logowania oraz obs³ugi czatu u¿yto bazy danych \textit{Firebase Cloud}. Dziêki niej mo¿liwe jest pisanie i odbieranie wiadomoœci w czasie rzeczywistym.  
 
 Dok³adny przep³yw danych w aplikacji zosta³ przedstawiony na rysunku (Rys.~\ref{l:system-przeplyw}).
 
@@ -154,8 +154,9 @@ Zachowanie i podzia³ na funkcje wewnêtrzne aplikacji, najlepiej opisuje podzia³ 
 	\includegraphics[width=.8\textwidth]{funkcje-auth}
 	\caption{Komponenty modu³u autoryzacji.}\label{l:funkcje-auth}
 \end{figure}
+\subsection{Komponenty modu³u autoryzacji}
 
-\paragraph{Komponenty modu³u autoryzacji}
+
 Modu³ autoryzacji zawiera 4 komponenty (Rys.~\ref{l:funkcje-auth}):
 \begin{itemize}
 \item \textit{error-login-modal} - wyœwietlanie b³êdu podczas próby logowania z b³êdnym loginem lub has³em,
@@ -170,14 +171,17 @@ Modu³ autoryzacji zawiera 4 komponenty (Rys.~\ref{l:funkcje-auth}):
 	\caption{Komponenty modu³u czatu.}\label{l:funkcje-chat}
 \end{figure}
 
-\paragraph{Komponenty modu³u czatu}
+
+
+\subsection{Komponenty modu³u czatu}
+
 Modu³ czatu zawiera 6 komponentów (Rys.~\ref{l:funkcje-chat}):
 \begin{itemize}
 \item \textit{chatroom} - g³ówne okienko czatu, zawieraj¹ce wszystkie pozosta³e komponenty czatu;
-\item \textit{chat-form} - formularz nowej wiadomoœci;
-\item \textit{feed} - wyœwietlenie wiadomoœci czatu;
-\item \textit{message} - wyœwietlenie pojedynczej wiadomoœci;
-\item \textit{user-list} - wyœwietlenie listy u¿ytkowników;
+\item \textit{chat-form} - formularz nowej wiadomoœci,
+\item \textit{feed} - wyœwietlenie wiadomoœci czatu,
+\item \textit{message} - wyœwietlenie pojedynczej wiadomoœci,
+\item \textit{user-list} - wyœwietlenie listy u¿ytkowników,
 \item \textit{user-item} - wyœwietlenie pojedynczego u¿ytkownika.
 \end{itemize}
 
@@ -266,7 +270,7 @@ Wykonane testy akceptacyjne z³o¿one s¹ z trzech sekcji.
 
 
 \chapter{Wnioski}
-Cel pracy zosta³ osi¹gniêty--zosta³a utworzona aplikacja, umo¿liwiaj¹ca bezpoœredni kontakt pomiêdzy pacjentem a lekarzem, bez koniecznoœci wczeœniejszego planowania wizyty. Dziêki wykorzystaniu najnowszych technologii, utworzono us³ugê œwiadczenia opieki zdrowotnej na odleg³oœæ. 
+Cel pracy zosta³ osi¹gniêty, gdy¿ utworzono aplikacjê, umo¿liwiaj¹c¹ bezpoœredni kontakt pomiêdzy pacjentem a lekarzem, bez koniecznoœci wczeœniejszego planowania wizyty. Dziêki wykorzystaniu najnowszych technologii, utworzono us³ugê œwiadczenia opieki zdrowotnej na odleg³oœæ. 
 Do najwa¿niejszych zalet powsta³ej aplikacji zalicza siê:
 \begin{itemize}
 \item zmniejszenie kosztów opieki medycznej,
@@ -285,5 +289,9 @@ W przysz³oœci, aplikacja mo¿e zostaæ rozbudowana o kolejne modu³y, zwiêkszaj¹ce 
 %	\caption{Zaprojektowana sieæ neuronowa.}\label{lstm-schema}
 %\end{figure}
 
+\begin{thebibliography}{999}
+
+
+\end{thebibliography}
 
 

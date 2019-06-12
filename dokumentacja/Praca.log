@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.29)  4 JUN 2019 11:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6600 64-bit) (preloaded format=pdflatex 2018.3.3)  12 JUN 2019 19:23
 entering extended mode
 **./Praca.tex
 (Praca.tex
 LaTeX2e <2017-04-15>
-Babel <3.15> and hyphenation patterns for 75 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 75 language(s) loaded.
 (USTAWIENIA.tex ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
@@ -49,7 +49,7 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
-File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
@@ -67,7 +67,7 @@ Package: inputenc 2015/03/17 v1.2c Input encoding file
 File: cp1250.def 2015/03/17 v1.2c Input encoding file
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
-Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
@@ -91,7 +91,7 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -127,55 +127,53 @@ Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 \Hy@pagecounter=\count91
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
-File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count92
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 4374.
-Package hyperref Info: Option `pdfusetitle' set `true' on input line 4374.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4383.
+Package hyperref Info: Option `pdfusetitle' set `true' on input line 4383.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 4374.
+(hyperref)                removing `subscript' on input line 4383.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 4374.
+(hyperref)                removing `subscript' on input line 4383.
 
-Package hyperref Info: Hyper figures OFF on input line 4498.
-Package hyperref Info: Link nesting OFF on input line 4503.
-Package hyperref Info: Hyper index ON on input line 4506.
-Package hyperref Info: Plain pages OFF on input line 4513.
-Package hyperref Info: Backreferencing OFF on input line 4518.
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4751.
+Package hyperref Info: Bookmarks ON on input line 4762.
 \c@Hy@tempcnt=\count93
-LaTeX Info: Redefining \url on input line 5104.
+LaTeX Info: Redefining \url on input line 5115.
 \XeTeXLinkMargin=\dimen106
 \Fld@menulength=\count94
 \Field@Width=\dimen107
 \Fld@charsize=\dimen108
-Package hyperref Info: Hyper figures OFF on input line 6358.
-Package hyperref Info: Link nesting OFF on input line 6363.
-Package hyperref Info: Hyper index ON on input line 6366.
-Package hyperref Info: backreferencing OFF on input line 6373.
-Package hyperref Info: Link coloring ON on input line 6376.
-Package hyperref Info: Link coloring with OCG OFF on input line 6383.
-Package hyperref Info: PDF/A mode OFF on input line 6388.
-LaTeX Info: Redefining \ref on input line 6428.
-LaTeX Info: Redefining \pageref on input line 6432.
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring ON on input line 6387.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
 \Hy@abspage=\count95
 \c@Item=\count96
 \c@Hfootnote=\count97
 )
-
-Package hyperref Message: Driver: hpdftex.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
-File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
+Package hyperref Info: Driver: hpdftex.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
 \Fld@listcount=\count98
 \c@bookmark@seq@number=\count99
 
@@ -281,7 +279,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\polski\polski.sty"
+(C:\Users\ketri\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\polski.sty
 Package: polski 2017/05/04 v1.3.4 Polish language package
 
    Inputenc package detected. Catcodes not changed.
@@ -446,7 +444,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 11.
 LaTeX Font Info:    Try loading font information for OT4+cmr on input line 11.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\polski\ot4cmr.fd"
+
+(C:\Users\ketri\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\ot4cmr.fd
 File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    ... okay on input line 11.
@@ -515,31 +514,29 @@ LaTeX Font Info:    Try loading font information for T1+phv on input line 17.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-<./rysunki/logoPS.png, id=75, 354.6048pt x 354.8457pt>
+<./rysunki/logoPS.png, id=83, 354.6048pt x 354.8457pt>
 File: ./rysunki/logoPS.png Graphic file (type png)
 <use ./rysunki/logoPS.png>
-Package pdftex.def Info: ./rysunki/logoPS.png  used on input line 17. on input 
-line 17.
-Package pdftex.def Info: Requested size: 79.66771pt x 79.71771pt on input line 
-17.
+Package pdftex.def Info: ./rysunki/logoPS.png  used on input line 17.
+(pdftex.def)             Requested size: 79.66771pt x 79.71771pt.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 17.
 LaTeX Font Info:    Font shape `T1/phv/bx/sc' in size <17> not available
 (Font)              Font shape `T1/phv/b/sc' tried instead on input line 17.
 LaTeX Font Info:    Try loading font information for OML+plm on input line 17.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omlplm.fd"
+ (C:\Users\ketri\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\omlplm.fd
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Try loading font information for OMS+plsy on input line 17.
 
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omsplsy.fd"
+(C:\Users\ketri\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\omsplsy.fd
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Try loading font information for OMX+plex on input line 17.
 
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omxplex.fd"
+(C:\Users\ketri\AppData\Roaming\MiKTeX\2.9\tex\latex\polski\omxplex.fd
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
@@ -569,7 +566,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--17
 
 [1
 
-{C:/Users/Dawid/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./rysunki/l
+{C:/Users/ketri/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./rysunki/l
 ogoPS.png>] (Praca.toc)
 \tf@toc=\write4
 \openout4 = `Praca.toc'.
@@ -606,20 +603,16 @@ l.26 \item f
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 45.
 
-<./rysunki/rynek1.jpg, id=153, 771.63281pt x 267.24844pt>
+<./rysunki/rynek1.jpg, id=161, 771.63281pt x 267.24844pt>
 File: ./rysunki/rynek1.jpg Graphic file (type jpg)
 <use ./rysunki/rynek1.jpg>
-Package pdftex.def Info: ./rysunki/rynek1.jpg  used on input line 68. on input 
-line 68.
-Package pdftex.def Info: Requested size: 352.81552pt x 122.19359pt on input lin
-e 68.
-<./rysunki/rynek2.jpg, id=155, 694.09312pt x 481.04718pt>
+Package pdftex.def Info: ./rysunki/rynek1.jpg  used on input line 68.
+(pdftex.def)             Requested size: 352.81552pt x 122.19359pt.
+<./rysunki/rynek2.jpg, id=163, 694.09312pt x 481.04718pt>
 File: ./rysunki/rynek2.jpg Graphic file (type jpg)
 <use ./rysunki/rynek2.jpg>
-Package pdftex.def Info: ./rysunki/rynek2.jpg  used on input line 77. on input 
-line 77.
-Package pdftex.def Info: Requested size: 352.81552pt x 244.53073pt on input lin
-e 77.
+Package pdftex.def Info: ./rysunki/rynek2.jpg  used on input line 77.
+(pdftex.def)             Requested size: 352.81552pt x 244.53073pt.
 [2]
 
 LaTeX Warning: Text page 3 contains only floats.
@@ -629,91 +622,74 @@ Overfull \vbox (3.08217pt too high) has occurred while \output is active []
 
 
 [3 <./rysunki/rynek1.jpg>]
-<./rysunki/rynek3.jpg, id=168, 728.7225pt x 262.73157pt>
+<./rysunki/rynek3.jpg, id=176, 728.7225pt x 262.73157pt>
 File: ./rysunki/rynek3.jpg Graphic file (type jpg)
 <use ./rysunki/rynek3.jpg>
-Package pdftex.def Info: ./rysunki/rynek3.jpg  used on input line 86. on input 
-line 86.
-Package pdftex.def Info: Requested size: 352.81552pt x 127.20015pt on input lin
-e 86.
-<./rysunki/rynek4.jpg, id=170, 679.78969pt x 418.56375pt>
+Package pdftex.def Info: ./rysunki/rynek3.jpg  used on input line 86.
+(pdftex.def)             Requested size: 352.81552pt x 127.20015pt.
+<./rysunki/rynek4.jpg, id=178, 679.78969pt x 418.56375pt>
 File: ./rysunki/rynek4.jpg Graphic file (type jpg)
 <use ./rysunki/rynek4.jpg>
-Package pdftex.def Info: ./rysunki/rynek4.jpg  used on input line 95. on input 
-line 95.
-Package pdftex.def Info: Requested size: 352.81552pt x 217.23926pt on input lin
-e 95.
+Package pdftex.def Info: ./rysunki/rynek4.jpg  used on input line 95.
+(pdftex.def)             Requested size: 352.81552pt x 217.23926pt.
  [4 <./rysunki/rynek2.jpg> <./rysunki/rynek3.jpg>]
-<./rysunki/rynek5.jpg, id=176, 637.63219pt x 491.58656pt>
+<./rysunki/rynek5.jpg, id=184, 637.63219pt x 491.58656pt>
 File: ./rysunki/rynek5.jpg Graphic file (type jpg)
 <use ./rysunki/rynek5.jpg>
-Package pdftex.def Info: ./rysunki/rynek5.jpg  used on input line 105. on input
- line 105.
-Package pdftex.def Info: Requested size: 352.81552pt x 272.00116pt on input lin
-e 105.
+Package pdftex.def Info: ./rysunki/rynek5.jpg  used on input line 105.
+(pdftex.def)             Requested size: 352.81552pt x 272.00116pt.
 
 [5 <./rysunki/rynek4.jpg>] [6 <./rysunki/rynek5.jpg>]
 Rozdzia\PlPrIeC {\l } 2.
-<./rysunki/system-modul.png, id=186, 688.07062pt x 296.60812pt>
+<./rysunki/system-modul.png, id=194, 688.07062pt x 296.60812pt>
 File: ./rysunki/system-modul.png Graphic file (type png)
 <use ./rysunki/system-modul.png>
-Package pdftex.def Info: ./rysunki/system-modul.png  used on input line 115. on
- input line 115.
-Package pdftex.def Info: Requested size: 352.81552pt x 152.08731pt on input lin
-e 115.
-<./rysunki/system-vsc.png, id=188, 261.97874pt x 204.765pt>
+Package pdftex.def Info: ./rysunki/system-modul.png  used on input line 115.
+(pdftex.def)             Requested size: 352.81552pt x 152.08731pt.
+<./rysunki/system-vsc.png, id=196, 261.97874pt x 204.765pt>
 File: ./rysunki/system-vsc.png Graphic file (type png)
 <use ./rysunki/system-vsc.png>
-Package pdftex.def Info: ./rysunki/system-vsc.png  used on input line 123. on i
-nput line 123.
-Package pdftex.def Info: Requested size: 220.50887pt x 172.35759pt on input lin
-e 123.
-<./rysunki/system.png, id=190, 797.98125pt x 282.30469pt>
+Package pdftex.def Info: ./rysunki/system-vsc.png  used on input line 123.
+(pdftex.def)             Requested size: 220.50887pt x 172.35759pt.
+<./rysunki/system.png, id=198, 797.98125pt x 282.30469pt>
 File: ./rysunki/system.png Graphic file (type png)
 <use ./rysunki/system.png>
-Package pdftex.def Info: ./rysunki/system.png  used on input line 131. on input
- line 131.
-Package pdftex.def Info: Requested size: 352.81552pt x 124.8175pt on input line
- 131.
+Package pdftex.def Info: ./rysunki/system.png  used on input line 131.
+(pdftex.def)             Requested size: 352.81552pt x 124.8175pt.
 [7
 
  <./rysunki/system-modul.png> <./rysunki/system-vsc.png>]
-<./rysunki/system-przeplyw.png, id=196, 894.34125pt x 286.82156pt>
+<./rysunki/system-przeplyw.png, id=204, 894.34125pt x 286.82156pt>
 File: ./rysunki/system-przeplyw.png Graphic file (type png)
 <use ./rysunki/system-przeplyw.png>
 Package pdftex.def Info: ./rysunki/system-przeplyw.png  used on input line 139.
- on input line 139.
-Package pdftex.def Info: Requested size: 485.1222pt x 155.58595pt on input line
- 139.
+
+(pdftex.def)             Requested size: 485.1222pt x 155.58595pt.
 
 Overfull \hbox (44.10446pt too wide) in paragraph at lines 139--140
  [][] 
  []
 
-<./rysunki/funkcje-auth.png, id=198, 240.14719pt x 111.41624pt>
+<./rysunki/funkcje-auth.png, id=206, 240.14719pt x 111.41624pt>
 File: ./rysunki/funkcje-auth.png Graphic file (type png)
 <use ./rysunki/funkcje-auth.png>
-Package pdftex.def Info: ./rysunki/funkcje-auth.png  used on input line 154. on
- input line 154.
-Package pdftex.def Info: Requested size: 352.81552pt x 163.7034pt on input line
- 154.
-
-Overfull \hbox (1.51796pt too wide) in paragraph at lines 159--160
- []\OT4/cmr/m/sl/12 Komponenty mo-du-ªu au-to-ry-za-cji[] \OT4/cmr/m/n/12 Mo-du
-ª au-to-ry-za-cji za-wie-ra 4 kom-po-nen-ty (Rys. [][]2.5[][]): 
- []
-
+Package pdftex.def Info: ./rysunki/funkcje-auth.png  used on input line 154.
+(pdftex.def)             Requested size: 352.81552pt x 163.7034pt.
 [8 <./rysunki/system.png> <./rysunki/system-przeplyw.png>]
-<./rysunki/funkcje-chat.png, id=205, 187.45032pt x 215.30438pt>
+<./rysunki/funkcje-chat.png, id=213, 187.45032pt x 215.30438pt>
 File: ./rysunki/funkcje-chat.png Graphic file (type png)
 <use ./rysunki/funkcje-chat.png>
-Package pdftex.def Info: ./rysunki/funkcje-chat.png  used on input line 169. on
- input line 169.
-Package pdftex.def Info: Requested size: 176.40439pt x 202.62924pt on input lin
-e 169.
+Package pdftex.def Info: ./rysunki/funkcje-chat.png  used on input line 170.
+(pdftex.def)             Requested size: 176.40439pt x 202.62924pt.
  [9 <./rysunki/funkcje-auth.png> <./rysunki/funkcje-chat.png>] [10] [11]
 Rozdzia\PlPrIeC {\l } 3.
-) [12
+[12
+
+]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 295.
+
+) [13
 
 ]
 
@@ -726,39 +702,34 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 44.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 44.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 44.
 Package rerunfilecheck Info: File `Praca.out' has not changed.
-(rerunfilecheck)             Checksum: 90FE0746A111B9DBB7E9E937C9C8EF2D;1086.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+(rerunfilecheck)             Checksum: AB5DA7985540B17C7B3D810D79A7C833;1254.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 44.
  ) 
 Here is how much of TeX's memory you used:
- 9323 strings out of 493312
- 139084 string characters out of 3138899
- 251705 words of memory out of 3000000
- 12633 multiletter control sequences out of 15000+200000
+ 9328 strings out of 493305
+ 138928 string characters out of 3138875
+ 252014 words of memory out of 3000000
+ 12640 multiletter control sequences out of 15000+200000
  30744 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,14n,42p,521b,395s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{figure.caption.19} has been referenced but does n
-ot exist, replaced by a fixed one
-
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plit.enc}{C:/Program Files/MiKT
-eX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips
-/pl/plms.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plmi.enc}{C:/Progr
-am Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/pl/plbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-pl/plmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/pl/plsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/pl/plsl12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plsy1
-0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on Praca.pdf (16 pages, 924406 bytes).
+ 46i,14n,42p,521b,397s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/ketri/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/plit.enc}{C:/Us
+ers/ketri/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Users/ketr
+i/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/plms.enc}{C:/Users/ketri/AppDat
+a/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/plmi.enc}{C:/Program Files/MiKTeX 2.9/f
+onts/enc/dvips/base/8r.enc}<C:/Users/ketri/AppData/Roaming/MiKTeX/2.9/fonts/typ
+e1/public/pl/plbx12.pfb><C:/Users/ketri/AppData/Roaming/MiKTeX/2.9/fonts/type1/
+public/pl/plmi12.pfb><C:/Users/ketri/AppData/Roaming/MiKTeX/2.9/fonts/type1/pub
+lic/pl/plr10.pfb><C:/Users/ketri/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/
+pl/plr12.pfb><C:/Users/ketri/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/p
+lsl10.pfb><C:/Users/ketri/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plsl
+12.pfb><C:/Users/ketri/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plsy10.
+pfb><C:/Users/ketri/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plti12.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on Praca.pdf (17 pages, 924628 bytes).
 PDF statistics:
- 287 PDF objects out of 1000 (max. 8388607)
- 61 named destinations out of 1000 (max. 500000)
- 205 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 298 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 500000)
+ 221 words of extra memory for PDF output out of 10000 (max. 10000000)
 
