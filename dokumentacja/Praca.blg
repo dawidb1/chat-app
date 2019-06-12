@@ -1,5 +1,13 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Praca.aux
 The style file: acm.bst
-I found no \citation commands---while reading file Praca.aux
 I found no \bibdata command---while reading file Praca.aux
-(There were 2 error messages)
+Warning--I didn't find a database entry for "doctormed"
+Warning--I didn't find a database entry for "edok"
+Warning--I didn't find a database entry for "lux"
+Warning--I didn't find a database entry for "kardio"
+Warning--I didn't find a database entry for "medi"
+Warning--I didn't find a database entry for "link1"
+Warning--I didn't find a database entry for "angjs"
+Warning--I didn't find a database entry for "ang2"
+Warning--I didn't find a database entry for "firebase"
+(There was 1 error message)
