@@ -15,6 +15,7 @@ import {
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatInputModule,
     MatListModule,
     MatRadioModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDatepickerModule
   ],
   exports: [
     MatExpansionModule,
@@ -47,7 +49,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatInputModule,
     MatListModule,
     MatRadioModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDatepickerModule
   ]
 })
 export class MyMaterialModule {}

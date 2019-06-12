@@ -1,5 +1,9 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { NewMedicine } from 'src/app/model/new-medicine.model';
+import { Medicine } from 'src/app/model/medicine-list.model';
+import { User } from 'src/app/model/user.model';
+import { MedicineService } from '../../services/medicine.service';
 
 @Component({
   selector: 'app-add-medicine-dialog',
@@ -7,13 +11,27 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./add-medicine-dialog.component.scss']
 })
 export class AddMedicineDialogComponent {
-  dosePerDay: number;
-  startDate: string;
-  endDate: string;
-  name: string;
-  constructor(public dialogRef: MatDialogRef<AddMedicineDialogComponent>) {}
+  newMedicine: NewMedicine;
 
-  close(): void {
+  constructor(
+    public dialogRef: MatDialogRef<AddMedicineDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public patient: User,
+    private medicineService: MedicineService
+  ) {
+    this.newMedicine = new NewMedicine();
+  }
+
+  add(): void {
+    const stringMed: Medicine = {
+      patientId: this.patient.id,
+      dosePerDay: this.newMedicine.dosePerDay,
+      startDate: this.newMedicine.startDate.toLocaleDateString(),
+      endDate: this.newMedicine.endDate.toLocaleDateString(),
+      name: this.newMedicine.name
+    };
+
+    this.medicineService.addMedicine(stringMed).subscribe();
+
     this.dialogRef.close();
   }
 }

@@ -78,7 +78,7 @@
           "dosePerDay": 2
         }
       ],
-      "History_list":[
+      "History_list": [
         {
           "id": 1,
           "doctorType": "Lekarz rodzinny",
@@ -138,7 +138,7 @@
           "dosePerDay": 2
         }
       ],
-      "History_list":[
+      "History_list": [
         {
           "id": 1,
           "doctorType": "Kardiolog",
@@ -242,7 +242,7 @@
           "dosePerDay": 2
         }
       ],
-      "History_list":[
+      "History_list": [
         {
           "id": 1,
           "doctorType": "Alergolog",
@@ -303,5 +303,6 @@
         }
       ]
     }
-  ]
+  ],
+  "newMedicines": []
 }

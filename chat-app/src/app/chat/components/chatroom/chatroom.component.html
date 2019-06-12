@@ -25,9 +25,10 @@
       <div *ngIf="medicine">
         <div>
           <app-medicine-list
+            *ngIf="patient"
             [roomUserEmail]="roomUser.email"
             [currentUserEmail]="currentUser.email"
-            [userType]="currentUser.userType"
+            [patient]="patient"
           ></app-medicine-list>
         </div>
       </div>

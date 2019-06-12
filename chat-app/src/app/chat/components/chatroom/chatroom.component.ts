@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewChecked, AfterViewIn
 import { User } from 'src/app/model/user.model';
 import { LoginService } from 'src/app/authorization/services/login.service';
 import { UserType } from 'src/app/authorization/model/user-type.enum';
-import { ChatScroll } from '../../classes/chat-scroll';
 import { ChatMessage } from 'src/app/model/chat-message.model';
 import { ChatService } from '../../services/chat.service';
 
@@ -15,6 +14,8 @@ export class ChatroomComponent implements OnInit {
   currentUser: User;
   roomUser: User;
   medicine: boolean;
+
+  patient: User;
 
   unreadMessage: ChatMessage;
 
@@ -39,8 +40,15 @@ export class ChatroomComponent implements OnInit {
     this.medicine = !this.medicine;
   }
 
-  changeUserRoomEvent(event: User) {
-    this.roomUser = event;
+  changeUserRoomEvent(eventUser: User) {
+    this.roomUser = eventUser;
+    this.roomUser.userType = this.roomUser.userType as UserType;
+
+    if (this.roomUser.userType == UserType.PATIENT) {
+      this.patient = this.roomUser;
+    } else if (this.roomUser.userType == UserType.DOCTOR) {
+      this.patient = this.currentUser;
+    }
   }
 
   isNewUnreadedMessage(e: ChatMessage) {

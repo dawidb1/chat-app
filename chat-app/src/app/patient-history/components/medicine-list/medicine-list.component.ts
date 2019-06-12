@@ -6,6 +6,8 @@ import { UserType } from 'src/app/authorization/model/user-type.enum';
 import { MatDialog } from '@angular/material';
 import { MedicineDialogComponent } from '../medicine-dialog/medicine-dialog.component';
 import { AddMedicineDialogComponent } from '../add-medicine-dialog/add-medicine-dialog.component';
+import { User } from 'src/app/model/user.model';
+import { MedicineService } from '../../services/medicine.service';
 
 @Component({
   selector: 'app-medicine-list',
@@ -13,11 +15,18 @@ import { AddMedicineDialogComponent } from '../add-medicine-dialog/add-medicine-
   styleUrls: ['./medicine-list.component.scss']
 })
 export class MedicineListComponent implements OnInit, OnChanges {
-  constructor(private clinicUserService: ClinicUserService, public dialog: MatDialog) {}
+  constructor(
+    private clinicUserService: ClinicUserService,
+    public dialog: MatDialog,
+    private medicineService: MedicineService
+  ) {}
   @Input() roomUserEmail: string;
-  @Input() userType: UserType;
+  @Input() currentUserType: UserType;
   @Input() currentUserEmail: string;
+  @Input() patient: User;
+
   med: Medicine[];
+  newMedicines: Medicine[];
 
   // med=MEDICINES;
   selectedMedicine: Medicine;
@@ -27,7 +36,10 @@ export class MedicineListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.getMedicineList();
+    console.log(changes);
+    if (changes.patient) {
+      this.getMedicineList();
+    }
   }
 
   onSelect(medicine: Medicine): void {
@@ -42,24 +54,29 @@ export class MedicineListComponent implements OnInit, OnChanges {
 
   add() {
     const dialogRef = this.dialog.open(AddMedicineDialogComponent, {
+      data: this.patient,
       height: '400px',
       width: '400px'
     });
+    dialogRef.afterClosed().subscribe(x => this.getMedicineList());
   }
 
   getMedicineList() {
-    if (this.userType == UserType.PATIENT) {
-      this.clinicUserService.getUserByEmail(this.currentUserEmail).subscribe((res: ClinicUser) => {
-        const clinicUser: ClinicUser = res;
-        this.med = res.Medicine_list;
-        return res.Medicine_list;
+    this.clinicUserService.getUserByEmail(this.patient.email).subscribe((res: ClinicUser) => {
+      this.med = res.Medicine_list as Medicine[];
+
+      this.getNewMedicines().subscribe(newMed => {
+        this.newMedicines = newMed;
+        this.connectMedicines();
       });
-    } else if (this.userType == UserType.DOCTOR) {
-      this.clinicUserService.getUserByEmail(this.roomUserEmail).subscribe((res: ClinicUser) => {
-        const clinicUser: ClinicUser = res;
-        this.med = res.Medicine_list;
-        return res.Medicine_list;
-      });
-    }
+    });
+  }
+
+  getNewMedicines() {
+    return this.medicineService.getNewMedicines(this.patient.id);
+  }
+
+  connectMedicines() {
+    this.med = [...this.med, ...this.newMedicines];
   }
 }
