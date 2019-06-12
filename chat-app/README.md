@@ -38,3 +38,9 @@ json-server --watch mock_db.json
 ## API for production build
 
 https://med-chat-json.azurewebsites.net/
+
+## Users
+
+jakub.kowalski@email.com / jakubk
+julia.zalewska@email.com / juliaz
+mateusz.nowak@email.com / drMateusz
