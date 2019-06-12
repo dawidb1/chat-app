@@ -42,10 +42,11 @@ export class ChatroomComponent implements OnInit {
 
   changeUserRoomEvent(eventUser: User) {
     this.roomUser = eventUser;
+    this.roomUser.userType = this.roomUser.userType as UserType;
 
-    if (this.roomUser.userType === UserType.PATIENT) {
+    if (this.roomUser.userType == UserType.PATIENT) {
       this.patient = this.roomUser;
-    } else if (this.roomUser.userType === UserType.DOCTOR) {
+    } else if (this.roomUser.userType == UserType.DOCTOR) {
       this.patient = this.currentUser;
     }
   }

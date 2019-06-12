@@ -8,7 +8,6 @@ import { MedicineDialogComponent } from '../medicine-dialog/medicine-dialog.comp
 import { AddMedicineDialogComponent } from '../add-medicine-dialog/add-medicine-dialog.component';
 import { User } from 'src/app/model/user.model';
 import { MedicineService } from '../../services/medicine.service';
-import { NewMedicine } from 'src/app/model/new-medicine.model';
 
 @Component({
   selector: 'app-medicine-list',
@@ -16,13 +15,18 @@ import { NewMedicine } from 'src/app/model/new-medicine.model';
   styleUrls: ['./medicine-list.component.scss']
 })
 export class MedicineListComponent implements OnInit, OnChanges {
-  constructor(private clinicUserService: ClinicUserService, public dialog: MatDialog, private medicineService: MedicineService) {}
+  constructor(
+    private clinicUserService: ClinicUserService,
+    public dialog: MatDialog,
+    private medicineService: MedicineService
+  ) {}
   @Input() roomUserEmail: string;
   @Input() currentUserType: UserType;
   @Input() currentUserEmail: string;
   @Input() patient: User;
 
   med: Medicine[];
+  newMedicines: Medicine[];
 
   // med=MEDICINES;
   selectedMedicine: Medicine;
@@ -32,7 +36,10 @@ export class MedicineListComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.getMedicineList();
+    console.log(changes);
+    if (changes.patient) {
+      this.getMedicineList();
+    }
   }
 
   onSelect(medicine: Medicine): void {
@@ -54,19 +61,21 @@ export class MedicineListComponent implements OnInit, OnChanges {
   }
 
   getMedicineList() {
-    
     this.clinicUserService.getUserByEmail(this.patient.email).subscribe((res: ClinicUser) => {
-      const clinicUser: ClinicUser = res;
-      this.med = res.Medicine_list;
-      
-      this.medicineService.getNewMedicines(this.patient.id).subscribe((resMed: Medicine[]) => {
-        
-        console.log(this.med);
-        //console.log(this.resMed);
-        
-        this.med = [...this.med, ...resMed];
+      this.med = res.Medicine_list as Medicine[];
+
+      this.getNewMedicines().subscribe(x => {
+        this.newMedicines = x;
+        this.connectMedicines();
       });
     });
+  }
 
+  getNewMedicines() {
+    return this.medicineService.getNewMedicines(this.patient.id);
+  }
+
+  connectMedicines() {
+    this.med = [...this.med, ...this.newMedicines];
   }
 }

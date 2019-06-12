@@ -320,6 +320,22 @@
       "endDate": "2019-06-06",
       "name": "dsad",
       "id": 2
+    },
+    {
+      "patientId": "ck7onDWlirUVhzFpalAgXWyMjRm2",
+      "dosePerDay": 2,
+      "startDate": "2019-06-13",
+      "endDate": "2019-06-19",
+      "name": "token4",
+      "id": 3
+    },
+    {
+      "patientId": "ck7onDWlirUVhzFpalAgXWyMjRm2",
+      "dosePerDay": 3,
+      "startDate": "2019-06-10",
+      "endDate": "2019-06-20",
+      "name": "Ibuprom",
+      "id": 4
     }
   ]
 }

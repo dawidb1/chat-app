@@ -17,20 +17,6 @@ export class MedicineService {
   }
 
   getNewMedicines(patientId: string): Observable<Medicine[]> {
-    return this.http.get<Medicine[]>(`${this.url}/newMedicines?patientId='${patientId}`).pipe(
-      map(x => {
-        x.map(item => {
-          const old: Medicine = {
-            dosePerDay: item.dosePerDay,
-            startDate: item.startDate,
-            name: item.name,
-            endDate: item.endDate,
-            patientId
-          };
-          return old;
-        });
-        return x;
-      })
-    );
+    return this.http.get<Medicine[]>(`${this.url}/newMedicines?patientId=${patientId}`);
   }
 }
