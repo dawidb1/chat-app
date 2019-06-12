@@ -25,8 +25,8 @@ export class AddMedicineDialogComponent {
     const stringMed: Medicine = {
       patientId: this.patient.id,
       dosePerDay: this.newMedicine.dosePerDay,
-      startDate: this.newMedicine.startDate.toString(),
-      endDate: this.newMedicine.endDate.toString(),
+      startDate: this.newMedicine.startDate.toLocaleDateString(),
+      endDate: this.newMedicine.endDate.toLocaleDateString(),
       name: this.newMedicine.name
     };
 

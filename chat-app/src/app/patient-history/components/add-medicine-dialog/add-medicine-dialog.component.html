@@ -6,11 +6,16 @@
 <div mat-dialog-content>
   <mat-form-field class="full-width">
     <mat-label>Data rozpoczęcia terapii</mat-label>
-    <input type="date" [(ngModel)]="newMedicine.startDate" matInput placeholder="Start" />
+    <input matInput [matDatepicker]="picker1" [(ngModel)]="newMedicine.startDate" />
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
   </mat-form-field>
+
   <mat-form-field class="full-width">
     <mat-label>Data zakończenia terapii</mat-label>
-    <input type="date" [(ngModel)]="newMedicine.endDate" matInput placeholder="Koniec" />
+    <input matInput [matDatepicker]="picker" [(ngModel)]="newMedicine.endDate" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
   <mat-form-field class="full-width">
     <mat-label>Ilość dawek dziennie</mat-label>
