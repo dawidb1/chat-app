@@ -58,14 +58,15 @@ export class MedicineListComponent implements OnInit, OnChanges {
       height: '400px',
       width: '400px'
     });
+    dialogRef.afterClosed().subscribe(x => this.getMedicineList());
   }
 
   getMedicineList() {
     this.clinicUserService.getUserByEmail(this.patient.email).subscribe((res: ClinicUser) => {
       this.med = res.Medicine_list as Medicine[];
 
-      this.getNewMedicines().subscribe(x => {
-        this.newMedicines = x;
+      this.getNewMedicines().subscribe(newMed => {
+        this.newMedicines = newMed;
         this.connectMedicines();
       });
     });
